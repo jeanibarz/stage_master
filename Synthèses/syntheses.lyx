@@ -120,13 +120,6 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Part*
 Objectif
 \end_layout
@@ -179,7 +172,7 @@ Contexte
 \end_layout
 
 \begin_layout Standard
-Diagnostic de faute basé modèle
+Diagnostic de faute basé modèle.
 \end_layout
 
 \begin_layout Section
@@ -201,7 +194,7 @@ Approche vérificateur (procédé jumeau)
 \begin_layout Standard
 Composition parallèle du modèle du procédé avec le modèle du procédé + fautes
  puis analyse structurelle du vérificateur (transformation du problème de
- diagnosticabilité en problème d'accessibilité/de couverture)
+ diagnosticabilité en problème d'accessibilité/de couverture).
 \end_layout
 
 \begin_layout Subsection
@@ -222,7 +215,7 @@ Système considéré comme un ensemble de modules.
  Chaque module = un modèle diagnostiqueur (PN).
  Les informations des diagnostics locaux peuvent être partagées entre les
  modules par des places communes de façon à pouvoir reconstituer un diagnostic
- global
+ global.
 \end_layout
 
 \begin_layout Subsection
@@ -231,9 +224,17 @@ Approche par programmation linéaire
 
 \begin_layout Standard
 Résolution d'ILP (recherche de T-invariants minimaux), polynômial en le
- nombre de noeudstechnique de "dépliage/déploiment": transforme le modèle
- PN en un autre PN acyclique, le comportement réduit souvent de façon exponentie
-lle l'espace d'état (et ne peut pas être plus grand)
+ nombre de noeuds.
+\end_layout
+
+\begin_layout Subsection
+Technique de "dépliage/déploiment"
+\end_layout
+
+\begin_layout Standard
+Transforme le modèle PN en un autre PN acyclique.
+ La transformation réduit souvent de façon exponentielle l'espace d'état
+ (et il ne peut pas être plus complexe que le modèle initial).
 \end_layout
 
 \begin_layout Subsection
@@ -305,7 +306,7 @@ les fautes considérées peuvent être partitionnées en ensembles disjoints
 \color purple
 quand est-ce que ce n'est pas le cas ?
 \color inherit
-),
+).
 \end_layout
 
 \begin_layout Section
@@ -332,7 +333,7 @@ diagnostic en-ligne,
 logiciel pour la K-diagnosticabilité et l'analyse de diagnosticabilité (On-the-F
 ly PEtri-Net-based Diagnosability Analyzer - OF-PENDA).
  Comparaison des résultats avec benchmark de diagnostic WODES (Workshop
- On Discrete Event Systems)
+ On Discrete Event Systems).
 \end_layout
 
 \begin_layout Section

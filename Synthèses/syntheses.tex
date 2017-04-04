@@ -18,6 +18,7 @@
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
  {hyperref}
+\usepackage{breakurl}
 \begin{document}
 
 \title{\noindent \medskip{}
@@ -30,8 +31,6 @@ Synthèse bibliographie\smallskip{}
 \newpage{}
 
 \tableofcontents{}\newpage{}
-
-\newpage{}
 
 \part*{Objectif}
 
@@ -54,7 +53,7 @@ La synthèse doit entre autre comparer les :
 
 \section{Contexte}
 
-Diagnostic de faute basé modèle
+Diagnostic de faute basé modèle.
 
 \section{Résumé littérature}
 
@@ -66,7 +65,7 @@ Limitée aux modèles bornés, souffre de l'explosion combinatoire
 
 Composition parallèle du modèle du procédé avec le modèle du procédé
 + fautes puis analyse structurelle du vérificateur (transformation
-du problème de diagnosticabilité en problème d'accessibilité/de couverture)
+du problème de diagnosticabilité en problème d'accessibilité/de couverture).
 
 \subsection{Approche décentralisée}
 
@@ -78,15 +77,18 @@ mais qui considèrent tous le modèle global de base pour leurs inférences.
 Système considéré comme un ensemble de modules. Chaque module = un
 modèle diagnostiqueur (PN). Les informations des diagnostics locaux
 peuvent être partagées entre les modules par des places communes de
-façon à pouvoir reconstituer un diagnostic global
+façon à pouvoir reconstituer un diagnostic global.
 
 \subsection{Approche par programmation linéaire}
 
 Résolution d'ILP (recherche de T-invariants minimaux), polynômial
-en le nombre de noeudstechnique de \textquotedbl{}dépliage/déploiment\textquotedbl{}:
-transforme le modèle PN en un autre PN acyclique, le comportement
-réduit souvent de façon exponentielle l'espace d'état (et ne peut
-pas être plus grand)
+en le nombre de noeuds.
+
+\subsection{Technique de \textquotedbl{}dépliage/déploiment\textquotedbl{}}
+
+Transforme le modèle PN en un autre PN acyclique. La transformation
+réduit souvent de façon exponentielle l'espace d'état (et il ne peut
+pas être plus complexe que le modèle initial).
 
 \subsection{Techniques basées sur la vérification de modèle}
 
@@ -117,7 +119,7 @@ durant l'analyse,
 \item la structure du système ne change pas, et le comportement du système
 ne répond pas à des commandes de contrôle,
 \item les fautes considérées peuvent être partitionnées en ensembles disjoints
-(\textcolor{purple}{quand est-ce que ce n'est pas le cas ?}),
+(\textcolor{purple}{quand est-ce que ce n'est pas le cas ?}).
 \end{enumerate}
 
 \section{Contributions}
@@ -134,7 +136,7 @@ généré entièrement),
 \item logiciel pour la K-diagnosticabilité et l'analyse de diagnosticabilité
 (On-the-Fly PEtri-Net-based Diagnosability Analyzer - OF-PENDA). Comparaison
 des résultats avec benchmark de diagnostic WODES (Workshop On Discrete
-Event Systems)
+Event Systems).
 \end{enumerate}
 
 \section{Limitations}
