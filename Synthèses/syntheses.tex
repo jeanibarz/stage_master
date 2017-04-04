@@ -1,0 +1,148 @@
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{xcolor}
+\usepackage{babel}
+\makeatletter
+\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}%
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}%
+}
+
+\makeatother
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
+ {hyperref}
+\begin{document}
+
+\title{\noindent \medskip{}
+Synthèse bibliographie\smallskip{}
+}
+
+\author{Jean IBARZ}
+
+\maketitle
+\newpage{}
+
+\tableofcontents{}\newpage{}
+
+\newpage{}
+
+\part*{Objectif}
+
+D'après les conseils de P. Ribot, doit permettre d'identifier des
+verrous scientifiques afin de rechercher si des solutions proposées
+dans des documents connexes proposent une solution partielle ou totale
+à ces verrous. L'idée principale est de ne pas réinventer la roue....
+
+La synthèse doit entre autre comparer les :
+\begin{itemize}
+\item contextes,
+\item modèles utilisés,
+\item méthodes et algorithmes développés,
+\item les implémentations et applications,
+\item les limitations / hypothèses restrictives, ...
+\end{itemize}
+\newpage{}
+
+\part{Thèse Liu Baisi}
+
+\section{Contexte}
+
+Diagnostic de faute basé modèle
+
+\section{Résumé littérature}
+
+\subsection{Approche diagnostiqueur (Sampath)}
+
+Limitée aux modèles bornés, souffre de l'explosion combinatoire
+
+\subsection{Approche vérificateur (procédé jumeau)}
+
+Composition parallèle du modèle du procédé avec le modèle du procédé
++ fautes puis analyse structurelle du vérificateur (transformation
+du problème de diagnosticabilité en problème d'accessibilité/de couverture)
+
+\subsection{Approche décentralisée}
+
+Ensemble de diagnostiqueurs avec des capacités d'observations différentes
+mais qui considèrent tous le modèle global de base pour leurs inférences.
+
+\subsection{Approche distribuée (= modulaire)}
+
+Système considéré comme un ensemble de modules. Chaque module = un
+modèle diagnostiqueur (PN). Les informations des diagnostics locaux
+peuvent être partagées entre les modules par des places communes de
+façon à pouvoir reconstituer un diagnostic global
+
+\subsection{Approche par programmation linéaire}
+
+Résolution d'ILP (recherche de T-invariants minimaux), polynômial
+en le nombre de noeudstechnique de \textquotedbl{}dépliage/déploiment\textquotedbl{}:
+transforme le modèle PN en un autre PN acyclique, le comportement
+réduit souvent de façon exponentielle l'espace d'état (et ne peut
+pas être plus grand)
+
+\subsection{Techniques basées sur la vérification de modèle}
+
+Problème de diagnosticabilité = problème de vérification de modèle.
+Vérification de propriétés fonctionnelles écrites en logique temporelle
+propositionnelle. Souffre lui aussi d'explosion combinatoire (recherche
+exhaustive). Avantages:
+\begin{enumerate}
+\item compacité des modèles basés sur des règles,
+\item possibilité d'exploration bidirectionnelle entre l'état initial et
+l'état courant (+ recherche concurrente),
+\item approche de vérification générale,
+\item vérification partielle possible,
+\item fourni des informations sur le diagnostic tel qu'un contre-exemple.
+\end{enumerate}
+
+\section{Modèles utilisés}
+
+RdP (LTPN : une extension du TPN, LTD : Labeled Timed Diagnoser)
+
+\section{Hypothèses restrictives}
+\begin{enumerate}
+\item Fautes permanentes,
+\item abstraction possible du système continu en un modèle SED temporisé
+(ou pas),
+\item il n'existe pas de cycle de transitions non-observables accessible
+durant l'analyse,
+\item la structure du système ne change pas, et le comportement du système
+ne répond pas à des commandes de contrôle,
+\item les fautes considérées peuvent être partitionnées en ensembles disjoints
+(\textcolor{purple}{quand est-ce que ce n'est pas le cas ?}),
+\end{enumerate}
+
+\section{Contributions}
+\begin{enumerate}
+\item Reformulation algébrique de l'analyse de diagnosticabilité (matrice
+incidente étendue, marquage d'évènement, marquage de faute équation
+d'état étendue),
+\item analyse à la volée de diagnosticabilité conventionnelle basée sur
+la K-diagnosticabilité : permet de conclure sur la diagnosticabilité
+(non-diagnosticabilité ?) sur des problèmes complexes, là où d'autres
+approches échouent (l'espace d'état est trop grand et ne peut être
+généré entièrement),
+\item diagnostic en-ligne,
+\item logiciel pour la K-diagnosticabilité et l'analyse de diagnosticabilité
+(On-the-Fly PEtri-Net-based Diagnosability Analyzer - OF-PENDA). Comparaison
+des résultats avec benchmark de diagnostic WODES (Workshop On Discrete
+Event Systems)
+\end{enumerate}
+
+\section{Limitations}
+
+La solution proposée d'analyse en-ligne et incrémentale résout \textbf{partiellement}
+les problèmes d'explosion combinatoire (\textcolor{purple}{uniquement
+dans le cas de la non-diagnosticabilité je pense, car on peut s'arrêter
+dès lors qu'on trouve un cycle F-incertain mais pour déterminer qu'il
+n'en existe aucun il faudrait tout explorer...}) mais ne s'applique
+que pour des PN : \textbf{le problème reste ouvert pour des TPN}.
+\end{document}

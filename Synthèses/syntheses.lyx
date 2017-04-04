@@ -1,0 +1,361 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+\begin_inset VSpace medskip
+\end_inset
+
+Synthèse bibliographie
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Jean IBARZ
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Objectif
+\end_layout
+
+\begin_layout Standard
+D'après les conseils de P.
+ Ribot, doit permettre d'identifier des verrous scientifiques afin de rechercher
+ si des solutions proposées dans des documents connexes proposent une solution
+ partielle ou totale à ces verrous.
+ L'idée principale est de ne pas réinventer la roue....
+\end_layout
+
+\begin_layout Standard
+La synthèse doit entre autre comparer les :
+\end_layout
+
+\begin_layout Itemize
+contextes,
+\end_layout
+
+\begin_layout Itemize
+modèles utilisés,
+\end_layout
+
+\begin_layout Itemize
+méthodes et algorithmes développés,
+\end_layout
+
+\begin_layout Itemize
+les implémentations et applications,
+\end_layout
+
+\begin_layout Itemize
+les limitations / hypothèses restrictives, ...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Thèse Liu Baisi
+\end_layout
+
+\begin_layout Section
+Contexte
+\end_layout
+
+\begin_layout Standard
+Diagnostic de faute basé modèle
+\end_layout
+
+\begin_layout Section
+Résumé littérature
+\end_layout
+
+\begin_layout Subsection
+Approche diagnostiqueur (Sampath)
+\end_layout
+
+\begin_layout Standard
+Limitée aux modèles bornés, souffre de l'explosion combinatoire
+\end_layout
+
+\begin_layout Subsection
+Approche vérificateur (procédé jumeau)
+\end_layout
+
+\begin_layout Standard
+Composition parallèle du modèle du procédé avec le modèle du procédé + fautes
+ puis analyse structurelle du vérificateur (transformation du problème de
+ diagnosticabilité en problème d'accessibilité/de couverture)
+\end_layout
+
+\begin_layout Subsection
+Approche décentralisée
+\end_layout
+
+\begin_layout Standard
+Ensemble de diagnostiqueurs avec des capacités d'observations différentes
+ mais qui considèrent tous le modèle global de base pour leurs inférences.
+\end_layout
+
+\begin_layout Subsection
+Approche distribuée (= modulaire)
+\end_layout
+
+\begin_layout Standard
+Système considéré comme un ensemble de modules.
+ Chaque module = un modèle diagnostiqueur (PN).
+ Les informations des diagnostics locaux peuvent être partagées entre les
+ modules par des places communes de façon à pouvoir reconstituer un diagnostic
+ global
+\end_layout
+
+\begin_layout Subsection
+Approche par programmation linéaire
+\end_layout
+
+\begin_layout Standard
+Résolution d'ILP (recherche de T-invariants minimaux), polynômial en le
+ nombre de noeudstechnique de "dépliage/déploiment": transforme le modèle
+ PN en un autre PN acyclique, le comportement réduit souvent de façon exponentie
+lle l'espace d'état (et ne peut pas être plus grand)
+\end_layout
+
+\begin_layout Subsection
+Techniques basées sur la vérification de modèle
+\end_layout
+
+\begin_layout Standard
+Problème de diagnosticabilité = problème de vérification de modèle.
+ Vérification de propriétés fonctionnelles écrites en logique temporelle
+ propositionnelle.
+ Souffre lui aussi d'explosion combinatoire (recherche exhaustive).
+ Avantages:
+\end_layout
+
+\begin_layout Enumerate
+compacité des modèles basés sur des règles,
+\end_layout
+
+\begin_layout Enumerate
+possibilité d'exploration bidirectionnelle entre l'état initial et l'état
+ courant (+ recherche concurrente),
+\end_layout
+
+\begin_layout Enumerate
+approche de vérification générale,
+\end_layout
+
+\begin_layout Enumerate
+vérification partielle possible,
+\end_layout
+
+\begin_layout Enumerate
+fourni des informations sur le diagnostic tel qu'un contre-exemple.
+\end_layout
+
+\begin_layout Section
+Modèles utilisés
+\end_layout
+
+\begin_layout Standard
+RdP (LTPN : une extension du TPN, LTD : Labeled Timed Diagnoser)
+\end_layout
+
+\begin_layout Section
+Hypothèses restrictives
+\end_layout
+
+\begin_layout Enumerate
+Fautes permanentes,
+\end_layout
+
+\begin_layout Enumerate
+abstraction possible du système continu en un modèle SED temporisé (ou pas),
+\end_layout
+
+\begin_layout Enumerate
+il n'existe pas de cycle de transitions non-observables accessible durant
+ l'analyse,
+\end_layout
+
+\begin_layout Enumerate
+la structure du système ne change pas, et le comportement du système ne
+ répond pas à des commandes de contrôle,
+\end_layout
+
+\begin_layout Enumerate
+les fautes considérées peuvent être partitionnées en ensembles disjoints
+ (
+\color purple
+quand est-ce que ce n'est pas le cas ?
+\color inherit
+),
+\end_layout
+
+\begin_layout Section
+Contributions
+\end_layout
+
+\begin_layout Enumerate
+Reformulation algébrique de l'analyse de diagnosticabilité (matrice incidente
+ étendue, marquage d'évènement, marquage de faute équation d'état étendue),
+\end_layout
+
+\begin_layout Enumerate
+analyse à la volée de diagnosticabilité conventionnelle basée sur la K-diagnosti
+cabilité : permet de conclure sur la diagnosticabilité (non-diagnosticabilité
+ ?) sur des problèmes complexes, là où d'autres approches échouent (l'espace
+ d'état est trop grand et ne peut être généré entièrement),
+\end_layout
+
+\begin_layout Enumerate
+diagnostic en-ligne,
+\end_layout
+
+\begin_layout Enumerate
+logiciel pour la K-diagnosticabilité et l'analyse de diagnosticabilité (On-the-F
+ly PEtri-Net-based Diagnosability Analyzer - OF-PENDA).
+ Comparaison des résultats avec benchmark de diagnostic WODES (Workshop
+ On Discrete Event Systems)
+\end_layout
+
+\begin_layout Section
+Limitations
+\end_layout
+
+\begin_layout Standard
+La solution proposée d'analyse en-ligne et incrémentale résout 
+\series bold
+partiellement
+\series default
+ les problèmes d'explosion combinatoire (
+\color purple
+uniquement dans le cas de la non-diagnosticabilité je pense, car on peut
+ s'arrêter dès lors qu'on trouve un cycle F-incertain mais pour déterminer
+ qu'il n'en existe aucun il faudrait tout explorer...
+\color inherit
+) mais ne s'applique que pour des PN : 
+\series bold
+le problème reste ouvert pour des TPN
+\series default
+.
+\end_layout
+
+\end_body
+\end_document
