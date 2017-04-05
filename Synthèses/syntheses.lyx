@@ -358,5 +358,118 @@ le problème reste ouvert pour des TPN
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Thèse Abderraouf Boussif
+\end_layout
+
+\begin_layout Section
+Contexte
+\end_layout
+
+\begin_layout Standard
+Diagnostic de faute basé modèle par technique de vérification de modèle.
+\end_layout
+
+\begin_layout Section
+Résumé littérature
+\end_layout
+
+\begin_layout Subsection
+Approche diagnostiqueur (Sampath)
+\end_layout
+
+\begin_layout Standard
+Inconvénients:
+\end_layout
+
+\begin_layout Enumerate
+la synthèse d'un modèle diagnostiqueur est de complexité exponentielle en
+ regard de la complexité du modèle de base, et doublement exponentiel en
+ la cardinalité des classes de fautes,
+\end_layout
+
+\begin_layout Enumerate
+approche basée sur l'analyse de 2 graphes.
+ Le premier est un observateur non-déterministe (pré-diagnostiqueur ou générateu
+r), le second est déterministe, appelé diagnostiqueur (ou générateur/diagnostiqu
+eur [Sampath et al., 1995], MBRG/BRD [Cabasino et al., 2009b], FM-graph/FM-set
+ graph [Liu, 2014], etc.),
+\end_layout
+
+\begin_layout Enumerate
+procédure de double vérification, qui consiste en une vérification sur le
+ diagnostiqueur (i.e.
+ l'existence de cycles F-incertains) et une autre sur le générateur ou le
+ pré-diagnostiqueur (i.e.
+ vérification que le cycle F-incertain est un F-indéterminé ou non).
+ En pratique, cette double vérification augmente considérablement le temps
+ de vérification.
+\end_layout
+
+\begin_layout Enumerate
+les fautes souvent supposées permanentes dans la littérature alors que ce
+ sont les fautes intermittentes qui sont prédominantes en pratique,
+\end_layout
+
+\begin_layout Subsection
+Autres
+\end_layout
+
+\begin_layout Standard
+Blabla...
+\end_layout
+
+\begin_layout Section
+Modèles utilisés
+\end_layout
+
+\begin_layout Standard
+Automates MEF + modèles RdP bornés.
+\end_layout
+
+\begin_layout Section
+Hypothèses restrictives
+\end_layout
+
+\begin_layout Standard
+A remplir
+\end_layout
+
+\begin_layout Section
+Contributions
+\end_layout
+
+\begin_layout Enumerate
+Développement d'une nouvelle variante de diagnostiqueur pour le diagnostic
+ de SED modélisés par automates (+ extension aux modèles RdP) avec fautes
+ permanentes,
+\end_layout
+
+\begin_layout Enumerate
+une investigation sur une variété de notions de diagnosticabilité de fautes
+ intermittentes dans l'approches basé diagnostiqueur et l'approche basée
+ procédé-jumelé,
+\end_layout
+
+\begin_layout Enumerate
+l'élaboration d'un framework de vérification de modèle pour une application
+ pratique de la vérification sur des concepts variées de diagnosticabilité.
+\end_layout
+
+\begin_layout Section
+Limitations
+\end_layout
+
+\begin_layout Standard
+A remplir
+\end_layout
+
 \end_body
 \end_document

@@ -18,7 +18,6 @@
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
  {hyperref}
-\usepackage{breakurl}
 \begin{document}
 
 \title{\noindent \medskip{}
@@ -147,4 +146,63 @@ dans le cas de la non-diagnosticabilité je pense, car on peut s'arrêter
 dès lors qu'on trouve un cycle F-incertain mais pour déterminer qu'il
 n'en existe aucun il faudrait tout explorer...}) mais ne s'applique
 que pour des PN : \textbf{le problème reste ouvert pour des TPN}.
+
+\newpage{}
+
+\part{Thèse Abderraouf Boussif}
+
+\section{Contexte}
+
+Diagnostic de faute basé modèle par technique de vérification de modèle.
+
+\section{Résumé littérature}
+
+\subsection{Approche diagnostiqueur (Sampath)}
+
+Inconvénients:
+\begin{enumerate}
+\item la synthèse d'un modèle diagnostiqueur est de complexité exponentielle
+en regard de la complexité du modèle de base, et doublement exponentiel
+en la cardinalité des classes de fautes,
+\item approche basée sur l'analyse de 2 graphes. Le premier est un observateur
+non-déterministe (pré-diagnostiqueur ou générateur), le second est
+déterministe, appelé diagnostiqueur (ou générateur/diagnostiqueur
+{[}Sampath et al., 1995{]}, MBRG/BRD {[}Cabasino et al., 2009b{]},
+FM-graph/FM-set graph {[}Liu, 2014{]}, etc.),
+\item procédure de double vérification, qui consiste en une vérification
+sur le diagnostiqueur (i.e. l'existence de cycles F-incertains) et
+une autre sur le générateur ou le pré-diagnostiqueur (i.e. vérification
+que le cycle F-incertain est un F-indéterminé ou non). En pratique,
+cette double vérification augmente considérablement le temps de vérification.
+\item les fautes souvent supposées permanentes dans la littérature alors
+que ce sont les fautes intermittentes qui sont prédominantes en pratique,
+\end{enumerate}
+
+\subsection{Autres}
+
+Blabla...
+
+\section{Modèles utilisés}
+
+Automates MEF + modèles RdP bornés.
+
+\section{Hypothèses restrictives}
+
+A remplir
+
+\section{Contributions}
+\begin{enumerate}
+\item Développement d'une nouvelle variante de diagnostiqueur pour le diagnostic
+de SED modélisés par automates (+ extension aux modèles RdP) avec
+fautes permanentes,
+\item une investigation sur une variété de notions de diagnosticabilité
+de fautes intermittentes dans l'approches basé diagnostiqueur et l'approche
+basée procédé-jumelé,
+\item l'élaboration d'un framework de vérification de modèle pour une application
+pratique de la vérification sur des concepts variées de diagnosticabilité.
+\end{enumerate}
+
+\section{Limitations}
+
+A remplir
 \end{document}
