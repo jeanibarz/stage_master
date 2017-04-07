@@ -1,0 +1,164 @@
+%% LyX 2.2.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{babel}
+\makeatletter
+\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}%
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}%
+}
+
+\makeatother
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
+ {hyperref}
+\begin{document}
+
+\title{\noindent \medskip{}
+Idées pour les calculs de cycles\smallskip{}
+}
+
+\author{Jean IBARZ}
+
+\maketitle
+\newpage{}
+
+\tableofcontents{}\newpage{}
+
+\part*{Objectif}
+
+Trouver une méthode rapide pour calculer des cycles dans un graphe
+orienté
+
+\part{Introduction}
+
+Soit $M$ la matrice d'incidence d'un graphe orienté tel que celui
+présenté en exemple Figure \ref{exemple_graphe}.
+
+\begin{figure}
+\begin{centering}
+\includegraphics[width=10cm]{image_graphe_cycle1}
+\par\end{centering}
+\caption{Exemple d'un graphe orienté}
+\label{exemple_graphe}
+
+\end{figure}
+
+\[
+M=\begin{bmatrix}0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 1\\
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+La ligne $i$ de $M^{n}$ (respectivement $\left(M^{n}\right)^{T}$)
+indique l'ensemble des noeuds accessibles (respectivement co-accessibles)
+depuis le noeud $i$ en $n$ évènements. Si $M_{i,j}^{n}=0$ (respectivement
+$\left(M_{i,j}^{n}\right)^{T}=0$), le noeud $j$ n'est pas accessible
+(respectivement co-accessible) depuis $i$ en $n$ évènements, sinon
+il est accessible.
+
+Les lignes de $M+M^{T}$ représentent les noeuds voisins de 1 évènement
+(successeurs ou/et prédécesseurs).
+
+On a :
+\begin{enumerate}
+\item $\mathbb{I}.M=0$ ssi il n'existe pas de cycle de longueur 1. Avec
+Matlab, on vérifie qu'il n'y a pas de tel cycle,
+\item $M.M^{T}=0$ ssi il n'existe pas de cycle de longueur 1 ou 2 : pour
+toute paire de noeuds $(n_{1},n_{2})$, $n_{1}$ n'est jamais (prédécesseur
+et successeur) de $n_{2}$ ($n_{2}$pouvant être égal à $n_{1}$ ce
+qui couvre les cycles de longueur 1-). On vérifie encore avec Matlab
+qu'il n'y a pas de tel cycle,
+\item $(M+M^{2}).(M+M^{2})^{T}=0$ ssi il n'existe pas de cycle de longueur
+$\leq4$. En effet, $M+M^{2}$ représente les noeuds accessibles en
++1 ou +2 évènements, tandis que $\left(M+M^{2}\right)^{T}$ représente
+les noeuds accessibles en -1 ou -2 évènements. Le produit des 2 est
+nul ssi pour toute paire de noeuds $(n_{1},n_{2})$, $n_{1}$ n'est
+jamais (prédécesseur de (1 ou 2) et successeur de (1 ou 2) de $n_{2}$,
+c'est à dire qu'on ne retombe jamais sur le même noeud $n_{1}$ à
+partir d'un noeud $n_{2}$ en avançant de 1 ou 2 et en reculant de
+1 ou 2 évènements depuis $n_{2}$. Comme ce calcul couvre les cycles
+de longueur 2, le calcul de l'étape 2 n'est pas nécessaire. Cette
+fois on obtient avec Matlab :
+\[
+(M+M^{2}).(M+M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+On en déduit donc qu'il existe un cycle de longueur $\leq4$ pour
+les noeuds 4,5,6. On pourrait encore préciser car comme le calcul
+précédent était nul, le cycle ne peut être que de longueur 3 ou 4.
+Mais ce n'a aucune importance puisque la seule chose qui nous intéresse
+est de trouver un cycle et pas de préciser sa longueur. On peut vérifier
+sur le graphe que le cycle $<4,5,6>$, de taille 3, existe bel et
+bien.
+\item De la même façon, $(M+M^{2}+M^{3}).(M+M^{2}+M^{3})^{T}=0$ ssi il
+n'existe pas de cycle de longueur 1 à 6. Ce calcul couvre également
+le cas 3. On trouve avec Matlab :
+\[
+\begin{bmatrix}0 & 0 & 0 & 2 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1\\
+2 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 1 & 1 & 1 & 0\\
+0 & 1 & 0 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+Il existe des cycles de longueur 2 à 6 sur tout les noeuds du graphe.
+Par exemple les cycles $<0,1,2,3,4,5>$ et $<0,1,2,3,6,7>$ suffisent
+effectivement à couvrir tout les noeuds.
+\item En généralisant, $C(M,n)=\left(\sum_{i=1}^{i=n}M^{i}\right).\left(\sum_{i=1}^{i=n}M^{i}\right)^{T}=0$
+ssi il n'existe pas de cycle de longueur $\leq2n$.
+\item Finalement, comme pour une matrice de taille $N$ les cycles minimaux
+sont de taille $\leq N$, il suffit de calculer $C(M,floor(N/2))$
+avec $floor$ la fonction de troncature.
+\item En utilisant un schéma de Horner pour calculer la matrice à la puissance
+$m$, il suffit de $(n-1)$ additions sur la diagonale principale
+et $(n-1)$ multiplications matricielles (complexité $\approx O(n^{2})$),
+soit une complexité polynômiale de $\approx O(n^{3})$. En plus, le
+calcul peut se faire de façon itérative....
+\item En plus, il y a une dualité entre le nombre de cycles et la possible
+réduction du graphe :
+\begin{enumerate}
+\item plus il y a de cycles longs, plus le graphe est réductible,
+\item plus il y a de cycles courts, plus ils seront trouvés rapidement !
+\end{enumerate}
+\end{enumerate}
+On peut faire la chose suivante :
+\begin{enumerate}
+\item Chercher un cycle de taille 1 (il suffit de regarder la diagonale
+de la matrice),
+\item Chercher un cycle de taille 2 (il suffit de calculer $M.M^{T}=0$),
+\item Il existe probablement (obligatoirement ?) des noeuds réductibles
+: réduire donc la matrice,
+\begin{enumerate}
+\item Si la matrice à été réduite, chercher un cycle de taille 2 (il suffit
+de recalculer $M.M^{T}=0$), puis répéter la procédure en 3
+\item Sinon continuer en calculant la puissance supérieure et en répétant
+les réductions
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

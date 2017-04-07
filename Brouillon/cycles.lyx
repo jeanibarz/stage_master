@@ -1,0 +1,535 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+\noindent
+\begin_inset VSpace medskip
+\end_inset
+
+Idées pour les calculs de cycles
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Jean IBARZ
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Objectif
+\end_layout
+
+\begin_layout Standard
+Trouver une méthode rapide pour calculer des cycles dans un graphe orienté
+\end_layout
+
+\begin_layout Part
+Introduction
+\end_layout
+
+\begin_layout Standard
+Soit 
+\begin_inset Formula $M$
+\end_inset
+
+ la matrice d'incidence d'un graphe orienté tel que celui présenté en exemple
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "exemple_graphe"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename image_graphe_cycle1.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemple d'un graphe orienté
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "exemple_graphe"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+M=\begin{bmatrix}0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+1 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 1\\
+1 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La ligne 
+\begin_inset Formula $i$
+\end_inset
+
+ de 
+\begin_inset Formula $M^{n}$
+\end_inset
+
+ (respectivement 
+\begin_inset Formula $\left(M^{n}\right)^{T}$
+\end_inset
+
+) indique l'ensemble des noeuds accessibles (respectivement co-accessibles)
+ depuis le noeud 
+\begin_inset Formula $i$
+\end_inset
+
+ en 
+\begin_inset Formula $n$
+\end_inset
+
+ évènements.
+ Si 
+\begin_inset Formula $M_{i,j}^{n}=0$
+\end_inset
+
+ (respectivement 
+\begin_inset Formula $\left(M_{i,j}^{n}\right)^{T}=0$
+\end_inset
+
+), le noeud 
+\begin_inset Formula $j$
+\end_inset
+
+ n'est pas accessible (respectivement co-accessible) depuis 
+\begin_inset Formula $i$
+\end_inset
+
+ en 
+\begin_inset Formula $n$
+\end_inset
+
+ évènements, sinon il est accessible.
+\end_layout
+
+\begin_layout Standard
+Les lignes de 
+\begin_inset Formula $M+M^{T}$
+\end_inset
+
+ représentent les noeuds voisins de 1 évènement (successeurs ou/et prédécesseurs
+).
+\end_layout
+
+\begin_layout Standard
+On a :
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb{I}.M=0$
+\end_inset
+
+ ssi il n'existe pas de cycle de longueur 1.
+ Avec Matlab, on vérifie qu'il n'y a pas de tel cycle,
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $M.M^{T}=0$
+\end_inset
+
+ ssi il n'existe pas de cycle de longueur 1 ou 2 : pour toute paire de noeuds
+ 
+\begin_inset Formula $(n_{1},n_{2})$
+\end_inset
+
+, 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ n'est jamais (prédécesseur et successeur) de 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+ (
+\begin_inset Formula $n_{2}$
+\end_inset
+
+pouvant être égal à 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ ce qui couvre les cycles de longueur 1-).
+ On vérifie encore avec Matlab qu'il n'y a pas de tel cycle,
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(M+M^{2}).(M+M^{2})^{T}=0$
+\end_inset
+
+ ssi il n'existe pas de cycle de longueur 
+\begin_inset Formula $\leq4$
+\end_inset
+
+.
+ En effet, 
+\begin_inset Formula $M+M^{2}$
+\end_inset
+
+ représente les noeuds accessibles en +1 ou +2 évènements, tandis que 
+\begin_inset Formula $\left(M+M^{2}\right)^{T}$
+\end_inset
+
+ représente les noeuds accessibles en -1 ou -2 évènements.
+ Le produit des 2 est nul ssi pour toute paire de noeuds 
+\begin_inset Formula $(n_{1},n_{2})$
+\end_inset
+
+, 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ n'est jamais (prédécesseur de (1 ou 2) et successeur de (1 ou 2) de 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+, c'est à dire qu'on ne retombe jamais sur le même noeud 
+\begin_inset Formula $n_{1}$
+\end_inset
+
+ à partir d'un noeud 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+ en avançant de 1 ou 2 et en reculant de 1 ou 2 évènements depuis 
+\begin_inset Formula $n_{2}$
+\end_inset
+
+.
+ Comme ce calcul couvre les cycles de longueur 2, le calcul de l'étape 2
+ n'est pas nécessaire.
+ Cette fois on obtient avec Matlab :
+\begin_inset Formula 
+\[
+(M+M^{2}).(M+M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+On en déduit donc qu'il existe un cycle de longueur 
+\begin_inset Formula $\leq4$
+\end_inset
+
+ pour les noeuds 4,5,6.
+ On pourrait encore préciser car comme le calcul précédent était nul, le
+ cycle ne peut être que de longueur 3 ou 4.
+ Mais ce n'a aucune importance puisque la seule chose qui nous intéresse
+ est de trouver un cycle et pas de préciser sa longueur.
+ On peut vérifier sur le graphe que le cycle 
+\begin_inset Formula $<4,5,6>$
+\end_inset
+
+, de taille 3, existe bel et bien.
+\end_layout
+
+\begin_layout Enumerate
+De la même façon, 
+\begin_inset Formula $(M+M^{2}+M^{3}).(M+M^{2}+M^{3})^{T}=0$
+\end_inset
+
+ ssi il n'existe pas de cycle de longueur 1 à 6.
+ Ce calcul couvre également le cas 3.
+ On trouve avec Matlab :
+\begin_inset Formula 
+\[
+\begin{bmatrix}0 & 0 & 0 & 2 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 1\\
+2 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 1 & 1 & 1 & 0\\
+0 & 1 & 0 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+\end_inset
+
+Il existe des cycles de longueur 2 à 6 sur tout les noeuds du graphe.
+ Par exemple les cycles 
+\begin_inset Formula $<0,1,2,3,4,5>$
+\end_inset
+
+ et 
+\begin_inset Formula $<0,1,2,3,6,7>$
+\end_inset
+
+ suffisent effectivement à couvrir tout les noeuds.
+\end_layout
+
+\begin_layout Enumerate
+En généralisant, 
+\begin_inset Formula $C(M,n)=\left(\sum_{i=1}^{i=n}M^{i}\right).\left(\sum_{i=1}^{i=n}M^{i}\right)^{T}=0$
+\end_inset
+
+ ssi il n'existe pas de cycle de longueur 
+\begin_inset Formula $\leq2n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Finalement, comme pour une matrice de taille 
+\begin_inset Formula $N$
+\end_inset
+
+ les cycles minimaux sont de taille 
+\begin_inset Formula $\leq N$
+\end_inset
+
+, il suffit de calculer 
+\begin_inset Formula $C(M,floor(N/2))$
+\end_inset
+
+ avec 
+\begin_inset Formula $floor$
+\end_inset
+
+ la fonction de troncature.
+\end_layout
+
+\begin_layout Enumerate
+En utilisant un schéma de Horner pour calculer la matrice à la puissance
+ 
+\begin_inset Formula $m$
+\end_inset
+
+, il suffit de 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ additions sur la diagonale principale et 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ multiplications matricielles (complexité 
+\begin_inset Formula $\approx O(n^{2})$
+\end_inset
+
+), soit une complexité polynômiale de 
+\begin_inset Formula $\approx O(n^{3})$
+\end_inset
+
+.
+ En plus, le calcul peut se faire de façon itérative....
+\end_layout
+
+\begin_layout Enumerate
+En plus, il y a une dualité entre le nombre de cycles et la possible réduction
+ du graphe :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+plus il y a de cycles longs, plus le graphe est réductible,
+\end_layout
+
+\begin_layout Enumerate
+plus il y a de cycles courts, plus ils seront trouvés rapidement !
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+On peut faire la chose suivante :
+\end_layout
+
+\begin_layout Enumerate
+Chercher un cycle de taille 1 (il suffit de regarder la diagonale de la
+ matrice),
+\end_layout
+
+\begin_layout Enumerate
+Chercher un cycle de taille 2 (il suffit de calculer 
+\begin_inset Formula $M.M^{T}=0$
+\end_inset
+
+),
+\end_layout
+
+\begin_layout Enumerate
+Il existe probablement (obligatoirement ?) des noeuds réductibles : réduire
+ donc la matrice,
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si la matrice à été réduite, chercher un cycle de taille 2 (il suffit de
+ recalculer 
+\begin_inset Formula $M.M^{T}=0$
+\end_inset
+
+), puis répéter la procédure en 3
+\end_layout
+
+\begin_layout Enumerate
+Sinon continuer en calculant la puissance supérieure et en répétant les
+ réductions
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
