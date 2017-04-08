@@ -129,16 +129,35 @@ Trouver une méthode rapide pour calculer des cycles dans un graphe orienté
 \end_layout
 
 \begin_layout Part
-Introduction
+A partir d'une matrice adjacente
 \end_layout
 
 \begin_layout Standard
-Soit 
-\begin_inset Formula $M$
+
+\bar under
+Inconvénient majeur :
+\bar default
+ matrice gigantesque (espace mémoire 
+\begin_inset Formula $O(N^{2})$
 \end_inset
 
- la matrice d'incidence d'un graphe orienté tel que celui présenté en exemple
- Figure 
+) non adaptée à des graphes trop gros.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Soit la matrice binaire 
+\begin_inset Formula $M\in\mathbb{B}^{N\times N}$
+\end_inset
+
+, la matrice d'adjacence d'un graphe orienté fini de 
+\begin_inset Formula $N$
+\end_inset
+
+ sommets tel que celui présenté en exemple Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "exemple_graphe"
@@ -225,8 +244,8 @@ La ligne
 \begin_inset Formula $\left(M^{n}\right)^{T}$
 \end_inset
 
-) indique l'ensemble des noeuds accessibles (respectivement co-accessibles)
- depuis le noeud 
+) indique l'ensemble des sommets accessibles (respectivement co-accessibles)
+ depuis le sommet 
 \begin_inset Formula $i$
 \end_inset
 
@@ -243,7 +262,7 @@ La ligne
 \begin_inset Formula $\left(M_{i,j}^{n}\right)^{T}=0$
 \end_inset
 
-), le noeud 
+), le sommet 
 \begin_inset Formula $j$
 \end_inset
 
@@ -259,57 +278,57 @@ La ligne
 \end_layout
 
 \begin_layout Standard
-Les lignes de 
-\begin_inset Formula $M+M^{T}$
+La matrice 
+\begin_inset Formula $M\vee M^{T}$
 \end_inset
 
- représentent les noeuds voisins de 1 évènement (successeurs ou/et prédécesseurs
-).
+ représente les sommets voisins de 
+\begin_inset Formula $\pm1$
+\end_inset
+
+ évènement (successeurs et prédécesseurs).
 \end_layout
 
 \begin_layout Standard
-On a :
+On a aussi :
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\mathbb{I}.M=0$
+\begin_inset Formula $\mathbb{I}\wedge M=0$
 \end_inset
 
- ssi il n'existe pas de cycle de longueur 1.
- Avec Matlab, on vérifie qu'il n'y a pas de tel cycle,
+ ssi il n'existe pas de cycle de longueur 1,
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $M.M^{T}=0$
+\begin_inset Formula $M\wedge M^{T}=0$
 \end_inset
 
- ssi il n'existe pas de cycle de longueur 1 ou 2 : pour toute paire de noeuds
+ ssi il n'existe pas de cycle de longueur 1 ou 2 : 
+\begin_inset Formula $\forall(n_{1},n_{2})\in\left[0,N\right]^{2},\cancel{\exists}n_{1}\,s.t.\,n_{1}=successeur(n_{2})=predecesseur(n_{2})$
+\end_inset
+
+.
+ Le cas où c'est égalité est vérifié avec 
+\begin_inset Formula $n_{1}=n_{2}$
+\end_inset
+
+ correspond à un cycle de longueur 1, tandis que le cas où cette égalité
+ est vérifié correspond à un cycle de longueur 2.
+ Sur l'exemple donné précédemment l'égalié 
+\begin_inset Formula $M\wedge M^{T}=0$
+\end_inset
+
+ est vérifiée: il n'y a pas de cycles de longueur 
+\begin_inset Formula $\leq2$
+\end_inset
+
+.
  
-\begin_inset Formula $(n_{1},n_{2})$
-\end_inset
-
-, 
-\begin_inset Formula $n_{1}$
-\end_inset
-
- n'est jamais (prédécesseur et successeur) de 
-\begin_inset Formula $n_{2}$
-\end_inset
-
- (
-\begin_inset Formula $n_{2}$
-\end_inset
-
-pouvant être égal à 
-\begin_inset Formula $n_{1}$
-\end_inset
-
- ce qui couvre les cycles de longueur 1-).
- On vérifie encore avec Matlab qu'il n'y a pas de tel cycle,
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $(M+M^{2}).(M+M^{2})^{T}=0$
+\begin_inset Formula $(M\vee M^{2})\wedge(M\vee M^{2})^{T}=0$
 \end_inset
 
  ssi il n'existe pas de cycle de longueur 
@@ -318,15 +337,23 @@ pouvant être égal à
 
 .
  En effet, 
-\begin_inset Formula $M+M^{2}$
+\begin_inset Formula $M\vee M^{2}$
 \end_inset
 
- représente les noeuds accessibles en +1 ou +2 évènements, tandis que 
-\begin_inset Formula $\left(M+M^{2}\right)^{T}$
+ représente les sommets accessibles en +1 ou +2 évènements, tandis que 
+\begin_inset Formula $\left(M\vee M^{2}\right)^{T}$
 \end_inset
 
- représente les noeuds accessibles en -1 ou -2 évènements.
- Le produit des 2 est nul ssi pour toute paire de noeuds 
+ représente les sommets accessibles en -1 ou -2 évènements.
+ Le produit par élément (
+\begin_inset Quotes fld
+\end_inset
+
+et
+\begin_inset Quotes frd
+\end_inset
+
+ logique) des 2 est nul ssi pour toute paire de sommets 
 \begin_inset Formula $(n_{1},n_{2})$
 \end_inset
 
@@ -338,25 +365,20 @@ pouvant être égal à
 \begin_inset Formula $n_{2}$
 \end_inset
 
-, c'est à dire qu'on ne retombe jamais sur le même noeud 
+, c'est à dire qu'on ne retombe jamais sur le même sommet 
 \begin_inset Formula $n_{1}$
 \end_inset
 
- à partir d'un noeud 
+ à partir d'un sommet 
 \begin_inset Formula $n_{2}$
 \end_inset
 
- en avançant de 1 ou 2 et en reculant de 1 ou 2 évènements depuis 
-\begin_inset Formula $n_{2}$
-\end_inset
-
-.
- Comme ce calcul couvre les cycles de longueur 2, le calcul de l'étape 2
- n'est pas nécessaire.
+ en avançant de (1 ou 2) arêtes et en reculant de (1 ou 2) arêtes.
+ Ce calcul couvre donc les cycles de longueur 2, 3 et 4.
  Cette fois on obtient avec Matlab :
 \begin_inset Formula 
 \[
-(M+M^{2}).(M+M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+(M\vee M^{2})\wedge(M\vee M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -373,7 +395,7 @@ On en déduit donc qu'il existe un cycle de longueur
 \begin_inset Formula $\leq4$
 \end_inset
 
- pour les noeuds 4,5,6.
+ pour les sommets 4,5,6.
  On pourrait encore préciser car comme le calcul précédent était nul, le
  cycle ne peut être que de longueur 3 ou 4.
  Mais ce n'a aucune importance puisque la seule chose qui nous intéresse
@@ -387,7 +409,7 @@ On en déduit donc qu'il existe un cycle de longueur
 
 \begin_layout Enumerate
 De la même façon, 
-\begin_inset Formula $(M+M^{2}+M^{3}).(M+M^{2}+M^{3})^{T}=0$
+\begin_inset Formula $(M\vee M^{2}\vee M^{3})\wedge(M\vee M^{2}\vee M^{3})^{T}=0$
 \end_inset
 
  ssi il n'existe pas de cycle de longueur 1 à 6.
@@ -408,7 +430,7 @@ De la même façon,
 
 \end_inset
 
-Il existe des cycles de longueur 2 à 6 sur tout les noeuds du graphe.
+Il existe des cycles de longueur 2 à 6 sur tout les sommets du graphe.
  Par exemple les cycles 
 \begin_inset Formula $<0,1,2,3,4,5>$
 \end_inset
@@ -417,12 +439,12 @@ Il existe des cycles de longueur 2 à 6 sur tout les noeuds du graphe.
 \begin_inset Formula $<0,1,2,3,6,7>$
 \end_inset
 
- suffisent effectivement à couvrir tout les noeuds.
+ suffisent effectivement à couvrir tout les sommets.
 \end_layout
 
 \begin_layout Enumerate
 En généralisant, 
-\begin_inset Formula $C(M,n)=\left(\sum_{i=1}^{i=n}M^{i}\right).\left(\sum_{i=1}^{i=n}M^{i}\right)^{T}=0$
+\begin_inset Formula $C(M,n)=\left(\bigvee_{i=1}^{i=n}M^{i}\right)\wedge\left(\bigvee_{i=1}^{i=n}M^{i}\right)^{T}=0$
 \end_inset
 
  ssi il n'existe pas de cycle de longueur 
@@ -432,6 +454,131 @@ En généralisant,
 .
 \end_layout
 
+\begin_layout Enumerate
+Pour calculer 
+\begin_inset Formula $\bigvee_{i=1}^{i=n}M^{i}$
+\end_inset
+
+ (
+\begin_inset Formula $\equiv\sum_{i=1}^{i=n}M^{i}$
+\end_inset
+
+), on peut :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Utiliser un schéma de Horner, par exemple avec 
+\begin_inset Formula $n=4$
+\end_inset
+
+ on a 
+\begin_inset Formula $M\left(\mathbb{I}+M\left(\mathbb{I}+M\left(\mathbb{I}+M\right)\right)\right)=M+M^{2}+M^{3}+M^{4}$
+\end_inset
+
+..., il suffit donc de 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ additions avec la matrice identité (diagonale uniquement donc complexité
+ 
+\begin_inset Formula $O(N)$
+\end_inset
+
+) et 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+ multiplications matricielles (complexité 
+\begin_inset Formula $\approx O(N^{2})$
+\end_inset
+
+), soit une complexité polynômiale de 
+\begin_inset Formula $\approx O((n-1)\times N^{3})$
+\end_inset
+
+).
+ En plus, le calcul peut se faire de façon itérative....
+\end_layout
+
+\begin_layout Enumerate
+Utiliser une exponentiation binaire, c'est à dire choisir un 
+\begin_inset Formula $n$
+\end_inset
+
+ étant une puissance de puissance de 2, et calculer par étape :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Initialisation:
+\bar default
+ 
+\begin_inset Formula $M_{2}=\left(\mathbb{I}+M\right)^{2}$
+\end_inset
+
+ soit l'équivalent de 
+\begin_inset Formula $\mathbb{I}+M+M^{2}$
+\end_inset
+
+ (les coefficients ne changent rien puisqu'on est en booléen),
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M_{4}=M_{2}^{2}=\left(\mathbb{I}+M+M^{2}\right)^{2}$
+\end_inset
+
+ soit 
+\begin_inset Formula $\mathbb{I}+M^{2}+M^{3}+M^{4}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M_{8}=M_{4}^{2}=\left(\mathbb{I}+M+M^{2}+M^{3}+M^{4}\right)^{2}$
+\end_inset
+
+ soit 
+\begin_inset Formula $\mathbb{I}+M+M^{2}+M^{3}+M^{4}+M^{5}+M^{6}+M^{7}+M^{8}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+etc.
+ (pour la dernière étape on pense à supprimer la matrice identité...)
+\begin_inset Newline newline
+\end_inset
+
+Le calcul prend cette fois 
+\begin_inset Formula $O(log(n)\times N^{2})$
+\end_inset
+
+.Comme on peut choisir 
+\begin_inset Formula $n$
+\end_inset
+
+ arbitraire, il suffit de choisir la puissance de 2 qui dépasse 
+\begin_inset Formula $N$
+\end_inset
+
+...
+ cette technique réduit davantage la complexité que Horner et on peut elle
+ aussi l'appliquer de façon itérative.
+ Le point faible reste le carré de la matrice booléenne qu'il faudrait pouvoir
+ simplifier (au moins l'écrire sous forme d'opérations 
+\begin_inset Formula $\left\{ \wedge,\vee\right\} $
+\end_inset
+
+)...
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Enumerate
 Finalement, comme pour une matrice de taille 
 \begin_inset Formula $N$
@@ -453,32 +600,6 @@ Finalement, comme pour une matrice de taille
 \end_layout
 
 \begin_layout Enumerate
-En utilisant un schéma de Horner pour calculer la matrice à la puissance
- 
-\begin_inset Formula $m$
-\end_inset
-
-, il suffit de 
-\begin_inset Formula $(n-1)$
-\end_inset
-
- additions sur la diagonale principale et 
-\begin_inset Formula $(n-1)$
-\end_inset
-
- multiplications matricielles (complexité 
-\begin_inset Formula $\approx O(n^{2})$
-\end_inset
-
-), soit une complexité polynômiale de 
-\begin_inset Formula $\approx O(n^{3})$
-\end_inset
-
-.
- En plus, le calcul peut se faire de façon itérative....
-\end_layout
-
-\begin_layout Enumerate
 En plus, il y a une dualité entre le nombre de cycles et la possible réduction
  du graphe :
 \end_layout
@@ -494,24 +615,32 @@ plus il y a de cycles courts, plus ils seront trouvés rapidement !
 
 \end_deeper
 \begin_layout Standard
-On peut faire la chose suivante :
+On pourrait faire la chose suivante :
 \end_layout
 
 \begin_layout Enumerate
 Chercher un cycle de taille 1 (il suffit de regarder la diagonale de la
- matrice),
-\end_layout
-
-\begin_layout Enumerate
-Chercher un cycle de taille 2 (il suffit de calculer 
-\begin_inset Formula $M.M^{T}=0$
+ matrice, complexité 
+\begin_inset Formula $O(N)$
 \end_inset
 
 ),
 \end_layout
 
 \begin_layout Enumerate
-Il existe probablement (obligatoirement ?) des noeuds réductibles : réduire
+Chercher un cycle de taille 2 (il suffit de calculer 
+\begin_inset Formula $M\wedge M^{T}=0$
+\end_inset
+
+, complexité 
+\begin_inset Formula $O(N^{2})$
+\end_inset
+
+),
+\end_layout
+
+\begin_layout Enumerate
+Il existe probablement (obligatoirement ?) des sommets réductibles : réduire
  donc la matrice,
 \end_layout
 
@@ -531,5 +660,64 @@ Sinon continuer en calculant la puissance supérieure et en répétant les
 \end_layout
 
 \end_deeper
+\begin_layout Part
+Solution bis
+\end_layout
+
+\begin_layout Standard
+Plutôt que d'associer un marquage 
+\begin_inset Formula $\left\{ Fsain,Fcertain,Fincertain\right\} $
+\end_inset
+
+ sur les sommets d'un graphe, il faudrait les associer aux arètes.
+ Pour moi, c'est plus logique et plus cohérent que l'on puisse fournir un
+ diagnostic 
+\begin_inset Quotes fld
+\end_inset
+
+au moment
+\begin_inset Quotes frd
+\end_inset
+
+ d'un évènement plutôt que 
+\begin_inset Quotes fld
+\end_inset
+
+sur un état
+\begin_inset Quotes frd
+\end_inset
+
+.
+ En effet, l'évènement est daté, l'état non...
+ Hors si une faute peut apparaître sur un état, même si l'évènement précédent
+ nous assure qu'aucune faute n'a eu lieu après le franchissement, immédiatement
+ arrivé sur l'état il est possible qu'une faute est apparue et donc qu'on
+ ne sache pas si le système est en faute ou non.
+ On crée de façon itérative par exploration un graphe dont les arêtes correspond
+raient à des évènements 
+\begin_inset Formula $Fincertains$
+\end_inset
+
+.
+ Quand l'exploration est finie :
+\end_layout
+
+\begin_layout Enumerate
+On retire les sommets qui n'ont pas de successeurs
+\end_layout
+
+\begin_layout Enumerate
+On répète l'opération jusqu'à ce qu'il n'y ai plus de sommets sans successeurs.
+\end_layout
+
+\begin_layout Enumerate
+S'il ne reste aucun sommet (graphe vide), alors il n'existe pas de cycle,
+ sinon il existe au moins un cycle 
+\begin_inset Formula $Fincertain$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document

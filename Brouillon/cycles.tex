@@ -15,7 +15,10 @@
 \makeatother
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{cancel}
 \usepackage{graphicx}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
 \usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
  breaklinks=false,pdfborder={0 0 1},backref=page,colorlinks=false]
@@ -38,9 +41,13 @@ Idées pour les calculs de cycles\smallskip{}
 Trouver une méthode rapide pour calculer des cycles dans un graphe
 orienté
 
-\part{Introduction}
+\part{A partir d'une matrice adjacente}
 
-Soit $M$ la matrice d'incidence d'un graphe orienté tel que celui
+\uline{Inconvénient majeur :} matrice gigantesque (espace mémoire
+$O(N^{2})$) non adaptée à des graphes trop gros.\\
+
+Soit la matrice binaire $M\in\mathbb{B}^{N\times N}$, la matrice
+d'adjacence d'un graphe orienté fini de $N$ sommets tel que celui
 présenté en exemple Figure \ref{exemple_graphe}.
 
 \begin{figure}
@@ -65,37 +72,38 @@ M=\begin{bmatrix}0 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
 \]
 
 La ligne $i$ de $M^{n}$ (respectivement $\left(M^{n}\right)^{T}$)
-indique l'ensemble des noeuds accessibles (respectivement co-accessibles)
-depuis le noeud $i$ en $n$ évènements. Si $M_{i,j}^{n}=0$ (respectivement
-$\left(M_{i,j}^{n}\right)^{T}=0$), le noeud $j$ n'est pas accessible
+indique l'ensemble des sommets accessibles (respectivement co-accessibles)
+depuis le sommet $i$ en $n$ évènements. Si $M_{i,j}^{n}=0$ (respectivement
+$\left(M_{i,j}^{n}\right)^{T}=0$), le sommet $j$ n'est pas accessible
 (respectivement co-accessible) depuis $i$ en $n$ évènements, sinon
 il est accessible.
 
-Les lignes de $M+M^{T}$ représentent les noeuds voisins de 1 évènement
-(successeurs ou/et prédécesseurs).
+La matrice $M\vee M^{T}$ représente les sommets voisins de $\pm1$
+évènement (successeurs et prédécesseurs).
 
-On a :
+On a aussi :
 \begin{enumerate}
-\item $\mathbb{I}.M=0$ ssi il n'existe pas de cycle de longueur 1. Avec
-Matlab, on vérifie qu'il n'y a pas de tel cycle,
-\item $M.M^{T}=0$ ssi il n'existe pas de cycle de longueur 1 ou 2 : pour
-toute paire de noeuds $(n_{1},n_{2})$, $n_{1}$ n'est jamais (prédécesseur
-et successeur) de $n_{2}$ ($n_{2}$pouvant être égal à $n_{1}$ ce
-qui couvre les cycles de longueur 1-). On vérifie encore avec Matlab
-qu'il n'y a pas de tel cycle,
-\item $(M+M^{2}).(M+M^{2})^{T}=0$ ssi il n'existe pas de cycle de longueur
-$\leq4$. En effet, $M+M^{2}$ représente les noeuds accessibles en
-+1 ou +2 évènements, tandis que $\left(M+M^{2}\right)^{T}$ représente
-les noeuds accessibles en -1 ou -2 évènements. Le produit des 2 est
-nul ssi pour toute paire de noeuds $(n_{1},n_{2})$, $n_{1}$ n'est
-jamais (prédécesseur de (1 ou 2) et successeur de (1 ou 2) de $n_{2}$,
-c'est à dire qu'on ne retombe jamais sur le même noeud $n_{1}$ à
-partir d'un noeud $n_{2}$ en avançant de 1 ou 2 et en reculant de
-1 ou 2 évènements depuis $n_{2}$. Comme ce calcul couvre les cycles
-de longueur 2, le calcul de l'étape 2 n'est pas nécessaire. Cette
+\item $\mathbb{I}\wedge M=0$ ssi il n'existe pas de cycle de longueur 1,
+\item $M\wedge M^{T}=0$ ssi il n'existe pas de cycle de longueur 1 ou 2
+: $\forall(n_{1},n_{2})\in\left[0,N\right]^{2},\cancel{\exists}n_{1}\,s.t.\,n_{1}=successeur(n_{2})=predecesseur(n_{2})$.
+Le cas où c'est égalité est vérifié avec $n_{1}=n_{2}$ correspond
+à un cycle de longueur 1, tandis que le cas où cette égalité est vérifié
+correspond à un cycle de longueur 2. Sur l'exemple donné précédemment
+l'égalié $M\wedge M^{T}=0$ est vérifiée: il n'y a pas de cycles de
+longueur $\leq2$. 
+\item $(M\vee M^{2})\wedge(M\vee M^{2})^{T}=0$ ssi il n'existe pas de cycle
+de longueur $\leq4$. En effet, $M\vee M^{2}$ représente les sommets
+accessibles en +1 ou +2 évènements, tandis que $\left(M\vee M^{2}\right)^{T}$
+représente les sommets accessibles en -1 ou -2 évènements. Le produit
+par élément (\og et \fg{} logique) des 2 est nul ssi pour toute
+paire de sommets $(n_{1},n_{2})$, $n_{1}$ n'est jamais (prédécesseur
+de (1 ou 2) et successeur de (1 ou 2) de $n_{2}$, c'est à dire qu'on
+ne retombe jamais sur le même sommet $n_{1}$ à partir d'un sommet
+$n_{2}$ en avançant de (1 ou 2) arêtes et en reculant de (1 ou 2)
+arêtes. Ce calcul couvre donc les cycles de longueur 2, 3 et 4. Cette
 fois on obtient avec Matlab :
 \[
-(M+M^{2}).(M+M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+(M\vee M^{2})\wedge(M\vee M^{2})^{T}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
@@ -106,14 +114,14 @@ fois on obtient avec Matlab :
 \end{bmatrix}
 \]
 On en déduit donc qu'il existe un cycle de longueur $\leq4$ pour
-les noeuds 4,5,6. On pourrait encore préciser car comme le calcul
+les sommets 4,5,6. On pourrait encore préciser car comme le calcul
 précédent était nul, le cycle ne peut être que de longueur 3 ou 4.
 Mais ce n'a aucune importance puisque la seule chose qui nous intéresse
 est de trouver un cycle et pas de préciser sa longueur. On peut vérifier
 sur le graphe que le cycle $<4,5,6>$, de taille 3, existe bel et
 bien.
-\item De la même façon, $(M+M^{2}+M^{3}).(M+M^{2}+M^{3})^{T}=0$ ssi il
-n'existe pas de cycle de longueur 1 à 6. Ce calcul couvre également
+\item De la même façon, $(M\vee M^{2}\vee M^{3})\wedge(M\vee M^{2}\vee M^{3})^{T}=0$
+ssi il n'existe pas de cycle de longueur 1 à 6. Ce calcul couvre également
 le cas 3. On trouve avec Matlab :
 \[
 \begin{bmatrix}0 & 0 & 0 & 2 & 0 & 0 & 0 & 0\\
@@ -126,19 +134,41 @@ le cas 3. On trouve avec Matlab :
 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
 \end{bmatrix}
 \]
-Il existe des cycles de longueur 2 à 6 sur tout les noeuds du graphe.
+Il existe des cycles de longueur 2 à 6 sur tout les sommets du graphe.
 Par exemple les cycles $<0,1,2,3,4,5>$ et $<0,1,2,3,6,7>$ suffisent
-effectivement à couvrir tout les noeuds.
-\item En généralisant, $C(M,n)=\left(\sum_{i=1}^{i=n}M^{i}\right).\left(\sum_{i=1}^{i=n}M^{i}\right)^{T}=0$
+effectivement à couvrir tout les sommets.
+\item En généralisant, $C(M,n)=\left(\bigvee_{i=1}^{i=n}M^{i}\right)\wedge\left(\bigvee_{i=1}^{i=n}M^{i}\right)^{T}=0$
 ssi il n'existe pas de cycle de longueur $\leq2n$.
+\item Pour calculer $\bigvee_{i=1}^{i=n}M^{i}$ ($\equiv\sum_{i=1}^{i=n}M^{i}$),
+on peut :
+\begin{enumerate}
+\item Utiliser un schéma de Horner, par exemple avec $n=4$ on a $M\left(\mathbb{I}+M\left(\mathbb{I}+M\left(\mathbb{I}+M\right)\right)\right)=M+M^{2}+M^{3}+M^{4}$...,
+il suffit donc de $(n-1)$ additions avec la matrice identité (diagonale
+uniquement donc complexité $O(N)$) et $(n-1)$ multiplications matricielles
+(complexité $\approx O(N^{2})$), soit une complexité polynômiale
+de $\approx O((n-1)\times N^{3})$). En plus, le calcul peut se faire
+de façon itérative....
+\item Utiliser une exponentiation binaire, c'est à dire choisir un $n$
+étant une puissance de puissance de 2, et calculer par étape :
+\begin{itemize}
+\item \uline{Initialisation:} $M_{2}=\left(\mathbb{I}+M\right)^{2}$
+soit l'équivalent de $\mathbb{I}+M+M^{2}$ (les coefficients ne changent
+rien puisqu'on est en booléen),
+\item $M_{4}=M_{2}^{2}=\left(\mathbb{I}+M+M^{2}\right)^{2}$ soit $\mathbb{I}+M^{2}+M^{3}+M^{4}$,
+\item $M_{8}=M_{4}^{2}=\left(\mathbb{I}+M+M^{2}+M^{3}+M^{4}\right)^{2}$
+soit $\mathbb{I}+M+M^{2}+M^{3}+M^{4}+M^{5}+M^{6}+M^{7}+M^{8}$
+\item etc. (pour la dernière étape on pense à supprimer la matrice identité...)\\
+Le calcul prend cette fois $O(log(n)\times N^{2})$.Comme on peut
+choisir $n$ arbitraire, il suffit de choisir la puissance de 2 qui
+dépasse $N$... cette technique réduit davantage la complexité que
+Horner et on peut elle aussi l'appliquer de façon itérative. Le point
+faible reste le carré de la matrice booléenne qu'il faudrait pouvoir
+simplifier (au moins l'écrire sous forme d'opérations $\left\{ \wedge,\vee\right\} $)...
+\end{itemize}
+\end{enumerate}
 \item Finalement, comme pour une matrice de taille $N$ les cycles minimaux
 sont de taille $\leq N$, il suffit de calculer $C(M,floor(N/2))$
 avec $floor$ la fonction de troncature.
-\item En utilisant un schéma de Horner pour calculer la matrice à la puissance
-$m$, il suffit de $(n-1)$ additions sur la diagonale principale
-et $(n-1)$ multiplications matricielles (complexité $\approx O(n^{2})$),
-soit une complexité polynômiale de $\approx O(n^{3})$. En plus, le
-calcul peut se faire de façon itérative....
 \item En plus, il y a une dualité entre le nombre de cycles et la possible
 réduction du graphe :
 \begin{enumerate}
@@ -146,12 +176,13 @@ réduction du graphe :
 \item plus il y a de cycles courts, plus ils seront trouvés rapidement !
 \end{enumerate}
 \end{enumerate}
-On peut faire la chose suivante :
+On pourrait faire la chose suivante :
 \begin{enumerate}
 \item Chercher un cycle de taille 1 (il suffit de regarder la diagonale
-de la matrice),
-\item Chercher un cycle de taille 2 (il suffit de calculer $M.M^{T}=0$),
-\item Il existe probablement (obligatoirement ?) des noeuds réductibles
+de la matrice, complexité $O(N)$),
+\item Chercher un cycle de taille 2 (il suffit de calculer $M\wedge M^{T}=0$,
+complexité $O(N^{2})$),
+\item Il existe probablement (obligatoirement ?) des sommets réductibles
 : réduire donc la matrice,
 \begin{enumerate}
 \item Si la matrice à été réduite, chercher un cycle de taille 2 (il suffit
@@ -159,6 +190,27 @@ de recalculer $M.M^{T}=0$), puis répéter la procédure en 3
 \item Sinon continuer en calculant la puissance supérieure et en répétant
 les réductions
 \end{enumerate}
+\end{enumerate}
+
+\part{Solution bis}
+
+Plutôt que d'associer un marquage $\left\{ Fsain,Fcertain,Fincertain\right\} $
+sur les sommets d'un graphe, il faudrait les associer aux arètes.
+Pour moi, c'est plus logique et plus cohérent que l'on puisse fournir
+un diagnostic \og au moment \fg{} d'un évènement plutôt que \og sur
+un état \fg{}. En effet, l'évènement est daté, l'état non... Hors
+si une faute peut apparaître sur un état, même si l'évènement précédent
+nous assure qu'aucune faute n'a eu lieu après le franchissement, immédiatement
+arrivé sur l'état il est possible qu'une faute est apparue et donc
+qu'on ne sache pas si le système est en faute ou non. On crée de façon
+itérative par exploration un graphe dont les arêtes correspondraient
+à des évènements $Fincertains$. Quand l'exploration est finie :
+\begin{enumerate}
+\item On retire les sommets qui n'ont pas de successeurs
+\item On répète l'opération jusqu'à ce qu'il n'y ai plus de sommets sans
+successeurs.
+\item S'il ne reste aucun sommet (graphe vide), alors il n'existe pas de
+cycle, sinon il existe au moins un cycle $Fincertain$.
 \end{enumerate}
 
 \end{document}
