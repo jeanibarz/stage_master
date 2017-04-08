@@ -8,11 +8,11 @@ M=[0 1 0 0 0 0 0 0;
    0 0 0 0 1 0 0 1;
    1 0 0 0 0 0 0 0];
 
-%% Voisins de +2/-1 évènement
+%% Voisins de +1/+2/-1 évènement
 M|M^2|M'
 
 %% Cycles de taille 1
-eye(8,8).*M
+eye(8,8)&M
 
 %% Cycles de taille 1 ou 2
 M&M' % équivalent à M.*M' car on est en booléen
@@ -29,7 +29,8 @@ r_in=diag(r)*M' % complexité O(N)
 M(:,r)
 
 %% Schéma d'exponentiation binaire...
-M2=(eye(8,8)+M+M^2)>0;
+M1=eye(8,8)|M;
+M2=M1^2>0;
 M4=M2^2>0;
 M8=M4^2>0;
 M16=M8^2>0;
