@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>mcc_nuno_bellard</title>
+<title>mcc_nuno_bellard-statique</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11748,10 +11748,12 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Travaux de Nuno Belard</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Reprise des travaux de Nuno Belard</span>
+<span class="c1"># Diagnostic à base de Relations Redondantes Analytiques de la MCC</span>
+<span class="c1"># Application au cas dynamique</span>
 </pre></div>
 
 </div>
@@ -11761,7 +11763,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Declaration des variables symboliques</span>
@@ -11776,7 +11778,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[23]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -11791,7 +11793,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="n">R</span><span class="o">/</span><span class="n">L</span><span class="p">,</span><span class="o">-</span><span class="n">K</span><span class="o">/</span><span class="n">L</span><span class="p">],[</span><span class="n">K</span><span class="o">/</span><span class="n">J</span><span class="p">,</span><span class="o">-</span><span class="n">f</span><span class="o">/</span><span class="n">J</span><span class="p">]])</span>
@@ -11807,7 +11809,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Affiche le système sous sa forme espace d&#39;état symbolique</span>
@@ -11863,46 +11865,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># On calcule H1(2) (la matrice d&#39;observation sur un horizon temporel de 3 mesures en considérant uniquement la sortie 1)</span>
-<span class="n">H1_2</span><span class="o">=</span><span class="n">matrix</span><span class="p">([</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="p">])</span>
-<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s2">R&quot;H_1(2)=&quot;</span><span class="p">),</span><span class="n">H1_2</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}H_1(2)= \left(\begin{array}{rr}
-1 & 0 \\
--\frac{R}{L} & -\frac{K}{L} \\
--\frac{K^{2}}{J L} + \frac{R^{2}}{L^{2}} & \frac{K R}{L^{2}} + \frac{K f}{J L}
-\end{array}\right)</script></html>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># On calcule le noyau a gauche de H1_2 pour trouver un vecteur orthogonal à H</span>
-<span class="n">Omega_1_basis</span><span class="o">=</span><span class="n">H1_2</span><span class="o">.</span><span class="n">left_kernel</span><span class="p">()</span>
-<span class="n">show</span><span class="p">(</span><span class="n">Omega_1_basis</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># On calcule le noyau à gauche de C</span>
+<span class="n">W_basis</span><span class="o">=</span><span class="n">C</span><span class="o">.</span><span class="n">left_kernel</span><span class="p">()</span>
+<span class="n">show</span><span class="p">(</span><span class="n">W_basis</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11917,7 +11885,7 @@ div#notebook {
 
 <div class="output_html rendered_html output_subarea ">
 <html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\mathrm{RowSpan}_{\text{SR}}\left(\begin{array}{rrr}
-1 & \frac{L {\left(\frac{K R}{L^{2}} + \frac{K f}{J L}\right)}}{K {\left(\frac{R {\left(\frac{K R}{L^{2}} + \frac{K f}{J L}\right)}}{K} + \frac{K^{2}}{J L} - \frac{R^{2}}{L^{2}}\right)}} & \frac{1}{\frac{R {\left(\frac{K R}{L^{2}} + \frac{K f}{J L}\right)}}{K} + \frac{K^{2}}{J L} - \frac{R^{2}}{L^{2}}}
+1 & \frac{K}{R} & \frac{1}{R}
 \end{array}\right)</script></html>
 </div>
 
@@ -11929,14 +11897,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># On va l&#39;exprimer sous une forme plus facile à manipuler</span>
 <span class="n">var</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">Omega_1</span><span class="o">=</span><span class="n">Omega_1_basis</span><span class="o">.</span><span class="n">linear_combination_of_basis</span><span class="p">([</span><span class="n">k</span><span class="p">])</span> <span class="c1"># expression sous forme paramétrique en k</span>
-<span class="n">Omega_1</span><span class="o">=</span><span class="n">Omega_1</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">K</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">R</span><span class="o">*</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span> <span class="c1"># substitution pour faire sauter les dénominateurs</span>
-<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s2">R&quot;\Omega_1=&quot;</span><span class="p">),</span><span class="n">Omega_1</span><span class="p">)</span>
+<span class="n">W</span><span class="o">=</span><span class="n">W_basis</span><span class="o">.</span><span class="n">linear_combination_of_basis</span><span class="p">([</span><span class="n">k</span><span class="p">])</span>
+<span class="n">W</span><span class="o">=</span><span class="n">W</span><span class="o">.</span><span class="n">substitute</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="n">R</span><span class="p">)</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">()</span>
+<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s2">R&quot;W=&quot;</span><span class="p">),</span><span class="n">W</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11950,7 +11918,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\Omega_1= \left(K^{2} + R f,\,J R + L f,\,J L\right)</script></html>
+<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}W= \left(R,\,K,\,1\right)</script></html>
 </div>
 
 </div>
@@ -11961,14 +11929,16 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calcul de la matrice G1_2</span>
-<span class="n">G1_2</span><span class="o">=</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
-     <span class="n">matrix</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">augment</span><span class="p">(</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])))</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span>
-     <span class="n">matrix</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">B</span><span class="p">)</span><span class="o">.</span><span class="n">augment</span><span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">B</span><span class="p">))</span><span class="o">.</span><span class="n">augment</span><span class="p">(</span><span class="n">matrix</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])));</span>
-<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s2">R&quot;G_1(2)=&quot;</span><span class="p">),</span><span class="n">G1_2</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Déclaration variables symboliques sorties</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;i_obs&#39;</span><span class="p">,</span><span class="s1">&#39;omega_R_obs&#39;</span><span class="p">,</span><span class="s1">&#39;V_L_obs&#39;</span><span class="p">)</span>
+<span class="c1"># Déclaration variables symboliques entrées</span>
+<span class="n">var</span><span class="p">(</span><span class="s1">&#39;V_S,tau_L&#39;</span><span class="p">)</span>
+<span class="n">r_1</span><span class="o">=</span><span class="n">W</span><span class="o">*</span><span class="p">(</span><span class="n">matrix</span><span class="p">([</span><span class="n">i_obs</span><span class="p">,</span><span class="n">omega_R_obs</span><span class="p">,</span><span class="n">V_L_obs</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">-</span><span class="n">D</span><span class="o">*</span><span class="n">matrix</span><span class="p">([</span><span class="n">V_S</span><span class="p">,</span><span class="n">tau_L</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+<span class="n">r_1</span><span class="o">=</span><span class="n">r_1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">();</span>
+<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s1">&#39;ARR_1 : r_1=&#39;</span><span class="p">),</span><span class="n">r_1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11982,11 +11952,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}G_1(2)= \left(\begin{array}{rrrrrr}
-0 & 0 & 0 & 0 & 0 & 0 \\
-\frac{1}{L} & 0 & 0 & 0 & 0 & 0 \\
--\frac{R}{L^{2}} & \frac{K}{J L} & \frac{1}{L} & 0 & 0 & 0
-\end{array}\right)</script></html>
+<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}ARR_1 : r_1= R i_{\mathit{obs}} + K \omega_{R_{\mathit{obs}}} + V_{L_{\mathit{obs}}} - V_{S}</script></html>
 </div>
 
 </div>
@@ -11997,14 +11963,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">var</span><span class="p">(</span><span class="s1">&#39;i_obs1&#39;</span><span class="p">,</span><span class="s1">&#39;i_obs2&#39;</span><span class="p">,</span><span class="s1">&#39;i_obs3&#39;</span><span class="p">)</span>
-<span class="n">var</span><span class="p">(</span><span class="s1">&#39;V_S1,tau_L1,V_S2,tau_L2,V_S3,tau_L3&#39;</span><span class="p">)</span>
-<span class="n">ARR1</span><span class="o">=</span><span class="n">Omega_1</span><span class="o">*</span><span class="n">matrix</span><span class="p">([</span><span class="n">i_obs1</span><span class="p">,</span><span class="n">i_obs2</span><span class="p">,</span><span class="n">i_obs3</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span><span class="o">-</span><span class="n">Omega_1</span><span class="o">*</span><span class="n">G1_2</span><span class="o">*</span><span class="n">matrix</span><span class="p">([</span><span class="n">V_S1</span><span class="p">,</span><span class="n">tau_L1</span><span class="p">,</span><span class="n">V_S2</span><span class="p">,</span><span class="n">tau_L2</span><span class="p">,</span><span class="n">V_S3</span><span class="p">,</span><span class="n">tau_L3</span><span class="p">])</span><span class="o">.</span><span class="n">transpose</span><span class="p">();</span>
-<span class="n">ARR1</span><span class="o">=</span><span class="n">ARR1</span><span class="o">.</span><span class="n">simplify_full</span><span class="p">();</span>
-<span class="n">show</span><span class="p">(</span><span class="n">LatexExpr</span><span class="p">(</span><span class="s1">&#39;ARR_1=&#39;</span><span class="p">),</span><span class="n">ARR1</span><span class="p">)</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Identique après transformation à l&#39;équation de Nuno (p.108)</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">V_L_obs</span><span class="o">-</span><span class="p">(</span><span class="n">V_S</span><span class="o">-</span><span class="n">R</span><span class="o">*</span><span class="n">i_obs</span><span class="o">-</span><span class="n">K</span><span class="o">*</span><span class="n">omega_R_obs</span><span class="p">)</span> <span class="o">==</span> <span class="n">r_1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12015,10 +11978,11 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
 
-<div class="output_html rendered_html output_subarea ">
-<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}ARR_1= \left(J L i_{\mathit{obs}_{3}} - J V_{S_{2}} - V_{S_{1}} f + {\left(K^{2} + R f\right)} i_{\mathit{obs}_{1}} + {\left(J R + L f\right)} i_{\mathit{obs}_{2}} - K \tau_{L_{1}}\right)</script></html>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
 </div>
 
 </div>
@@ -12029,28 +11993,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Les autres équations sont simplement trouvées à la main... (la première peut l&#39;être aussi d&#39;ailleurs...)</span>
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-<div class="output_html rendered_html output_subarea ">
-<html><script type="math/tex; mode=display">\newcommand{\Bold}[1]{\mathbf{#1}}\left(J L i_{\mathit{obs}_{3}} + {\left(K^{2} + R f\right)} i_{\mathit{obs}_{1}} + {\left(J R + L f\right)} i_{\mathit{obs}_{2}}\right)</script></html>
-</div>
-
-</div>
-
 </div>
 </div>
 
