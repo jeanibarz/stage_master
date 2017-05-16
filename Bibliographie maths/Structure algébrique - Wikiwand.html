@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html lang="en" ng-app="wikiwand" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="wikiwand" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="wikiwand" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="wikiwand" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" class="no-js ng-scope" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+
+	<!--header generic -->
+	
+	<!--this is the original url for google fonts-->
+	<link href="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/css.css" rel="stylesheet" type="text/css">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/emffkefkbkpkgpdeeooapgaicgmcbolj">
+	<link rel="shortcut icon" href="http://www.wikiwand.com/favicon.ico" type="image/x-icon">
+	<!--<script type="text/javascript"  src="https://s3.amazonaws.com/assets.wikiwand.com/ads.js"></script>-->
+	<link rel="apple-touch-icon" href="http://d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon_apple.png">
+	
+
+	
+
+	
+	<script id="facebook-jssdk" async="" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/sdk.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head><body ng-init="initializeShellController()" ng-controller="ShellController" ng-class="$root.userBodyStyle" class="lg_latin bsp1 bsp2 lang_fr bsp3 ng-scope [ medium_txt serif light narrow_column ]"><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="http://staticxx.facebook.com/connect/xd_arbiter/r/JtmcTFxyLye.js?version=42#channel=f1c36c3d2ca541a&amp;origin=http%3A%2F%2Fwww.wikiwand.com" frameborder="0"></iframe><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/JtmcTFxyLye_002.html" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><img id="imagePlaceHolder" src="" style="opacity:0;position:fixed" width="0" height="0">
+	<script async="" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/analytics.js"></script><script>
+
+		console.time('time up to showArticleContents');
+		var precache_from_extension = false;
+		if (window.location.hash.indexOf('precache_from_extension=true') > -1) {
+			precache_from_extension = true;
+		}
+		var pageLoadStart = new Date().getTime();
+		var pageHTMLReceived = (new Date()).getTime();
+		var genericData = {
+			debug: {
+				pageLoadedTimestamp: (new Date()).getTime()
+			}
+		};
+		var localContentHtml;
+		var localContentHtmlPartial;
+		var attempts = 0;
+		function tempConditioning(mystring) {
+			//this is to migrate old article contents until we do a database recaching (advance version)
+			//replace old pic-placeholder with one which supports both protocols
+			if (location.protocol == 'https:') {
+				var newstring = mystring.split('http://assets.cdn.wikiwand.com/img/pic-placeholder.gif').join('//d3isfnyiuldmfu.cloudfront.net/img/pic-placeholder.gif');
+			} else {
+				newstring = mystring;
+			}
+			return newstring;
+		}
+
+		function httpGet(theUrl, type) {
+			var xmlHttp = null;
+			xmlHttp = new XMLHttpRequest();
+			xmlHttp.onreadystatechange = function() {
+				if (xmlHttp.readyState == 4) // Finished
+				{
+					if (xmlHttp.status == 200) {
+						if (theUrl.indexOf('_PARTIAL_DOWNLOAD') == -1) {
+							//console.log('got full text');
+							localContentHtml = xmlHttp.responseText;
+						} else {
+							//console.log('got partial text');
+							localContentHtmlPartial = xmlHttp.responseText;
+						}
+					}
+					else {
+						console.log('failed with status ',xmlHttp.status);
+						attempts++;
+						if (attempts < 10 && (theUrl.indexOf('_PARTIAL_DOWNLOAD') == -1)) {
+							console.log("DOWNLOAD FAILED, TRYING AGAIN ", theUrl);
+							if (xmlHttp.status == 0) {
+								if (theUrl.indexOf('s3.amazonaws.com') != -1) {
+									if (attempts==9) {
+
+										setTimeout(function() {
+											var element;
+											if (typeof(noAdblock) == 'undefined') {
+												element = '#adblockNotice';
+											} else {
+												element = '#httpsEverywhereNotice';
+											}
+											if ($(element).length > 0) {
+												console.log(' element exists');
+												$(element).show();
+												$(element).css('opacity', 1);
+												$(element).detach().prependTo('#content');
+											}
+										}, 6000);
+									}
+								}
+								var urlOnS3 = '';
+								urlOnS3 = urlOnS3.replace('http://', '//').replace('https://', '//');
+								urlOnS3 = urlOnS3.replace(/\+/g, '%2B');
+								httpGet(urlOnS3, 'html');
+								httpGet(urlOnS3, 'html');
+							} else {
+								//console.log('status ', xmlHttp);
+								setTimeout(function() {
+									httpGet(theUrl, 'html');
+								}, 500);
+							}
+						}
+					}
+				}
+			};
+			xmlHttp.open("GET", theUrl, true);
+			xmlHttp.send(null);
+		}
+	</script>
+	
+	<script>
+		var loadedFromCache = false;
+	</script>
+	
+
+	<script src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/jquery.js"></script>
+	<script src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/angular.js"></script>
+
+	<!--
+	
+	<link rel="stylesheet" href="//d3isfnyiuldmfu.cloudfront.net/css/fonts.92ff4698.css" type="text/css" media="screen"/>
+	
+	-->
+
+	
+
+	
+	<script> var CURRENT_USER_ID='171098c68d4e490b82b51d2f56d2060c'; </script>
+	
+
+	 
+
+	
+
+	<link rel="stylesheet" href="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/wikiwand.css" type="text/css" media="screen">
+	<script type="text/javascript" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/wikiwand.js"></script>
+	
+	
+
+	
+
+	
+
+
+
+	<!-- BEGIN TRACKJS -->
+	<script type="text/javascript">
+		var LOAD_TRACKJS = false;
+		if (LOAD_TRACKJS && !precache_from_extension) {
+			window._trackJs = {
+				token: '9bcd9b3d130a4b8eb9f58ff06e6781b5',
+				callback: {enabled: false},
+				console: {enabled: true, display: true, error: false},
+				network: {enabled: false},
+				visitor: {enabled: false},
+				window: {enabled: false},
+				onError: function(payload, error) {
+
+					// List borrowed from the awesome @pamelafox
+					// https://gist.github.com/pamelafox/1878283
+					var i, commonCrypticExtensionErrors = [
+						"top.GLOBALS",
+						"originalCreateNotification",
+						"canvas.contentDocument",
+						"MyApp_RemoveAllHighlights",
+						"http://tt.epicplay.com",
+						"Can't find variable: ZiteReader",
+						"jigsaw is not defined",
+						"ComboSearch is not defined",
+						"http://loading.retry.widdit.com/",
+						"atomicFindClose",
+						"fb_xd_fragment",
+						"Script error",
+						"__adg_gm_commands_api",
+						"A Chrome Web Store installation is already pending.",
+						"‘-×´]/: Range out of order in character class"
+					];
+					for (i = 0; i < commonCrypticExtensionErrors.length; i++) {
+						if (payload.message.indexOf(commonCrypticExtensionErrors[i]) > -1) {
+							// returning any kind of falsy value will reject error
+							return false;
+						}
+					}
+					return true; // Return any kind of truthy value here to allow transmission of error
+				}
+			};
+			var fileref = document.createElement('script');
+			fileref.setAttribute("type", "text/javascript");
+			fileref.setAttribute("src", "//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js");
+			if (typeof fileref != "undefined")    document.getElementsByTagName("head")[0].appendChild(fileref);
+		}
+	</script>
+
+
+<div id="splashscreen" class="hide_before_angular" style="display: none;">
+</div>
+
+
+
+
+
+	
+	
+
+	
+	<script>
+		// disable all logs
+		if (document.location.search.indexOf('debug_logs=1') == -1) {
+			console.log = function() {};
+			console.time = function() {};
+			console.timeEnd = function() {};
+		}
+	</script>
+
+
+	
+
+	<script>
+		
+		
+			var serverData={"layout":"wikiwand","publisherMonetization":"false","showTOC":"true","agent":{"string":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0","ua":{"family":"Firefox","major":"53","minor":"0","patch":null},"userAgent":{"family":"Firefox","major":"53","minor":"0","patch":null},"os":{"family":"Ubuntu","major":null,"minor":null,"patch":null,"patchMinor":null},"device":{"family":"Other"},"family":"Firefox","major":53,"minor":0,"isMobileRes":false,"clientLanguages":"en-US,en;q=0.5","extensionInstalled":false,"fromSearchWidget":false,"isBot":false,"isHuman":true},"config":{"environment":"production","features":{"news":false,"map":true,"toc":true,"gallery":true,"partials":true,"apiCache":true,"invites":false,"articlePromo":true,"classification":false,"moduleYouTubeVideo":false,"webSocket":false,"snippet":true,"userManagement":true,"comments":false,"reportBoardActions":true,"paywall":false,"boards":false,"comparisons":false},"agent":{"string":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0","ua":{"family":"Firefox","major":"53","minor":"0","patch":null},"userAgent":{"family":"Firefox","major":"53","minor":"0","patch":null},"os":{"family":"Ubuntu","major":null,"minor":null,"patch":null,"patchMinor":null},"device":{"family":"Other"},"family":"Firefox","major":53,"minor":0,"isMobileRes":false,"clientLanguages":"en-US,en;q=0.5","extensionInstalled":false,"fromSearchWidget":false,"isBot":false,"isHuman":true},"facebook":{"appId":"823404911083396"}},"cpu":133,"callToInstallExtension":true,"settings":{"whitelist":["/en/Kinsey_scale","/en/Mokomokai","/en/Binomial_distribution","/en/Lee_Van_Cleef","/en/Gutter_oil","/en/Yūki_Kaji"],"tests":{"mon_p":{"none":0},"mon_footer":{"recommendations":0,"adsense":0},"mon_footer_b":{"wikipedia":0},"mon_bottom":{"none":100},"mon_ocd":{"msg":0}},"boards":{"percent_see_gen_buttons":100},"msg_to_all_users":{"show":false,"text":"Due to a global Amazon S3 outage, article load times may be longer than usual.<BR>In the meantime, you can use the toolbar to skip to Wikipedia. We appreciate your patience."},"pw":false,"redirect_all_users":"no","monPlus":false}};
+		
+		
+			var userData={"userId":"171098c68d4e490b82b51d2f56d2060c","objVersion":1,"info":{"birthdate":null,"age":null,"location":{},"acceptLanguage":"en-US,en;q=0.5","picture":null,"coverPicture":null},"profile":{"bio":""},"technology":{"devicesUsed":[],"web":{"browser":"Firefox","browserVersion":"53","os":"Ubuntu","device":"Other","string":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0","extensionInstalled":false}},"permissions":{"role":1},"settings":{"favoriteLangs":null,"clientPrefs":null},"stats":{"dateJoined":null,"dateLastVisited":"2017-05-11T20:23:18.265Z","numOfPagesViewed":null,"topLangsUsed":null,"score":0},"logins":{"facebook":{"isActive":false,"secureBrowsing":null}},"friendsUsingApp":[]};
+		
+		
+
+		
+			var articleData={"cache":{"cacheDBVer":51,"cacheDate":1494534199516,"hash":"e0446ae7d19b925e0c619be21832fcce","key":"/fr/Structure_alg%C3%A9brique","wikiRevision":"137049704","canonical":"/fr/Structure_alg%C3%A9brique","isCanonical":true},"langCodeUrl":"fr","rawArticlePath":"Structure_alg%C3%A9brique","fonts":{},"bodyClasses":["lg_latin"],"hasInfobox":false,"facts":[],"photos":[{"url":"//upload.wikimedia.org/wikipedia/commons/thumb/3/3c/InfographieTopologie.png/220px-InfographieTopologie.png","w":220,"h":147}],"title":"Structure algébrique","geo":null,"TOC":{"type":"ul","id":"toc_btn_article-root-section","href":"article-root-section","text":"","children":[{"type":"od","classesHtml":"","special":false,"id":"toc_btn_overview","href":"overview","text":"Introduction","children":[]},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_Structures_alg.C3.A9briques_pures","href":"Structures_alg.C3.A9briques_pures","text":"Structures algébriques pures","children":[{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Structures_de_base","href":"Structures_de_base","text":"Structures de base","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Structures_.C3.A0_op.C3.A9rateurs_externes","href":"Structures_.C3.A0_op.C3.A9rateurs_externes","text":"Structures à opérateurs externes","children":[]}],"hasChildren":true},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_Structures_alg.C3.A9briques_ordonn.C3.A9es","href":"Structures_alg.C3.A9briques_ordonn.C3.A9es","text":"Structures algébriques ordonnées","children":[{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Groupes_ordonn.C3.A9s_et_anneaux_ordonn.C3.A9s","href":"Groupes_ordonn.C3.A9s_et_anneaux_ordonn.C3.A9s","text":"Groupes ordonnés et anneaux ordonnés","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Treillis","href":"Treillis","text":"Treillis","children":[]}],"hasChildren":true},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_Structures_alg.C3.A9briques_topologiques","href":"Structures_alg.C3.A9briques_topologiques","text":"Structures algébriques topologiques","children":[{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Structures_et_topologies.2C_distances.2C_normes_ou_produits_scalaires","href":"Structures_et_topologies.2C_distances.2C_normes_ou_produits_scalaires","text":"Structures et topologies, distances, normes ou produits scalaires","children":[]},{"type":"li","classesHtml":"","special":false,"id":"toc_btn_Structures_et_g.C3.A9om.C3.A9trie_diff.C3.A9rentielle_et_alg.C3.A9brique","href":"Structures_et_g.C3.A9om.C3.A9trie_diff.C3.A9rentielle_et_alg.C3.A9brique","text":"Structures et géométrie différentielle et algébrique","children":[]}],"hasChildren":true},{"type":"od","classesHtml":"","special":false,"id":"toc_btn_Structures_alg.C3.A9briques_et_cat.C3.A9gories","href":"Structures_alg.C3.A9briques_et_cat.C3.A9gories","text":"Structures algébriques et catégories","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_Notes_et_r.C3.A9f.C3.A9rences","href":"Notes_et_r.C3.A9f.C3.A9rences","text":"Notes et références","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_Bibliographie","href":"Bibliographie","text":"Bibliographie","children":[]},{"type":"od","classesHtml":" class='special'","special":true,"id":"toc_btn_Voir_aussi","href":"Voir_aussi","text":"Voir aussi","children":[]}],"hasChildren":true},"mainImage":{"mode":"none","fromEnglishWikipedia":true},"pageIsArticle":true,"links":{"selfRead":"http://wikiwand.com/fr/Structure_alg%C3%A9brique","wikipediaRead":"https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true","wikipediaEdit":"https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&action=edit","wikipediaHistory":"https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&action=history","wikipediaPrint":"https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&printable=yes","wikipediaTalk":"https://fr.wikipedia.org/wiki/Talk:Structure_alg%C3%A9brique?oldformat=true","wikipediaDownload":"https://fr.wikipedia.org/w/index.php?title=Special:Book&bookcmd=render_article&arttitle=Structure_alg%C3%A9brique&writer=rl"},"meta":{"title":"Structure algébrique | Wikiwand","keywords":"qw, Structure algébrique, français","description":"En mathématiques, plus précisément en algèbre générale et en algèbre universelle, une structure algébrique est un type particulier de structure. Sa spécificité par rapport aux autres types de structure est d'être formée d’un ensemble combiné à une ou plusieurs lois de composition, éventuellement complétées par un ordre ou une topologie, le tout satisfaisant un certain nombre d'axiomes.","robots":"index,follow","url":"http://www.wikiwand.com/fr/Structure_alg%C3%A9brique","image":"//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png"},"fromWikipedia":"Un article de Wikipédia, l'encyclopédie libre.","disambiguations":[],"searchTranslation":"Rechercher sur Wikipédia","availableLanguages":[{"langEnglishName":"Arabic","langNativeName":"العربية","langAbberviation":"ar","langCodeHTML":0,"langCodeURL":"ar","articleTitle":"بنية جبرية","articleLink":"/ar/%D8%A8%D9%86%D9%8A%D8%A9_%D8%AC%D8%A8%D8%B1%D9%8A%D8%A9","score":0},{"langEnglishName":"Basque","langNativeName":"euskara","langAbberviation":"eu","langCodeHTML":0,"langCodeURL":"eu","articleTitle":"Egitura aljebraiko","articleLink":"/eu/Egitura_aljebraiko","score":0},{"langEnglishName":"Catalan; Valencian","langNativeName":"català","langAbberviation":"ca","langCodeHTML":0,"langCodeURL":"ca","articleTitle":"Estructura algebraica","articleLink":"/ca/Estructura_algebraica","score":0},{"langEnglishName":"Chinese","langNativeName":"中文","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh","articleTitle":"代数结构","articleLink":"/zh/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Czech","langNativeName":"česky","langAbberviation":"cs","langCodeHTML":0,"langCodeURL":"cs","articleTitle":"Algebraická struktura","articleLink":"/cs/Algebraick%C3%A1_struktura","score":0},{"langEnglishName":"Dutch","langNativeName":"Nederlands","langAbberviation":"nl","langCodeHTML":0,"langCodeURL":"nl","articleTitle":"Algebraïsche structuur","articleLink":"/nl/Algebra%C3%AFsche_structuur","score":0},{"langEnglishName":"English","langNativeName":"English","langAbberviation":"en","langCodeHTML":0,"langCodeURL":"en","articleTitle":"Algebraic structure","articleLink":"/en/Algebraic_structure","score":1},{"langEnglishName":"Esperanto","langNativeName":"Esperanto","langAbberviation":"eo","langCodeHTML":0,"langCodeURL":"eo","articleTitle":"Algebra strukturo","articleLink":"/eo/Algebra_strukturo","score":0},{"langEnglishName":"Finnish","langNativeName":"suomi","langAbberviation":"fi","langCodeHTML":0,"langCodeURL":"fi","articleTitle":"Algebrallinen rakenne","articleLink":"/fi/Algebrallinen_rakenne","score":0},{"langEnglishName":"French","langNativeName":"français","langAbberviation":"fr","langCodeHTML":0,"langCodeURL":"fr","articleTitle":"Structure algébrique","articleLink":"/fr/Structure_alg%C3%A9brique","score":1},{"langEnglishName":"Galician","langNativeName":"galego","langAbberviation":"gl","langCodeHTML":0,"langCodeURL":"gl","articleTitle":"Estrutura alxébrica","articleLink":"/gl/Estrutura_alx%C3%A9brica","score":0},{"langEnglishName":"German","langNativeName":"Deutsch","langAbberviation":"de","langCodeHTML":0,"langCodeURL":"de","articleTitle":"Algebraische Struktur","articleLink":"/de/Algebraische_Struktur","score":1},{"langEnglishName":"Hebrew","langNativeName":"עברית","langAbberviation":"he","langCodeHTML":0,"langCodeURL":"he","articleTitle":"מבנה אלגברי","articleLink":"/he/%D7%9E%D7%91%D7%A0%D7%94_%D7%90%D7%9C%D7%92%D7%91%D7%A8%D7%99","score":0},{"langEnglishName":"Italian","langNativeName":"italiano","langAbberviation":"it","langCodeHTML":0,"langCodeURL":"it","articleTitle":"Struttura algebrica","articleLink":"/it/Struttura_algebrica","score":0},{"langEnglishName":"Japanese","langNativeName":"日本語","langAbberviation":"ja","langCodeHTML":0,"langCodeURL":"ja","articleTitle":"代数的構造","articleLink":"/ja/%E4%BB%A3%E6%95%B0%E7%9A%84%E6%A7%8B%E9%80%A0","score":0},{"langEnglishName":"Korean","langNativeName":"한국어","langAbberviation":"ko","langCodeHTML":0,"langCodeURL":"ko","articleTitle":"대수 구조","articleLink":"/ko/%EB%8C%80%EC%88%98_%EA%B5%AC%EC%A1%B0","score":0},{"langEnglishName":"Lithuanian","langNativeName":"lietuvių","langAbberviation":"lt","langCodeHTML":0,"langCodeURL":"lt","articleTitle":"Algebrinė struktūra","articleLink":"/lt/Algebrin%C4%97_strukt%C5%ABra","score":0},{"langEnglishName":"Malayalam","langNativeName":"മലയാളം","langAbberviation":"ml","langCodeHTML":0,"langCodeURL":"ml","articleTitle":"ബീജീയഘടന","articleLink":"/ml/%E0%B4%AC%E0%B5%80%E0%B4%9C%E0%B5%80%E0%B4%AF%E0%B4%98%E0%B4%9F%E0%B4%A8","score":0},{"langEnglishName":"Norwegian (Bokmål)","langNativeName":"norsk (bokmål)","langAbberviation":"no","langCodeHTML":0,"langCodeURL":"no","articleTitle":"Algebraisk struktur","articleLink":"/no/Algebraisk_struktur","score":0},{"langEnglishName":"Norwegian (Nynorsk)","langNativeName":"norsk (nynorsk)‎","langAbberviation":"nn","langCodeHTML":0,"langCodeURL":"nn","articleTitle":"Algebraisk struktur","articleLink":"/nn/Algebraisk_struktur","score":0},{"langEnglishName":"Occitan","langNativeName":"occitan","langAbberviation":"oc","langCodeHTML":0,"langCodeURL":"oc","articleTitle":"Estructura algebrica","articleLink":"/oc/Estructura_algebrica","score":0},{"langEnglishName":"Persian","langNativeName":"فارسی","langAbberviation":"fa","langCodeHTML":0,"langCodeURL":"fa","articleTitle":"ساختار جبری","articleLink":"/fa/%D8%B3%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1_%D8%AC%D8%A8%D8%B1%DB%8C","score":0},{"langEnglishName":"Piedmontese","langNativeName":"Piemontèis","langAbberviation":"pm","langCodeHTML":0,"langCodeURL":"pms","articleTitle":"Strutura algébrica","articleLink":"/pms/Strutura_alg%C3%A9brica","score":0},{"langEnglishName":"Polish","langNativeName":"polski","langAbberviation":"pl","langCodeHTML":0,"langCodeURL":"pl","articleTitle":"Algebra ogólna","articleLink":"/pl/Algebra_og%C3%B3lna","score":0},{"langEnglishName":"Portuguese","langNativeName":"português","langAbberviation":"pt","langCodeHTML":0,"langCodeURL":"pt","articleTitle":"Estrutura algébrica","articleLink":"/pt/Estrutura_alg%C3%A9brica","score":1},{"langEnglishName":"Russian","langNativeName":"русский","langAbberviation":"ru","langCodeHTML":0,"langCodeURL":"ru","articleTitle":"Алгебраическая система","articleLink":"/ru/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0","score":0},{"langEnglishName":"Serbian","langNativeName":"српски / srpski","langAbberviation":"sr","langCodeHTML":0,"langCodeURL":"sr","articleTitle":"Алгебарска структура","articleLink":"/sr/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D0%B0%D1%80%D1%81%D0%BA%D0%B0_%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0","score":0},{"langEnglishName":"Serbo-Croatian","langNativeName":"srpskohrvatski / српскохрватски","langAbberviation":"sh","langCodeHTML":0,"langCodeURL":"sh","articleTitle":"Algebarska struktura","articleLink":"/sh/Algebarska_struktura","score":0},{"langEnglishName":"Simple English","langNativeName":"Simple English","langAbberviation":"si","langCodeHTML":0,"langCodeURL":"simple","articleTitle":"Algebraic structure","articleLink":"/simple/Algebraic_structure","score":0},{"langEnglishName":"Simplified Chinese","langNativeName":"中文（简体)","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-hans","articleTitle":"代数结构","articleLink":"/zh-hans/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Simplified Chinese (China)","langNativeName":"中文（中国大陆)","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-cn","articleTitle":"代数结构","articleLink":"/zh-cn/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Simplified Chinese (Singapore)","langNativeName":"中文（新加坡）","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-sg","articleTitle":"代数结构","articleLink":"/zh-sg/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Slovak","langNativeName":"slovenčina","langAbberviation":"sk","langCodeHTML":0,"langCodeURL":"sk","articleTitle":"Algebrická štruktúra","articleLink":"/sk/Algebrick%C3%A1_%C5%A1trukt%C3%BAra","score":0},{"langEnglishName":"Slovenian","langNativeName":"slovenščina","langAbberviation":"sl","langCodeHTML":0,"langCodeURL":"sl","articleTitle":"Algebrska struktura","articleLink":"/sl/Algebrska_struktura","score":0},{"langEnglishName":"Spanish","langNativeName":"español","langAbberviation":"es","langCodeHTML":0,"langCodeURL":"es","articleTitle":"Estructura algebraica","articleLink":"/es/Estructura_algebraica","score":1},{"langEnglishName":"Swedish","langNativeName":"svenska","langAbberviation":"sv","langCodeHTML":0,"langCodeURL":"sv","articleTitle":"Algebraisk struktur","articleLink":"/sv/Algebraisk_struktur","score":0},{"langEnglishName":"Tagalog","langNativeName":"Tagalog","langAbberviation":"tl","langCodeHTML":0,"langCodeURL":"tl","articleTitle":"Balarilang pampanandaan","articleLink":"/tl/Balarilang_pampanandaan","score":0},{"langEnglishName":"Traditional Chinese","langNativeName":"中文（繁體）","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-hant","articleTitle":"代数结构","articleLink":"/zh-hant/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Traditional Chinese (Hong Kong)","langNativeName":"中文（香港）","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-hk","articleTitle":"代数结构","articleLink":"/zh-hk/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Traditional Chinese (Macau)","langNativeName":"中文（澳門）","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-mo","articleTitle":"代数结构","articleLink":"/zh-mo/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Traditional Chinese (Taiwan)","langNativeName":"中文（台灣）","langAbberviation":"zh","langCodeHTML":0,"langCodeURL":"zh-tw","articleTitle":"代数结构","articleLink":"/zh-tw/%E4%BB%A3%E6%95%B0%E7%BB%93%E6%9E%84","score":0},{"langEnglishName":"Ukranian","langNativeName":"українська","langAbberviation":"uk","langCodeHTML":0,"langCodeURL":"uk","articleTitle":"Алгебрична структура","articleLink":"/uk/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B8%D1%87%D0%BD%D0%B0_%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0","score":0},{"langEnglishName":"Vietnamese","langNativeName":"Tiếng Việt","langAbberviation":"vi","langCodeHTML":0,"langCodeURL":"vi","articleTitle":"Cấu trúc đại số","articleLink":"/vi/C%E1%BA%A5u_tr%C3%BAc_%C4%91%E1%BA%A1i_s%E1%BB%91","score":0},{"langEnglishName":"Yiddish","langNativeName":"ייִדיש","langAbberviation":"yi","langCodeHTML":0,"langCodeURL":"yi","articleTitle":"אלגעברעישע סטרוקטור","articleLink":"/yi/%D7%90%D7%9C%D7%92%D7%A2%D7%91%D7%A8%D7%A2%D7%99%D7%A9%D7%A2_%D7%A1%D7%98%D7%A8%D7%95%D7%A7%D7%98%D7%95%D7%A8","score":0}]};
+		
+
+	</script>
+	<script>
+		if (location.host=='translate.googleusercontent.com' && location.search){
+
+			var requestedLang=location.search.split('tl=')[1];
+			if (requestedLang) {
+				requestedLang = requestedLang.split('&')[0];
+				var desiredLink = articleData.links.selfRead.replace('http://', 'https://');
+				for (idx in articleData.availableLanguages) {
+					var lang = articleData.availableLanguages[idx];
+					if (lang.langCodeURL == requestedLang) {
+						desiredLink = 'https://www.wikiwand.com' + lang.articleLink;
+						break;
+					}
+				}
+				window.location = desiredLink;
+				var dontReport=true;
+			}
+		}
+	</script>
+
+	<title>Structure algébrique - Wikiwand</title>
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@wikiwand">
+	<meta name="twitter:app:name:iphone" content="Wikiwand">
+	<meta name="twitter:app:name:ipad" content="Wikiwand">
+	<meta name="twitter:app:id:iphone" content="947444965">
+	<meta name="twitter:app:id:ipad" content="947444965">
+	
+	<meta name="twitter:app:url:iphone" content="wikiwand-article://fr/Structure_alg%C3%A9brique">
+	<meta name="twitter:app:url:ipad" content="wikiwand-article://fr/Structure_alg%C3%A9brique">
+	<meta name="apple-itunes-app" content="app-id=947444965, app-argument=wikiwand-article://fr/Structure_alg%C3%A9brique">
+	
+	<meta property="al:ios:url" content="wikiwand://applinks">
+	<meta property="al:ios:app_store_id" content="947444965">
+	<meta property="al:ios:app_name" content="Wikiwand">
+	<meta property="fb:app_id" content="823404911083396">
+
+	<meta name="robots" content="index,follow">
+
+	
+		<meta property="og:type" content="article">
+		<meta property="og:site_name" content="Wikiwand">
+		<meta property="og:url" content="http://www.wikiwand.com/fr/Structure_alg%C3%A9brique">
+
+		<meta property="og:title" content="Structure algébrique | Wikiwand">
+		<meta property="twitter:title" content="Structure algébrique | Wikiwand">
+
+		<meta property="og:description" content="En mathématiques, plus précisément en algèbre générale et en algèbre universelle, une structure algébrique est un type particulier de structure. Sa spécificité par rapport aux autres types de structure est d'être formée d’un ensemble combiné à une ou plusieurs lois de composition, éventuellement complétées par un ordre ou une topologie, le tout satisfaisant un certain nombre d'axiomes.">
+		<meta name="description" content="En mathématiques, plus précisément en algèbre générale et en algèbre universelle, une structure algébrique est un type particulier de structure. Sa spécificité par rapport aux autres types de structure est d'être formée d’un ensemble combiné à une ou plusieurs lois de composition, éventuellement complétées par un ordre ou une topologie, le tout satisfaisant un certain nombre d'axiomes.">
+		<meta name="twitter:description" content="En mathématiques, plus précisément en algèbre générale et en algèbre universelle, une structure algébrique est un type particulier de structure. Sa spécificité par rapport aux autres types de structure est d'être formée d’un ensemble combiné à une ou plusieurs lois de composition, éventuellement complétées par un ordre ou une topologie, le tout satisfaisant un certain nombre d'axiomes.">
+		
+		<link rel="image_src" href="http://d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+		<meta property="og:image" content="//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+		<meta property="twitter:image:src" content="//d3isfnyiuldmfu.cloudfront.net/img/wikiwand_icon.png">
+		
+
+		<meta name="keywords" content="qw, Structure algébrique, français">
+	
+
+    
+
+
+
+
+
+
+
+
+
+
+	<div id="body_wrapp" ng-click="clickedOutside()" ng-mousedown="clickedAnywhere($event)">
+
+	
+<!-- ngIf: precache_from_extension -->
+
+<!-- ngIf: !hideToolbar --><nav ng-if="!hideToolbar" ng-hide="$root.serverData.agent.iOSWebView" ng-class="{active:!$root.tocShow}" ng-controller="ToolbarController" id="header" class="unselectable ng-scope fold" style="">
+		<ul id="main_menu" ng-class="{ios_focus: $root.iosFocus}" class="menu  navbar_opaque">
+			
+			<li class="toc_folded" ng-class="{activated:!$root.tocShow, gone: searchFocus}" ng-click="$root.tocFold(); $root.userClick(true, 'toolbar-toc-show');"><i></i></li>
+			
+			<li class="article_btn article" ng-class="{active:showWikiwandMenu, gone: searchFocus}" ng-click="toggleWikiwandMenu($event); $root.userClick(showWikiwandMenu, 'toolbar-mainmenu');">
+				<img class="logo_img unselectable" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/logo_new.svg" alt="wikiwand logo">
+				<img class="hide logo_w unselectable" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/w.svg" alt="wikiwand w">
+				<i></i>
+				<div class="drop_down ng-hide" ng-show="showWikiwandMenu" ng-click="clickedInside($event)">
+
+					<ul id="feadback_list" ng-show="!showUserVoice &amp;&amp; !showCoverReport">
+						<li><a href="http://www.wikiwand.com/"><i class="home_icon"></i>Home</a></li>
+						<li><a href="http://www.wikiwand.com/news"><i class="news_icon"></i>News</a></li>
+
+						
+						<li><a href="http://www.wikiwand.com/random/fr"><i class="random_icon"></i>Random Article</a></li>
+						
+
+						<!-- ngIf: !activation.extensionInstalled --><li ng-if="!activation.extensionInstalled" class="ng-scope"><a href="#" ng-click="$root.showInstall = true" onclick="event.preventDefault();"><i class="install_icon"></i>Install Wikiwand</a></li><!-- end ngIf: !activation.extensionInstalled -->
+						<li><a href="#" ng-click="$root.showFollow = true; loadGplusScript()" onclick="event.preventDefault();"><i class="follow_icon"></i>Follow Us</a></li>
+
+						<!--<li><a href="http://wikiwand.uservoice.com" target="_blank"><i class="support_icon"></i>Support</a></li>-->
+						<!---->
+						<!--<!<li><a href="javascript:void(0);" ng-click="showUserVoice=true; openUserVoiceDialog()" onclick="event.preventDefault()"><i class="report_icon"></i>Report a problem</a></li>-->
+
+						<li><a ng-click="closeAllMenus()" href="http://wikiwand.uservoice.com/forums/247843-wikiwand-website-extensions" target="_blank"><i class="idea_icon"></i>Send a suggestion</a></li>
+						<!-- ngIf: activation.extensionInstalled -->
+
+						<!--<li ng-if="$root.activation.showSwitchToWikipedia"><a href="javascript:void(0);" ng-click="closeAllMenus(); $root.walkthroughs['switch_to_wp'].showWalkthrough=true;" onclick="event.preventDefault()"><i class="wiki_icon"></i>Switch to Wikipedia</a></li>-->
+						<!--<li ng-if="!$root.activation.showSwitchToWikipedia"><a href="javascript:void(0);" ng-click="closeAllMenus()" ng-href="{{::articleData.links.wikipediaRead }}" target="_blank"><i class="wiki_icon"></i>Switch to Wikipedia</a></li>-->
+
+					</ul>
+
+					<div id="user_voice_wrapper" ng-show="showUserVoice" class="ng-hide">
+
+					</div>
+
+
+					<div id="cover_report" ng-show="showCoverReport" class="ng-hide">
+						<article ng-show="$root.showReportCoverImageText1" class="ng-hide">
+							<h3>Our magic isn't perfect</h3>
+							<p>You can help our automatic cover photo selection by reporting an unsuitable photo.</p>
+							<div ng-click="$root.reportImage($event,'disturbing',articleData.mainImage.full.originalUrl)">The cover is visually disturbing</div>
+							<div ng-click="$root.reportImage($event,'irrelevant',articleData.mainImage.full.originalUrl)">The cover is not a good choice</div>
+						</article>
+
+						<article ng-show="$root.showReportCoverImageText2" class="ng-hide">
+							<h4>Thank you for helping!</h4>
+							<br>
+							<p>Your input will affect cover photo selection, along with input from other users.<br>
+						</p></article>
+
+					</div>
+
+					<div id="feadback_back" ng-show="showUserVoice || showCoverReport" ng-click="showUserVoice=false;showCoverReport=false;$root.showReportCoverImageText1=true;$root.showReportCoverImageText2=false;" class="ng-hide">&lt; back</div>
+
+
+				</div>
+
+			</li>
+
+
+			<li class="search_btn menu-tooltip tooltipstered" ng-click="$root.openSearch('open'); $root.userClick(true, 'toolbar-search');">
+				<i></i>
+			</li>
+
+
+
+			
+			<li class="per_btn menu-tooltip tooltipstered" ng-class="{active:showPerMenu, gone: searchFocus}" ng-click="togglePerMenu($event); $root.userClick(showPerMenu, 'toolbar-pers');">
+				<i></i>
+				<!-- ngIf: showPerMenu -->
+			</li>
+			
+
+			<!--
+			<li class="find_btn menu-tooltip" title="Find in article" ng-class="{active: showFindMenu}">
+				<i></i>
+			</li>
+			-->
+
+			
+			<li class="lang_btn menu-tooltip tooltipstered" ng-class="{active:showLanguageMenu, gone: searchFocus}" ng-click="toggleLanguageMenu($event); $root.userClick(showLanguageMenu, 'toolbar-lang');">
+				<i class="ng-binding">FR</i>
+
+				<ul class="drop_down ng-scope ng-hide" ng-show="showLanguageMenu" ng-controller="PreferredLanguagesController">
+					<!-- ngRepeat: lang in list -->
+					<!-- ngIf: articleData.availableLanguages.length > numOfAvailablePreferredLanguages -->
+					<li class="lang_pref"><a href="javascript:void(0);" ng-click="$root.$broadcast('showAllWikipediaLanguagesFunc')">
+						<i></i>Language preferences</a></li>
+				</ul>
+			</li>
+			
+
+
+
+
+			<li class="share_btn article menu-tooltip tooltipstered" ng-class="{active:showShareMenu, gone: searchFocus}" ng-click="toggleShareMenu($event); $root.userClick(showShareMenu, 'toolbar-share');">
+				<i></i>
+				<div class="drop_down menu_share ng-hide" id="share_drop_down" ng-show="showShareMenu" ng-click="clickedInside($event)">
+					<ul class="share_links">
+						<li class="share-facebook"><a class="hover" href="#" target="_blank" ng-click="$root.userClick(showShareMenu, 'toolbar-share-facebook');"></a></li>
+						<li class="share-gplus"><a class="hover" href="#" target="_blank" ng-click="$root.userClick(showShareMenu, 'toolbar-share-gplus');"></a></li>
+						<!--<li class="share-reddit"><a class="hover" href="#" target="_blank" ng-click="$root.userClick(showShareMenu, 'toolbar-share-reddit');"></a></li>-->
+						<li class="share-twitter"><a class="hover" href="#" target="_blank" ng-click="$root.userClick(showShareMenu, 'toolbar-share-twitter');"></a></li>
+						<li class="share-gmail"><a class="hover" href="#" target="_blank" ng-click="$root.userClick(showShareMenu, 'toolbar-share-gmail');"></a></li>
+					</ul>
+				</div>
+			</li>
+
+
+
+
+			<li class="feedback_btn article menu-tooltip tooltipstered" ng-class="{active:showFeedbackMenu, gone: searchFocus}" ng-click="toggleFeedbackMenu($event); $root.userClick(showFeedbackMenu, 'toolbar-report');">
+				<i></i>
+				<ul class="drop_down menu_feedback ng-hide" id="feedback_drop_down" ng-show="showFeedbackMenu">
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true" target="_blank" href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true"><i class="read_w_icon"></i>Read On Wikipedia</a></li>
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=edit" target="_blank" href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=edit"><i class="edit_w_icon"></i>Edit</a></li>
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=history" target="_blank" href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=history"><i class="history_w_icon"></i>History</a></li>
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/wiki/Talk:Structure_alg%C3%A9brique?oldformat=true" target="_blank" href="https://fr.wikipedia.org/wiki/Talk:Structure_alg%C3%A9brique?oldformat=true"><i class="talk_w_icon"></i>Talk Page</a></li>
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;printable=yes" target="_blank" href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;printable=yes"><i class="print_w_icon"></i>Print</a></li>
+					<li class="wikipedia_list"><a ng-href="https://fr.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Structure_alg%C3%A9brique&amp;writer=rl" target="_blank" href="https://fr.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Structure_alg%C3%A9brique&amp;writer=rl"><i class="download_w_icon"></i>Download PDF</a></li>
+					<!--<li class="wikipedia_list"><a ng-href="https://en.wikipedia.org/wiki/Special:Watchlist" target="_blank"><i class="watch_icon"></i>Your Watchlist</a></li>-->
+					<!--<li class="wikipedia_list"><a ng-href="https://{{::articleData.langCodeUrl }}.wikipedia.org" target="_blank"><i class="home_icon"></i>Wikipedia Home Page</a></li>-->
+				</ul>
+			</li>
+
+
+			
+			<li class="bookmark_btn article menu-tooltip tooltipstered" ng-class="{active:$root.showBookmarkFeed, gone: searchFocus}" ng-click="toggleBookmarkFeed($event); $root.userClick($root.showBookmarkFeed, 'toolbar-report');">
+				<i></i>
+				<!-- ngIf: $root.bookmarkCount === 0 --><span ng-if="$root.bookmarkCount === 0" style="font-size: 14px" class="ng-scope">+</span><!-- end ngIf: $root.bookmarkCount === 0 -->
+				<!-- ngIf: $root.bookmarkCount < 10 && $root.bookmarkCount !== 0 -->
+				<!-- ngIf: $root.bookmarkCount >= 10 -->
+			</li>
+			
+
+
+
+
+
+			<span class="menu_line"></span>
+
+
+			
+
+
+
+
+<!-- ngIf: $root.activation.nextAction != '' --><li class="upgrade_btn menu-tooltip activation_install tooltipstered" ng-if="$root.activation.nextAction != ''" ng-class="{active: hover}" ng-mouseenter="hover = true; $root.extensionPopup('enter');" ng-mouseleave="hover = false; $root.extensionPopup('leave');" ng-click="$root.reportClick('toolbar');$root.activationButtonClicked();  $root.extensionPopup('click');">
+
+	<!-- ngIf: $root.activation.nextAction != 'activation_share' --><span ng-if="$root.activation.nextAction != 'activation_share'" class="upgrade_txt ng-binding ng-scope">Get Wikiwand</span><!-- end ngIf: $root.activation.nextAction != 'activation_share' -->
+	<!-- ngIf: $root.activation.nextAction == 'activation_share' -->
+	<i>
+		
+	</i>
+
+</li><!-- end ngIf: $root.activation.nextAction != '' -->
+<!--
+<a href="javascript:void(0);" ng-cloak ng-class="{active: hover}"
+	ng-mouseenter="hover = true"  ng-mouseleave="hover = false"
+	ng-click="activationButtonClicked();" class="upgrade_button activation_button_toolbar small {{::activation.action}}" >
+	<span>{{activation.text}}</span><i></i>
+</a>
+-->
+
+		</ul>
+
+
+
+
+	</nav><!-- end ngIf: !hideToolbar -->
+
+
+
+
+
+
+
+<!--*************************** content  *************************-->
+<div id="content" ng-class="{limit: $root.limitPage, active:!$root.tocShow}" class=" small_image">
+
+
+	<!--************ news Article section ************-->
+	
+
+
+	
+
+	
+	
+
+	<!--************ main_image ************-->
+		
+	<!--************ main_image ENDS ************-->
+	
+	
+
+	
+
+<article id="article_content_wrapper" ng-controller="ArticleContentController" ng-class="{withGist: $root.gistOn, minimal_margin: $root.minimalStyle, loaded: showArticleContents, narrow_column: $root.columnWidth=='narrow', wide_column: $root.columnWidth=='wide',
+	full_column: $root.columnWidth=='full', no_cover: articleMarginTop=='noCover', margin_initial: articleMarginTop=='initial', margin_low: articleMarginTop=='low', margin_middle: articleMarginTop=='middle', margin_high: articleMarginTop=='high'}" class="ng-scope narrow_column no_cover loaded">
+
+	
+
+	<section class="title_wrapper">
+
+		<h1 class="firstHeading">
+			<span class="">Structure algébrique</span>
+
+
+			
+
+			<a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=edit" target="_blank" class="title_icon edit_article edit_section tooltip_top tooltipstered"></a>
+
+			<!--<span class="title_icon geo-location tooltip_top" title="Browse map" ng-if="$root.map.exists" ng-class="{loading: $root.mapLoading}" onClick="loadGoogleMaps();"></span>
+
+			<span class="title_icon like_buttons unselectable" onclick="event.stopPropagation()"></span>-->
+
+			
+		</h1>
+
+
+		<!-- READ MORE SECTION-->
+		<nav id="read_more" ng-style="{opacity:showReadMore}" style="opacity: 1;">
+
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="25px">
+				<path d="M9.512,8.692L8.073,7.331C8.24,7.026,8.344,6.682,8.344,6.31c0-1.179-0.956-2.135-2.135-2.135	c-1.18,0-2.137,0.955-2.137,2.135s0.957,2.136,2.137,2.136c0.416,0,0.801-0.124,1.129-0.33l1.438,1.359	C8.993,9.188,9.238,8.924,9.512,8.692z"></path>
+				<path d="M15.603,8.522l1.912-3.22c0.188,0.054,0.384,0.093,0.589,0.093c1.182,0,2.138-0.956,2.138-2.136 c0-1.179-0.956-2.134-2.138-2.134c-1.18,0-2.135,0.955-2.135,2.134c0,0.586,0.236,1.115,0.618,1.501l-1.907,3.21	C15.008,8.119,15.316,8.305,15.603,8.522z"></path>
+				<path d="M22.199,11.217c-0.918,0-1.696,0.583-1.998,1.397l-2.657-0.262c0,0.02,0.003,0.039,0.003,0.059 c0,0.346-0.039,0.685-0.107,1.012l2.657,0.263c0.16,1.019,1.038,1.801,2.103,1.801c1.18,0,2.135-0.955,2.135-2.135	C24.334,12.173,23.379,11.217,22.199,11.217z"></path>
+				<path d="M14.865,19.612l-0.594-2.597c-0.336,0.117-0.685,0.201-1.049,0.243l0.596,2.596c-0.683,0.357-1.153,1.063-1.153,1.887 c0,1.18,0.954,2.134,2.137,2.134c1.179,0,2.134-0.954,2.134-2.134C16.937,20.584,16.015,19.646,14.865,19.612z"></path>
+				<path d="M7.896,13.441L4.587,14.55c-0.382-0.583-1.039-0.97-1.787-0.97c-1.18,0-2.135,0.955-2.135,2.135 c0,1.181,0.955,2.136,2.135,2.136c1.179,0,2.136-0.955,2.136-2.136c0-0.049-0.011-0.095-0.015-0.144l3.319-1.111	C8.092,14.138,7.973,13.798,7.896,13.441z"></path>
+				<circle cx="12.666" cy="12.411" r="3.662"></circle>
+			</svg>
+
+
+			<!-- ngIf: showTextEnglish -->
+
+			<!-- ngRepeat: readMoreArticle in readMoreArticles | limitTo:3 --><a class="read_more_link int-link ng-scope" ng-mouseenter="reportReadMore('hover')" ng-mousedown="reportReadMore('click')" ng-repeat="readMoreArticle in readMoreArticles | limitTo:3" href="http://www.wikiwand.com/fr/Ensemble" ng-class="{no_thumb: readMoreArticle.thumb == 'none'}" style="">
+				<span class="title ng-binding">Ensemble</span>
+			</a><!-- end ngRepeat: readMoreArticle in readMoreArticles | limitTo:3 --><a class="read_more_link int-link ng-scope" ng-mouseenter="reportReadMore('hover')" ng-mousedown="reportReadMore('click')" ng-repeat="readMoreArticle in readMoreArticles | limitTo:3" href="http://www.wikiwand.com/fr/Loi_de_composition" ng-class="{no_thumb: readMoreArticle.thumb == 'none'}" style="">
+				<span class="title ng-binding">Loi de composition</span>
+			</a><!-- end ngRepeat: readMoreArticle in readMoreArticles | limitTo:3 --><a class="read_more_link int-link ng-scope" ng-mouseenter="reportReadMore('hover')" ng-mousedown="reportReadMore('click')" ng-repeat="readMoreArticle in readMoreArticles | limitTo:3" href="http://www.wikiwand.com/fr/Alg%C3%A8bre_g%C3%A9n%C3%A9rale" ng-class="{no_thumb: readMoreArticle.thumb == 'none'}" style="">
+				<span class="title ng-binding">Algèbre générale</span>
+			</a><!-- end ngRepeat: readMoreArticle in readMoreArticles | limitTo:3 -->
+
+		</nav>
+
+
+		<h2>Un article de Wikipédia, l'encyclopédie libre.</h2>
+
+	</section>
+
+
+	
+
+	
+	<div id="fullContent">
+		
+
+
+<section class="article_content" id="overview"><div class="wiki_alert">
+
+
+
+Cet article ne cite pas suffisamment ses sources (janvier 2013).
+Si vous disposez d'ouvrages ou d'articles de référence ou si vous 
+connaissez des sites web de qualité traitant du thème abordé ici, merci 
+de compléter l'article en donnant les références utiles à sa 
+vérifiabilité et en les liant à la section «&nbsp;Notes et 
+références&nbsp;» (modifier l'article, comment ajouter mes 
+sources&nbsp;?).
+
+</div><p class="first-paragraph">En <a href="http://www.wikiwand.com/fr/Math%C3%A9matiques" title="Mathématiques" class="int-link">mathématiques</a>, plus précisément en <a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_g%C3%A9n%C3%A9rale" title="Algèbre générale" class="int-link">algèbre générale</a> et en <a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_universelle" title="Algèbre universelle" class="int-link">algèbre universelle</a>, une <b>structure algébrique</b> est un type particulier de <a href="http://www.wikiwand.com/fr/Structure_%28math%C3%A9matiques%29" title="" class="int-link">structure</a>. Sa spécificité par rapport aux autres types de structure est d'être formée d’un <a href="http://www.wikiwand.com/fr/Ensemble" title="Ensemble" class="int-link">ensemble</a> combiné à une ou plusieurs <a href="http://www.wikiwand.com/fr/Loi_de_composition" title="Loi de composition" class="int-link">lois de composition</a>, éventuellement complétées par un <a href="http://www.wikiwand.com/fr/Ordre_%28th%C3%A9orie_des_groupes%29" title="Ordre (théorie des groupes)" class="int-link">ordre</a> ou une <a href="http://www.wikiwand.com/fr/Espace_topologique" title="Espace topologique" class="int-link">topologie</a>, le tout satisfaisant un certain nombre d'<a href="http://www.wikiwand.com/fr/Axiome" title="Axiome" class="int-link">axiomes</a>.</p><p>En <a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_g%C3%A9n%C3%A9rale" title="Algèbre générale" class="int-link">algèbre générale</a>, les structures algébriques sont définies une à une et leurs propriétés sont étudiées séparément.</p><p>En <a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_universelle" title="Algèbre universelle" class="int-link">algèbre universelle</a>,
+ les structures algébriques sont étudiées de façon globale de façon à 
+obtenir un modèle unifié, d'où l'adjectif «&nbsp;universel&nbsp;». Par 
+exemple, qu'y a-t-il en commun entre la théorie des groupes, la théorie 
+des anneaux et la théorie des corps?</p><p>L'objectif de cet article est de dresser une liste des structures algébriques usuelles et de les classer.</p></section><section class="article_content" id="section_Structures_alg.C3.A9briques_pures"><h2><span class="mw-headline" id="Structures_alg.C3.A9briques_pures">Structures algébriques pures</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=1" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h2><p>Ces structures ne comportent que des lois de composition.</p><h3><span class="mw-headline" id="Structures_de_base">Structures de base</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=2" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><p>Elles ne comportent que des lois de composition internes. On peut notamment citer les structures de <a href="http://www.wikiwand.com/fr/Groupe_%28math%C3%A9matiques%29" title="Groupe (mathématiques)" class="int-link">groupe</a>, d’<a href="http://www.wikiwand.com/fr/Anneau_unitaire" title="Anneau unitaire" class="int-link">anneau</a> et de <a href="http://www.wikiwand.com/fr/Corps_commutatif" title="Corps commutatif" class="int-link">corps commutatif</a>.</p><h4><span class="mw-headline" id="Structures_.C3.A0_une_loi_interne">Structures à une loi interne</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=3" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Ce sont les structures algébriques les plus simples.</p><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Magma_%28math%C3%A9matiques%29" class="mw-redirect int-link" title="Magma (mathématiques)">Magma</a></b>&nbsp;: un ensemble muni d'une loi interne. Les magmas sont parfois appelés <i>groupoïdes</i>, mais ce terme de <a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie_groupo%C3%AFde" title="Catégorie groupoïde" class="int-link">groupoïde</a> a un autre sens en <a href="http://www.wikiwand.com/fr/Th%C3%A9orie_des_cat%C3%A9gories" title="Théorie des catégories" class="int-link">théorie des catégories</a>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Quasigroupe" title="Quasigroupe" class="int-link">Quasigroupe</a></b>&nbsp;: un <i>magma</i> tel que <i>Chaque élément du magma apparaît une et une seule fois dans chaque ligne et chaque colonne de la table de sa loi</i>.</li>
+</ul><dl>
+<dd>
+<dl>
+<dd>(Ainsi, la table de la loi d'un quasigroupe fini est un <a href="http://www.wikiwand.com/fr/Carr%C3%A9_latin" title="Carré latin" class="int-link">carré latin</a>).</dd>
+</dl>
+</dd>
+</dl><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Quasigroupe#Structures_d.C3.A9riv.C3.A9es" title="Quasigroupe" class="int-link">Boucle</a></b>&nbsp;: un <i>quasigroupe</i> unifère, c’est-à-dire possédant un <a href="http://www.wikiwand.com/fr/%C3%89l%C3%A9ment_neutre" title="Élément neutre" class="int-link">élément neutre</a>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Quasigroupe#Structures_d.C3.A9riv.C3.A9es" title="Quasigroupe" class="int-link">Moufang</a></b></li>
+<li><b><a href="http://www.wikiwand.com/fr/Demi-groupe" title="Demi-groupe" class="int-link">Demi-groupe</a></b>&nbsp;: un <i>magma</i> <a href="http://www.wikiwand.com/fr/Associativit%C3%A9" title="Associativité" class="int-link">associatif</a>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Mono%C3%AFde" title="Monoïde" class="int-link">Monoïde</a></b>&nbsp;: un <i>demi-groupe</i> <a href="http://www.wikiwand.com/fr/Unif%C3%A8re" class="mw-redirect int-link" title="Unifère">unifère</a>, c’est-à-dire possédant un <a href="http://www.wikiwand.com/fr/%C3%89l%C3%A9ment_neutre" title="Élément neutre" class="int-link">élément neutre</a>.
+<dl>
+<dd>Exemple&nbsp;: l'ensemble des entiers naturels muni de l'addition forme un <i>monoïde</i> commutatif.</dd>
+</dl>
+</li>
+<li><b><a href="http://www.wikiwand.com/fr/Groupe_%28math%C3%A9matiques%29" title="Groupe (mathématiques)" class="int-link">Groupe</a></b>&nbsp;: un <i>monoïde</i> où tout élément possède un <a href="http://www.wikiwand.com/fr/%C3%89l%C3%A9ment_sym%C3%A9trique" title="Élément symétrique" class="int-link">symétrique</a>; c’est aussi une <i>boucle</i> associative, donc un <i>quasigroupe</i> associatif et unifère.
+<dl>
+<dd>La table de sa loi respecte donc le lemme de réarrangement.</dd>
+</dl>
+</li>
+<li><b><a href="http://www.wikiwand.com/fr/Groupe_ab%C3%A9lien" title="Groupe abélien" class="int-link">Groupe abélien</a></b>&nbsp;: un <i>groupe</i> <a href="http://www.wikiwand.com/fr/Commutativit%C3%A9" class="mw-redirect int-link" title="Commutativité">commutatif</a>.</li>
+</ul><h4><span class="mw-headline" id="Ann.C3.A9lides">Annélides</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=4" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Ces structures comportent <b>deux</b> lois de composition internes. Il est d’usage courant de qualifier d’<b>additive</b> la première loi et de <b>multiplicative</b> la seconde. Autrement dit, la première loi est nommée <b>addition</b> (souvent notée ⊕ pour la distinguer de l’addition usuelle) et la seconde est nommée <b>multiplication</b> ou <b>produit</b> (souvent notée ⊗). La seconde loi est <a href="http://www.wikiwand.com/fr/Distributivit%C3%A9" title="Distributivité" class="int-link">distributive</a> bilatéralement (c’est-à-dire à gauche et à droite) par rapport à la première loi.</p><ul>
+<li>Anneau non associatif&nbsp;<a href="http://www.wikiwand.com/en/Nonassociative_ring" class="extiw wiki-link" title="en:Nonassociative ring"><span class="indicateur-langue" title="Équivalent de l’article « Anneau non associatif » dans une autre langue">(en)</span></a>&nbsp;: un ensemble muni d’une structure de <a href="http://www.wikiwand.com/fr/Groupe_ab%C3%A9lien" title="Groupe abélien" class="int-link">groupe abélien</a>
+ pour l’addition (qui est donc associative et commutative), la 
+multiplication ne vérifiant à priori que la distributivité sur 
+l’addition<sup id="cite_ref-1" class="reference"><a href="#citenote1" class="anch-link"><span class="cite_crochet">[</span>1<span class="cite_crochet">]</span></a></sup>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Pseudo-anneau" title="Pseudo-anneau" class="int-link">Pseudo-anneau</a></b>&nbsp;: un anneau non associatif dont la multiplication est en outre associative (structure de <a href="http://www.wikiwand.com/fr/Demi-groupe" title="Demi-groupe" class="int-link">demi-groupe</a> sur la multiplication).</li>
+<li><b><a href="http://www.wikiwand.com/fr/Demi-anneau" title="Demi-anneau" class="int-link">Demi-anneau</a></b>&nbsp;:
+ un ensemble muni de deux structures de monoïde et où la multiplication 
+est distributive par rapport à l’addition et où l’élément neutre de 
+l’addition est absorbant pour la multiplication<sup id="cite_ref-2" class="reference"><a href="#citenote2" class="anch-link"><span class="cite_crochet">[</span>2<span class="cite_crochet">]</span></a></sup>. Un demi-anneau est aussi appelé «&nbsp;semi-anneau&nbsp;».</li>
+<li><b><a href="http://www.wikiwand.com/fr/Dio%C3%AFde" title="Dioïde" class="int-link">Dioïde</a></b>&nbsp;: un demi-anneau dans lequel le <a href="http://www.wikiwand.com/fr/Pr%C3%A9ordre" title="Préordre" class="int-link">préordre</a> défini par l’addition est une <a href="http://www.wikiwand.com/fr/Relation_d%27ordre" title="Relation d'ordre" class="int-link">relation d'ordre</a>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Anneau_unitaire" title="Anneau unitaire" class="int-link">Anneau</a></b>
+ (unitaire)&nbsp;: un pseudo-anneau dont la loi multiplicative est en 
+outre unifère (c’est donc un monoïde pour la multiplication). C’est 
+encore un demi-anneau où l’addition crée une structure de groupe 
+abélien. Certains auteurs appellent «&nbsp;anneau&nbsp;» ce que l’on a 
+appelé «&nbsp;pseudo-anneau&nbsp;» ci-dessus et appellent «&nbsp;anneau 
+unitaire&nbsp;» ce que l’on a appelé «&nbsp;anneau&nbsp;» ici.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Anneau_commutatif" title="Anneau commutatif" class="int-link">Anneau commutatif</a></b>&nbsp;: un anneau dont la multiplication est en outre commutative.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Anneau_int%C3%A8gre" title="Anneau intègre" class="int-link">Anneau intègre</a></b>&nbsp;: un anneau commutatif non nul et sans <a href="http://www.wikiwand.com/fr/Diviseur_de_z%C3%A9ro" title="Diviseur de zéro" class="int-link">diviseur de zéro</a>, c’est-à-dire que tout élément non nul de l’anneau est <a href="http://www.wikiwand.com/fr/Loi_de_composition_interne#R.C3.A9guliers_et_d.C3.A9riv.C3.A9s" title="Loi de composition interne" class="int-link">régulier</a> pour la multiplication.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Corps_%28math%C3%A9matiques%29" title="Corps (mathématiques)" class="int-link">Corps</a></b>&nbsp;:
+ un anneau où l’élément neutre de l’addition n’est pas celui de la 
+multiplication et où tout élément non nul a un inverse multiplicatif. À 
+cause de l’influence anglaise (voir ci-dessous), un corps est souvent 
+considéré comme implicitement commutatif, alors que dans la tradition 
+française, il ne l’est pas nécessairement. Pour éviter toute ambiguïté, 
+il vaut mieux indiquer&nbsp;:
+<ul>
+<li>«&nbsp;<b><a href="http://www.wikiwand.com/fr/Corps_commutatif" title="Corps commutatif" class="int-link">corps commutatif</a></b>&nbsp;» pour un corps effectivement commutatif,</li>
+<li>«&nbsp;<b><a href="http://www.wikiwand.com/fr/Corps_gauche" title="Corps gauche" class="int-link">corps gauche</a></b>&nbsp;» pour un corps «&nbsp;en principe&nbsp;» non commutatif,</li>
+<li>«&nbsp;corps commutatif ou non&nbsp;», ou «&nbsp;corps quelconque&nbsp;», pour un corps non nécessairement commutatif.</li>
+</ul>
+</li>
+</ul><h3><span class="mw-headline" id="Structures_.C3.A0_op.C3.A9rateurs_externes">Structures à opérateurs externes</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=5" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><p>Ces structures peuvent être considérées d’un point de vue <i>algébrique</i> ou <i>géométrique</i>.</p><p>Algébriquement, une <b>structure externe</b> est un <i><a href="http://www.wikiwand.com/fr/Ensemble" title="Ensemble" class="int-link">ensemble</a></i> muni d’une <i><a href="http://www.wikiwand.com/fr/Loi_de_composition" title="Loi de composition" class="int-link">loi de composition</a> externe</i> sur une structure de base, et éventuellement d’une ou plusieurs <i>lois de composition interne</i>.</p><p>Géométriquement, c’est un ensemble <i>E</i> sur lequel <b>agit</b> un <i>ensemble-opérateur</i> <i>S</i>, encore appelé ensemble des <i>opérateurs</i> ou <i>scalaires</i>. Pour cela, l'ensemble <i>E</i> est muni d’une <b>action</b>, c’est-à-dire d’une application de <i>S</i> dans <i>E<sup>E</sup></i> (ensemble des transformations de <i>E</i>, c'est-à-dire des applications de <i>E</i> dans <i>E</i>).</p><p>La correspondance entre les actions et les lois externes est <a href="http://www.wikiwand.com/fr/Bijective" class="mw-redirect int-link" title="Bijective">bijective</a>; c’est pourquoi les lois externes sont souvent appelées <b>lois d’action</b>.</p><h4><span class="mw-headline" id="Espaces_homog.C3.A8nes">Espaces homogènes</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=6" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Ces structures ne comportent qu'une seule loi, qui est externe, un exemple est&nbsp;:</p><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Espace_homog%C3%A8ne" title="Espace homogène" class="int-link">Espace homogène</a></b>&nbsp;: ensemble sur lequel un groupe <i>G</i> <b>opère transitivement</b>,</li>
+</ul><h4><span class="mw-headline" id="Modulo.C3.AFdes">Moduloïdes</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=7" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Structures possédant à la fois une loi de composition interne et une loi de composition externe.</p><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Groupe_%C3%A0_op%C3%A9rateurs" title="Groupe à opérateurs" class="int-link">Groupe à opérateurs</a> (dans un ensemble)</b>&nbsp;: <i>groupe</i> muni d’une loi externe sur un ensemble d’opérateurs, <i><a href="http://www.wikiwand.com/fr/Distributivit%C3%A9" title="Distributivité" class="int-link">distributive</a></i> par rapport à la loi du groupe</li>
+<li><b><a href="http://www.wikiwand.com/fr/Module_sur_un_anneau" title="Module sur un anneau" class="int-link">Module sur un anneau</a></b>, on distingue les modules à gauche et à droite sur un anneau non commutatif.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Espace_vectoriel" title="Espace vectoriel" class="int-link">Espace vectoriel</a> (sur un corps)</b>&nbsp;: <i>module</i> sur un <i>corps</i> <i>K</i>, on doit distinguer également les espaces vectoriels à gauche et à droite si le corps n'est pas commutatif.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Espace_affine" title="Espace affine" class="int-link">Espace affine</a> (sur un corps)</b>&nbsp;: <i>espace homogène</i> d'un espace vectoriel sur un corps <i>K</i>.</li>
+</ul><h4><span class="mw-headline" id="Alg.C3.A8bres">Algèbres</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=8" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Structures possédant deux lois internes et une loi externe.</p><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_sur_un_anneau" title="Algèbre sur un anneau" class="int-link">Algèbre</a></b> (sur un anneau commutatif)&nbsp;: un module (ou un espace vectoriel) muni en plus d’une loi de composition interne bilinéaire.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_associative_sur_un_anneau" class="mw-redirect int-link" title="Algèbre associative sur un anneau">Algèbre associative</a></b>&nbsp;: une algèbre (sur un anneau commutatif) dont la multiplication est associative.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_sur_un_corps" title="Algèbre sur un corps" class="int-link">Algèbre sur un corps</a></b>&nbsp;: une algèbre sur un anneau commutatif qui, lui, est un corps.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_associative_sur_un_corps" title="" class="int-link">Algèbre associative sur un corps</a></b>&nbsp;: à la fois une algèbre associative et une algèbre sur un corps.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_unitaire" title="" class="int-link">Algèbre unitaire</a></b>&nbsp;: une algèbre ayant un élément neutre pour la multiplication.</li>
+<li><b>Algèbre commutative</b>&nbsp;: une algèbre dont la multiplication est commutative.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Lie" title="Algèbre de Lie" class="int-link">Algèbre de Lie</a></b>&nbsp;: un type particulier d’algèbre généralement non associative, importante dans l'étude des <a href="http://www.wikiwand.com/fr/Groupe_de_Lie" title="Groupe de Lie" class="int-link">groupes de Lie</a>.</li>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Jordan" title="Algèbre de Jordan" class="int-link">Algèbre de Jordan</a></b>&nbsp;: un type particulier d’algèbre généralement non associative.</li>
+</ul><h4><span class="mw-headline" id="Bialg.C3.A8bres"><a href="http://www.wikiwand.com/fr/Bialg%C3%A8bre" title="Bialgèbre" class="int-link">Bialgèbres</a></span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=9" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h4><p>Structures possédant deux lois internes, une loi externe, et une loi "duale" de l'une des deux lois internes.</p><ul>
+<li><b><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Hopf" title="Algèbre de Hopf" class="int-link">Algèbre de Hopf</a></b></li>
+</ul></section><section class="article_content" id="section_Structures_alg.C3.A9briques_ordonn.C3.A9es"><h2><span class="mw-headline" id="Structures_alg.C3.A9briques_ordonn.C3.A9es">Structures algébriques ordonnées</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=10" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h2><h3><span class="mw-headline" id="Groupes_ordonn.C3.A9s_et_anneaux_ordonn.C3.A9s">Groupes ordonnés et anneaux ordonnés</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=11" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><p>On s'intéresse ici aux structures algébriques compatibles avec une relation d'ordre.</p><ul>
+<li>Un monoïde ordonné est un <a href="http://www.wikiwand.com/fr/Mono%C3%AFde" title="Monoïde" class="int-link">monoïde</a> commutatif muni d'une <a href="http://www.wikiwand.com/fr/Relation_d%27ordre" title="Relation d'ordre" class="int-link">relation d'ordre</a> compatible avec l'opération, c'est-à-dire telle que <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>a</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>b</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a\leq b}</annotation>
+  </semantics>
+</math></span><img src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/41558abc50886fdf38817495b243958d7b3dd39b.svg" class="mwe-math-fallback-image-inline immediate" aria-hidden="true" style="vertical-align: -0.671ex; width:5.357ex; height:2.509ex;" alt="a\leq b" data-original="https://wikimedia.org/api/rest_v1/media/math/render/svg/41558abc50886fdf38817495b243958d7b3dd39b"></span> implique <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>a</mi>
+        <mi>c</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>b</mi>
+        <mi>c</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle ac\leq bc}</annotation>
+  </semantics>
+</math></span><img src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/2dd77306a687391107efb2ab53af7cad02020d4c.svg" class="mwe-math-fallback-image-inline immediate" aria-hidden="true" style="vertical-align: -0.671ex; width:7.392ex; height:2.509ex;" alt="ac\leq bc" data-original="https://wikimedia.org/api/rest_v1/media/math/render/svg/2dd77306a687391107efb2ab53af7cad02020d4c"></span> pour tout <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>a</mi>
+        <mo>,</mo>
+        <mi>b</mi>
+        <mo>,</mo>
+        <mi>c</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a,b,c}</annotation>
+  </semantics>
+</math></span><img src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/f13f068df656c1b1911ae9f81628c49a6181194d.svg" class="mwe-math-fallback-image-inline immediate" aria-hidden="true" style="vertical-align: -0.671ex; width:5.354ex; height:2.509ex;" alt="a,b,c" data-original="https://wikimedia.org/api/rest_v1/media/math/render/svg/f13f068df656c1b1911ae9f81628c49a6181194d"></span>. On définit de même un monoïde préordonné en remplaçant la relation d'ordre par une relation de préordre.</li>
+<li>Un <a href="http://www.wikiwand.com/fr/Groupe_ordonn%C3%A9" title="Groupe ordonné" class="int-link">groupe ordonné</a> est un monoïde ordonné qui est un groupe commutatif. Un groupe préordonné est un monoïde préordonné qui est un groupe.</li>
+<li>Un anneau ordonné est un anneau commutatif muni d'une relation 
+d'ordre pour laquelle il est groupe ordonné pour l'addition et tel que 
+le produit de deux éléments supérieurs ou égaux à 0 sont supérieurs ou 
+égaux à 0.</li>
+<li>Un <a href="http://www.wikiwand.com/fr/Corps_ordonn%C3%A9" title="Corps ordonné" class="int-link">corps ordonné</a> est un anneau ordonné qui est un corps.</li>
+</ul><h3><span class="mw-headline" id="Treillis">Treillis</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=12" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><p>Ensembles
+ munis de deux lois internes, qui peuvent aussi s’interpréter comme la 
+borne supérieure et la borne inférieure des couples au sens des <a href="http://www.wikiwand.com/fr/Relation_d%27ordre" title="Relation d'ordre" class="int-link">relations d'ordre</a>.</p><ul>
+<li><a href="http://www.wikiwand.com/fr/Treillis_%28ensemble_ordonn%C3%A9%29" title="Treillis (ensemble ordonné)" class="int-link">Treillis</a>&nbsp;:
+ un ensemble muni de deux lois de composition internes commutatives, 
+associatives et idempotentes satisfaisant la loi d’absorption.</li>
+<li><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Boole_%28structure%29" title="Algèbre de Boole (structure)" class="int-link">Algèbre de Boole</a>&nbsp;: un <i>treillis</i> borné, distributif et complémenté.</li>
+</ul></section><section class="article_content" id="section_Structures_alg.C3.A9briques_topologiques"><h2><span class="mw-headline" id="Structures_alg.C3.A9briques_topologiques">Structures algébriques topologiques</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=13" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h2><h3><span class="mw-headline" id="Structures_et_topologies.2C_distances.2C_normes_ou_produits_scalaires">Structures et topologies, distances, normes ou produits scalaires</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=14" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><p>Les structures algébriques peuvent également posséder des caractéristiques additionnelles <a href="http://www.wikiwand.com/fr/Topologie" title="Topologie" class="int-link">topologiques</a>.</p><div class="image_wrapper ">
+	<div class="img_container" ng-click="$root.galleryOpen($event)"><img class="immediate ntmb" data-w="440" data-h="294" data-fw="2474" data-fh="1655" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/440px-InfographieTopologie.png" data-original="//upload.wikimedia.org/wikipedia/commons/thumb/3/3c/InfographieTopologie.png/440px-InfographieTopologie.png" data-href="/wiki/Fichier:InfographieTopologie.png" alt="Résumé graphique de l'articulation des différents espaces (à utiliser avec précaution, certaines subtilités étant difficilement transposables sur un graphique)" width="220" height="147"><i class="img_enlarge"></i>
+		<a class="pin_btn tooltip_top tooltipstered" href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.wikiwand.com%2Ffr%2FStructure_alg%25C3%25A9brique&amp;media=%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3c%2FInfographieTopologie.png%2F440px-InfographieTopologie.png&amp;description=From%20Wikiwand:%20R%C3%A9sum%C3%A9%20graphique%20de%20l%26%2339%3Barticulation%20des%20diff%C3%A9rents%20espaces%20%28%C3%A0%20utiliser%20avec%20pr%C3%A9caution%2C%20certaines%20subtilit%C3%A9s%20%C3%A9tant%20difficilement%20transposables%20sur%20un%20graphique%29" target="_blank" onclick="event.stopPropagation();"></a>
+	</div>
+	<div class="caption">
+		Résumé graphique de l'articulation des différents espaces (à utiliser 
+avec précaution, certaines subtilités étant difficilement transposables 
+sur un graphique)
+	</div>
+</div><p>Ainsi, en allant du général au particulier (topologie &gt; distance &gt; norme &gt; produit scalaire)&nbsp;:</p><ul>
+<li>Une structure algébrique peut être munie d'une <i><b><a href="http://www.wikiwand.com/fr/Topologie" title="Topologie" class="int-link">topologie</a></b></i>, devenant ainsi un <i><a href="http://www.wikiwand.com/fr/Espace_topologique" title="Espace topologique" class="int-link">espace topologique</a></i> pour lequel chacune de ses lois externes et internes sont continues.
+<ul>
+<li>Un <b>demi-groupe topologique</b> est un <i>demi-groupe</i> muni d'une <i>topologie</i> rendant <i><a href="http://www.wikiwand.com/fr/Continuit%C3%A9_%28math%C3%A9matiques%29" title="Continuité (mathématiques)" class="int-link">continue</a></i> sa loi de composition interne.</li>
+<li>Un <b>monoïde topologique</b> est un <i>demi-groupe topologique</i> unifère. C'est aussi un <i>monoïde</i> muni d'une <i>topologie</i> rendant continue sa loi de composition interne.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Groupe_topologique" title="Groupe topologique" class="int-link">groupe topologique</a></b> est un <i>groupe</i> muni d'une <i>topologie</i> rendant continue sa loi de composition interne, ainsi que l'application qui à tout élément du groupe associe son inverse.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Anneau_topologique" title="Anneau topologique" class="int-link">anneau topologique</a></b> est un <i>anneau</i> muni d'une <i>topologie</i> pour laquelle le groupe additif sous-jacent est un <i>groupe topologique</i> et le monoïde multiplicatif sous-jacent est un <i>monoïde topologique</i>.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Corps_topologique" class="mw-redirect int-link" title="Corps topologique">corps topologique</a></b> est un <i>corps</i> muni d'une <i>topologie</i> qui en fait un <i>anneau topologique</i> et pour laquelle le groupe multiplicatif des éléments non nuls est un <i>groupe topologique</i>.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Corps_valu%C3%A9" title="Corps valué" class="int-link">corps valué</a></b> est un <i>corps</i> (commutatif ou non) muni d'une <i>valeur absolue</i>. C'est un <i>corps topologique</i> pour la topologie définie par cette valeur absolue.</li>
+<li>Un <b>module topologique</b> sur un <i>anneau topologique</i> <i>A</i> est un <i>module</i> sur <i>A</i> muni d'une <i>topologie</i> pour laquelle il est un <i>groupe topologique</i> et pour laquelle la loi externe est continue.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_vectoriel_topologique" title="Espace vectoriel topologique" class="int-link">espace vectoriel topologique</a></b> sur un <i>corps topologique</i> (par exemple le corps des nombres réels ou le corps des nombres complexes) est un <i>module topologique</i> sur ce <i>corps topologique</i>.</li>
+<li>Une <b>algèbre topologique</b> sur un <i><a href="http://www.wikiwand.com/fr/Anneau_topologique" title="Anneau topologique" class="int-link">anneau topologique</a> commutatif</i> <i>A</i> est une <i>algèbre</i> sur cet anneau topologique <i>A</i>, munie d'une <i>topologie</i> pour laquelle elle est un <i>module topologique</i> sur <i>A</i> et pour laquelle la multiplication est continue.</li>
+<li>Autre exemple, la structure algébrique peut être munie d'un <i>écart</i>, devenant un <i><a href="http://www.wikiwand.com/fr/Espace_pseudom%C3%A9trique" title="Espace pseudométrique" class="int-link">espace pseudométrique</a></i>&nbsp;:
+<ul>
+<li>Les <b><a href="http://www.wikiwand.com/fr/Espace_vectoriel_norm%C3%A9" title="Espace vectoriel normé" class="int-link">espaces semi-normés</a></b> (ou espaces vectoriels semi-normés) sont des <i>espaces vectoriels</i> réels ou complexes (ou sur un <a href="http://www.wikiwand.com/fr/Corps_valu%C3%A9" title="" class="int-link">corps valué</a> non discret) munis d'une <i><a href="http://www.wikiwand.com/fr/Semi-norme" title="Semi-norme" class="int-link">semi-norme</a></i>. Les <i>espaces semi-normés</i> sont des <i>espaces pseudométriques</i>,
+ car il est toujours possible de construire un écart à partir d’une 
+semi-norme&nbsp;: on prend comme écart entre deux vecteurs la semi-norme
+ de leur différence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Plus particulièrement, la structure algébrique peut être munie d'une <i><b><a href="http://www.wikiwand.com/fr/Distance_%28math%C3%A9matiques%29" title="Distance (mathématiques)" class="int-link">distance</a></b></i>, devenant un <i><a href="http://www.wikiwand.com/fr/Espace_m%C3%A9trique" title="Espace métrique" class="int-link">espace métrique</a></i>&nbsp;:
+<ul>
+<li>Un cas important est celui des espaces vectoriels possédant une <i><b><a href="http://www.wikiwand.com/fr/Norme_%28math%C3%A9matiques%29" title="Norme (mathématiques)" class="int-link">norme</a></b></i>, qui définit la «&nbsp;longueur&nbsp;» d’un vecteur&nbsp;:
+<ul>
+<li>Les <b><a href="http://www.wikiwand.com/fr/Espace_vectoriel_norm%C3%A9" title="Espace vectoriel normé" class="int-link">espaces normés</a></b> (ou espaces vectoriels normés) sont des <i>espaces vectoriels</i>
+ réels ou complexes (ou sur un corps valué non discret) munis d'une 
+norme. Les espaces normés sont des espaces métriques car il est toujours
+ possible de construire une distance à partir d’une norme&nbsp;: on 
+prend comme distance entre deux vecteurs la norme de leur différence.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_de_Banach" title="Espace de Banach" class="int-link">espace de Banach</a></b> est un <i>espace vectoriel normé</i> <a href="http://www.wikiwand.com/fr/Espace_complet" title="Espace complet" class="int-link">complet</a>.</li>
+</ul>
+</li>
+<li>Un <b>espace affine normé</b> est un espace affine attaché à un 
+espace vectoriel normé. C'est un espace métrique&nbsp;: il est possible 
+de définir la distance entre deux points comme la norme du vecteur qui 
+va du premier point au second.</li>
+<li>Les <b><a href="http://www.wikiwand.com/fr/Espace_pr%C3%A9hilbertien" title="Espace préhilbertien" class="int-link">espaces préhilbertiens</a></b> sont des <i>espaces vectoriels</i> réels ou complexes munis d'un <i><b><a href="http://www.wikiwand.com/fr/Produit_scalaire" title="Produit scalaire" class="int-link">produit scalaire</a></b></i>. Ces espaces vectoriels sont des <i>espaces normés</i>&nbsp;: la norme d'un vecteur y est la racine carrée de son carré scalaire. Quelques cas importants ont reçu un nom&nbsp;:
+<ul>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_euclidien" title="Espace euclidien" class="int-link">espace vectoriel euclidien</a></b> est un <i>espace vectoriel</i> préhilbertien réel de dimension finie, muni d’un <i><a href="http://www.wikiwand.com/fr/Produit_scalaire" title="Produit scalaire" class="int-link">produit scalaire</a></i> dont la <i><a href="http://www.wikiwand.com/fr/Forme_quadratique" title="Forme quadratique" class="int-link">forme quadratique</a></i> correspondante est définie positive. Un <b><a href="http://www.wikiwand.com/fr/Espace_euclidien" title="Espace euclidien" class="int-link">espace affine euclidien</a></b> est un <i><a href="http://www.wikiwand.com/fr/Espace_affine" title="Espace affine" class="int-link">espace affine</a></i>
+ attaché à un espace vectoriel euclidien, muni de la distance, dite 
+euclidienne, déduite de la norme euclidienne. Cet espace est celui de la
+ géométrie classique d’ <i><a href="http://www.wikiwand.com/fr/Euclide" title="Euclide" class="int-link">Euclide</a></i>.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_hermitien" title="Espace hermitien" class="int-link">espace vectoriel hermitien</a></b> est un <i>espace vectoriel</i> préhilbertien complexe de dimension finie.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_de_Hilbert" title="Espace de Hilbert" class="int-link">espace de Hilbert</a></b> (ou espace hilbertien) est un espace <i>préhilbertien</i> <i><a href="http://www.wikiwand.com/fr/Espace_complet" title="Espace complet" class="int-link">complet</a></i>. C’est donc un <i>espace de Banach</i> particulier. Les espaces vectoriels euclidiens et hermitiens sont des exemples d'espaces de Hilbert.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3><span class="mw-headline" id="Structures_et_g.C3.A9om.C3.A9trie_diff.C3.A9rentielle_et_alg.C3.A9brique">Structures et géométrie différentielle et algébrique</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=15" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h3><ul>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Groupe_de_Lie" title="Groupe de Lie" class="int-link">groupe de Lie</a></b> réel ou complexe est un groupe muni d'une structure de variété analytique réelle ou complexe (ou de <a href="http://www.wikiwand.com/fr/Vari%C3%A9t%C3%A9_diff%C3%A9rentielle" title="Variété différentielle" class="int-link">variété différentielle</a> dans le réel, c'est suffisant) pour laquelle la loi de composition est <a href="http://www.wikiwand.com/fr/Fonction_analytique" title="Fonction analytique" class="int-link">analytique</a> (ou indéfiniment <a href="http://www.wikiwand.com/fr/Diff%C3%A9rentiable" class="mw-redirect int-link" title="Différentiable">différentiable</a>
+ dans le cas réel), ainsi que l'application qui à un élément associe son
+ inverse. Les groupes de Lie réels et complexes sont des groupes 
+topologiques. Un <a href="http://www.wikiwand.com/fr/Groupe_topologique" title="Groupe topologique" class="int-link">groupe topologique</a>
+ est le groupe topologique sous-jacent à au plus un groupe de Lie réel, 
+et ainsi on peut dire, sans ambiguïté, que certains groupes topologiques
+ sont des groupes de Lie réels. On peut aussi définir les groupes de Lie
+ sur un corps valué complet commutatif <i>K</i> dont la valeur absolue est non triviale (en particulier sur le <a href="http://www.wikiwand.com/fr/Nombre_p-adique" title="Nombre p-adique" class="int-link">corps des nombres <i>p</i>-adiques</a>) en remplaçant les variétés analytiques réelles ou complexes par les variétés <i>K</i>-analytiques.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Espace_homog%C3%A8ne" title="Espace homogène" class="int-link">espace homogène de Lie</a></b> d'un <a href="http://www.wikiwand.com/fr/Groupe_de_Lie" title="Groupe de Lie" class="int-link">groupe de Lie</a> réel <i>G</i> est une <a href="http://www.wikiwand.com/fr/Vari%C3%A9t%C3%A9_diff%C3%A9rentielle" title="Variété différentielle" class="int-link">variété différentielle</a> <i>X</i>, munie d'un loi externe de <i>G</i> sur <i>X</i> qui est indéfiniment différentiable.</li>
+<li>Un <b><a href="http://www.wikiwand.com/fr/Groupe_alg%C3%A9brique" title="Groupe algébrique" class="int-link">groupe algébrique</a></b> sur un <a href="http://www.wikiwand.com/fr/Corps_commutatif" title="Corps commutatif" class="int-link">corps commutatif</a> algébriquement clos <i>K</i> est un <a href="http://www.wikiwand.com/fr/Groupe_%28math%C3%A9matiques%29" title="Groupe (mathématiques)" class="int-link">groupe</a> muni d'une structure de <a href="http://www.wikiwand.com/fr/Vari%C3%A9t%C3%A9_alg%C3%A9brique" title="Variété algébrique" class="int-link">variété algébrique</a> sur <i>K</i> pour laquelle la loi de composition est régulière, ainsi que l'application qui à un élément associe son inverse.</li>
+</ul></section><section class="article_content" id="section_Structures_alg.C3.A9briques_et_cat.C3.A9gories"><h2><span class="mw-headline" id="Structures_alg.C3.A9briques_et_cat.C3.A9gories">Structures algébriques et catégories</span><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=16" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a></h2><p>Toute structure algébrique possède sa propre notion d’<a href="http://www.wikiwand.com/fr/Homomorphisme" class="mw-redirect int-link" title="Homomorphisme">homomorphisme</a>, une <a href="http://www.wikiwand.com/fr/Fonction_%28math%C3%A9matiques%29" title="Fonction (mathématiques)" class="int-link">application</a> compatible avec ses lois de composition. En ce sens, toute structure algébrique définit une <a href="http://www.wikiwand.com/fr/Th%C3%A9orie_des_cat%C3%A9gories" title="Théorie des catégories" class="int-link">catégorie</a>.</p></section><section class="article_content collapsed_section" id="section_Notes_et_r.C3.A9f.C3.A9rences">
+
+<div class="unselectable collapse_title notes_title">
+	<h2><span class="mw-headline" id="Notes_et_r.C3.A9f.C3.A9rences">Notes et références</span><i class="collapse_arrow"></i><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=17" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a><i class="collapse_icon notes_icon"></i></h2>
+</div><div class="collapse hide"><div class="references-small decimal " style="">
+<div class="mw-references-wrap">
+<ol class="references">
+<li id="citenote1"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-1" class="anch-link">↑</a></span> <span class="reference-text">Raymond Raffin, <i>Anneaux non-associatifs</i>, exposé au séminaire Dubreil (1950-1951) <a rel="nofollow" class="external text ext-link" href="http://archive.numdam.org/article/SD_1950-1951__4__A4_0.pdf" target="_blank">disponible en ligne</a>.</span></li>
+<li id="citenote2"><span class="noprint renvois_vers_le_texte"><a href="#cite_ref-2" class="anch-link">↑</a></span> <span class="reference-text">cette dernière propriété disparait dans la définition de l’anneau car elle est automatiquement vérifiée.</span></li>
+</ol>
+</div>
+</div></div></section><section class="article_content collapsed_section" id="section_Bibliographie">
+
+<div class="unselectable collapse_title bib_title">
+	<h2><span class="mw-headline" id="Bibliographie">Bibliographie</span><i class="collapse_arrow"></i><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=18" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a><i class="collapse_icon bib_icon"></i></h2>
+</div><div class="collapse hide"><ul class=" ">
+<li><span class="ouvrage" id="Lang1976"><span class="ouvrage" id="Serge_Lang1976"><a href="http://www.wikiwand.com/fr/Serge_Lang" title="Serge Lang" class="int-link">Serge Lang</a>, <cite class="italique">Structures algébriques</cite>, Paris, <a href="http://www.wikiwand.com/fr/InterEditions" class="mw-redirect int-link" title="InterEditions">InterEditions</a>, <abbr class="abbr" title="collection">coll.</abbr>&nbsp;«&nbsp;Les cours de Serge Lang&nbsp;», <time>1976</time><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Structures+alg%C3%A9briques&amp;rft.place=Paris&amp;rft.pub=InterEditions&amp;rft.aulast=Lang&amp;rft.aufirst=Serge&amp;rft.date=1976&amp;rfr_id=info%3Asid%2Ffr.wikipedia.org%3AStructure+alg%C3%A9brique" id="COinS_24543"></span></span></span></li>
+</ul></div></section><section class="article_content collapsed_section" id="section_Voir_aussi">
+
+<div class="unselectable collapse_title see_also_title">
+	<h2><span class="mw-headline" id="Voir_aussi">Voir aussi</span><i class="collapse_arrow"></i><a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;veaction=edit&amp;section=19" target="_blank" onclick="event.stopPropagation()" class="edit_section tooltip_top tooltipstered"></a><i class="collapse_icon see_also_icon"></i></h2>
+</div><div class="collapse hide"><div class="autres-projets boite-grise boite-a-droite noprint js-interprojets ">
+<p class="titre">Sur les autres projets Wikimedia&nbsp;:</p>
+<ul class="noarchive plainlinks">
+<li class="wikiversity"><a href="https://fr.wikiversity.org/wiki/Structure_alg%C3%A9brique" class="extiw ext-link" title="v:Structure algébrique" rel="nofollow" target="_blank">Structure algébrique</a>, <span class="nowrap">sur <span class="project">Wikiversity</span></span></li>
+</ul>
+</div><ul class=" ">
+<li><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_g%C3%A9n%C3%A9rale" title="Algèbre générale" class="int-link">Algèbre générale</a></li>
+<li><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_universelle" title="Algèbre universelle" class="int-link">Algèbre universelle</a></li>
+<li><a href="http://www.wikiwand.com/fr/Knuth-Bendix_%28algorithme%29" class="mw-redirect int-link" title="Knuth-Bendix (algorithme)">Procédure de Knuth et Bendix</a></li>
+</ul><div class="navbox-container " style="clear:both;">
+<table class="navbox collapsible noprint autocollapse" data-autocollapse-group="palette" style="" id="collapsibleTable0">
+<tbody><tr>
+<th class="navbox-title" colspan="2" style=""><span class="collapseButton">[<a id="collapseButton0" href="#">hide</a>]</span>
+<div style="float:left; width:6em; text-align:left">
+<div class="noprint plainlinksneverexpand nowrap tnavbar" style="background-color:transparent; padding:0; font-size:xx-small; color:#000000;"><a href="http://www.wikiwand.com/fr/Mod%C3%A8le:Palette_Structures_alg%C3%A9briques" title="Modèle:Palette Structures algébriques" class="int-link"><abbr class="abbr" title="Voir ce modèle.">v</abbr></a>&nbsp;· <a class="external text wiki-link" href="http://fr.wikipedia.org/w/index.php?title=Mod%C3%A8le:Palette_Structures_alg%C3%A9briques&amp;action=edit"><abbr class="abbr" title="Modifier ce modèle. Merci de prévisualiser avant de sauvegarder.">m</abbr></a></div>
+</div>
+<span style="font-size:110%"><a class="mw-selflink selflink other-link">Structures algébriques</a></span></th>
+</tr>
+<tr>
+<th class="navbox-group" style="">Pures</th>
+<td class="navbox-list" style="">
+<table class="navbox-subgroup" style="">
+<tbody><tr>
+<th class="navbox-group" style="width:80px;"><a href="http://www.wikiwand.com/fr/Magma_%28alg%C3%A8bre%29" title="Magma (algèbre)" class="int-link">Magmas</a></th>
+<td class="navbox-list" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_%28math%C3%A9matiques%29" title="Groupe (mathématiques)" class="int-link">Groupe</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Quasigroupe" title="Quasigroupe" class="int-link">Quasigroupe</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Demi-groupe" title="Demi-groupe" class="int-link">Demi-groupe</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Mono%C3%AFde" title="Monoïde" class="int-link">Monoïde</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_ab%C3%A9lien" title="Groupe abélien" class="int-link">Groupe abélien</a></span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:80px;">Moduloïdes</th>
+<td class="navbox-list" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_vectoriel" title="Espace vectoriel" class="int-link">Espace vectoriel</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_affine" title="Espace affine" class="int-link">Espace affine</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_%C3%A0_op%C3%A9rateurs" title="Groupe à opérateurs" class="int-link">Groupe à opérateurs</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Module_sur_un_anneau" title="Module sur un anneau" class="int-link">Module sur un anneau</a></span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:80px;">Annélides</th>
+<td class="navbox-list navbox-even" style="text-align:left;;"><span class="nowrap">Anneau non associatif&nbsp;<a href="http://www.wikiwand.com/en/Nonassociative_ring" class="extiw wiki-link" title="en:Nonassociative ring"><span class="indicateur-langue" title="Équivalent de l’article « Anneau non associatif » dans une autre langue">(en)</span></a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Pseudo-anneau" title="Pseudo-anneau" class="int-link">Pseudo-anneau</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Demi-anneau" title="Demi-anneau" class="int-link">Demi-anneau</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Dio%C3%AFde" title="Dioïde" class="int-link">Dioïde</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Anneau_%28math%C3%A9matiques%29" title="Anneau (mathématiques)" class="int-link">Anneau</a> (<a href="http://www.wikiwand.com/fr/Anneau_unitaire" title="Anneau unitaire" class="int-link">unitaire</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Anneau_commutatif" title="Anneau commutatif" class="int-link">commutatif</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Anneau_sans_diviseur_de_z%C3%A9ro" title="Anneau sans diviseur de zéro" class="int-link">sans diviseur de zéro</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Anneau_int%C3%A8gre" title="Anneau intègre" class="int-link">intègre</a>)</span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Corps_%28math%C3%A9matiques%29" title="Corps (mathématiques)" class="int-link">Corps</a> (<a href="http://www.wikiwand.com/fr/Corps_commutatif" title="Corps commutatif" class="int-link">commutatif</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Corps_gauche" title="Corps gauche" class="int-link">gauche</a>)</span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:80px;"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_sur_un_anneau" title="Algèbre sur un anneau" class="int-link">Algèbre</a></th>
+<td class="navbox-list" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_associative" title="Algèbre associative" class="int-link">Algèbre associative</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_sur_un_corps" title="Algèbre sur un corps" class="int-link">Algèbre sur un corps</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_associative_sur_un_corps" title="Algèbre associative sur un corps" class="int-link">Algèbre associative sur un corps</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_unitaire" title="Algèbre unitaire" class="int-link">Algèbre unitaire</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Lie" title="Algèbre de Lie" class="int-link">Algèbre de Lie</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Jordan" title="Algèbre de Jordan" class="int-link">Algèbre de Jordan</a></span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:80px;">Autres</th>
+<td class="navbox-list navbox-even" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Alg%C3%A8bre_de_Hopf" title="Algèbre de Hopf" class="int-link">Algèbre de Hopf</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_homog%C3%A8ne" title="Espace homogène" class="int-link">Espace homogène</a></span></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<th class="navbox-group" style="">Enrichies</th>
+<td class="navbox-list navbox-even" style="">
+<table class="navbox-subgroup" style="">
+<tbody><tr>
+<th class="navbox-group" style="width:12em;">Espace topologique</th>
+<td class="navbox-list" style="text-align:left;;"><span class="nowrap">Semi-groupe topologique&nbsp;<a href="http://www.wikiwand.com/en/Topological_semigroup" class="extiw wiki-link" title="en:Topological semigroup"><span class="indicateur-langue" title="Équivalent de l’article « Semi-groupe topologique » dans une autre langue">(en)</span></a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap">Monoïde topologique&nbsp;<a href="http://www.wikiwand.com/en/Topological_monoid" class="extiw wiki-link" title="en:Topological monoid"><span class="indicateur-langue" title="Équivalent de l’article « Monoïde topologique » dans une autre langue">(en)</span></a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_topologique" title="Groupe topologique" class="int-link">Groupe topologique</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Anneau_topologique" title="Anneau topologique" class="int-link">Anneau topologique</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Corps_topologique" class="mw-redirect int-link" title="Corps topologique">Corps topologique</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Corps_valu%C3%A9" title="Corps valué" class="int-link">Corps valué</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap">Module topologique&nbsp;<a href="http://www.wikiwand.com/en/Topological_module" class="extiw wiki-link" title="en:Topological module"><span class="indicateur-langue" title="Équivalent de l’article « Module topologique » dans une autre langue">(en)</span></a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_vectoriel_topologique" title="Espace vectoriel topologique" class="int-link">Espace vectoriel topologique</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap">Algèbre topologique&nbsp;<a href="http://www.wikiwand.com/en/Topological_algebra" class="extiw wiki-link" title="en:Topological algebra"><span class="indicateur-langue" title="Équivalent de l’article « Algèbre topologique » dans une autre langue">(en)</span></a></span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:12em;"><a href="http://www.wikiwand.com/fr/Espace_m%C3%A9trique" title="Espace métrique" class="int-link">Espaces métriques</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_vectoriel_norm%C3%A9" title="Espace vectoriel normé" class="int-link">Espace vectoriel normé</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_de_Banach" title="Espace de Banach" class="int-link">Espace de Banach</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_pr%C3%A9hilbertien" title="Espace préhilbertien" class="int-link">Espace préhilbertien</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_euclidien" title="Espace euclidien" class="int-link">Espace euclidien</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_hermitien" title="Espace hermitien" class="int-link">Espace hermitien</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Espace_de_Hilbert" title="Espace de Hilbert" class="int-link">Espace de Hilbert</a></span></td>
+</tr>
+<tr>
+<th class="navbox-group" style="width:12em;">Géométrie différentielle et algébrique</th>
+<td class="navbox-list" style="text-align:left;;"><span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_de_Lie" title="Groupe de Lie" class="int-link">Groupe de Lie</a></span>&nbsp;<span style="font-weight:bold">·</span> <span class="nowrap"><a href="http://www.wikiwand.com/fr/Groupe_alg%C3%A9brique" title="Groupe algébrique" class="int-link">Groupe algébrique</a></span></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</div><ul id="bandeau-portail" class="bandeau-portail ">
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://www.wikiwand.com/fr/Portail:Alg%C3%A8bre" title="Portail de l’algèbre" class="int-link"><img alt="Portail de l’algèbre" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/24px-Arithmetic_symbols.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arithmetic_symbols.svg/36px-Arithmetic_symbols.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arithmetic_symbols.svg/48px-Arithmetic_symbols.svg.png 2x" data-file-width="210" data-file-height="210" class="immediate" data-original="//upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arithmetic_symbols.svg/24px-Arithmetic_symbols.svg.png" data-srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arithmetic_symbols.svg/36px-Arithmetic_symbols.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Arithmetic_symbols.svg/48px-Arithmetic_symbols.svg.png 2x" width="24" height="24"></a></span> <span class="bandeau-portail-texte"><a href="http://www.wikiwand.com/fr/Portail:Alg%C3%A8bre" title="Portail:Algèbre" class="int-link">Portail de l’algèbre</a></span></span></li>
+<li><span class="bandeau-portail-element"><span class="bandeau-portail-icone"><a href="http://www.wikiwand.com/fr/Portail:Math%C3%A9matiques" title="Portail des mathématiques" class="int-link"><img alt="Portail des mathématiques" src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/24px-Racine_carre_bleue.png" data-file-width="128" data-file-height="128" class="" data-original="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Racine_carr%C3%A9e_bleue.svg/24px-Racine_carr%C3%A9e_bleue.svg.png" data-srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Racine_carr%C3%A9e_bleue.svg/36px-Racine_carr%C3%A9e_bleue.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Racine_carr%C3%A9e_bleue.svg/48px-Racine_carr%C3%A9e_bleue.svg.png 2x" width="24" height="24"></a></span> <span class="bandeau-portail-texte"><a href="http://www.wikiwand.com/fr/Portail:Math%C3%A9matiques" title="Portail:Mathématiques" class="int-link">Portail des mathématiques</a></span></span></li>
+</ul><noscript class=" "><img src="//d3isfnyiuldmfu.cloudfront.net/img/pic-placeholder.gif" alt="" title="" width="1" height="1" style="border: none; position: absolute;" class="lazy" data-original="//fr.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1"></noscript></div></section><section class="article_content" id="section_navigation-section"><div><div class="unselectable collapse_title s_collapse_title [[classPrefix]_title" id="__related_cat_gories">
+	Catégories
+	<i class="collapse_arrow"></i>
+</div><div class="collapse hide"><div id="catlinks" class="catlinks " data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie:Accueil" title="Catégorie:Accueil" class="int-link">Catégories</a>&nbsp;: <ul><li><a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie:Structure_alg%C3%A9brique" title="Catégorie:Structure algébrique" class="int-link">Structure algébrique</a></li><li><a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie:Alg%C3%A8bre_g%C3%A9n%C3%A9rale" title="Catégorie:Algèbre générale" class="int-link">Algèbre générale</a></li><li><a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie:Vocabulaire_de_l%27alg%C3%A8bre" title="Catégorie:Vocabulaire de l'algèbre" class="int-link">Vocabulaire de l'algèbre</a></li><li><a href="http://www.wikiwand.com/fr/Cat%C3%A9gorie:Liste_en_rapport_avec_les_math%C3%A9matiques" title="Catégorie:Liste en rapport avec les mathématiques" class="int-link">Liste en rapport avec les mathématiques</a></li></ul></div></div></div></div></section>
+	</div>
+	
+
+	<!-- discover MORE SECTION -->
+	<!-- ngIf: (showDiscoverMore != 0) -->
+
+	
+
+
+	<section ng-show="$root.showArticleContents" class="page_copyright" ng-init="mainImage = articleData.mainImage" style="">
+		
+		This page is based on a <a ng-href="http://www.wikipedia.org" target="_blank" rel="nofollow" href="http://www.wikipedia.org/">Wikipedia</a> article written by
+		<a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=history" target="_blank" rel="nofollow">contributors</a> (<a ng-href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true" target="_blank" rel="nofollow" href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true">read</a>/<a href="https://fr.wikipedia.org/w/index.php?title=Structure_alg%C3%A9brique&amp;action=edit" target="_blank" rel="nofollow">edit</a>).<br>
+		Text is available under the
+		<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="license,nofollow">CC BY-SA 4.0</a> license; additional terms may apply.<br>
+		Images, videos and audio are available under their respective licenses.<br>
+
+		<!-- ngIf: mainImage.wikipediaPageFullUrl -->
+		
+		<div class="line"></div>
+	</section>
+
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+	
+
+
+			<!--************ wikiwand_footer ************-->
+			<footer class="wikiwand_footer" ng-show="$root.showArticleContents || !articleData.pageIsArticle" style="">
+
+
+				
+				<!-- ngIf: $root.activation.nextAction != '' --><div ng-if="$root.activation.nextAction != ''" class="ng-scope">
+
+					<!-- touch devices footer share -->
+					<!-- ngIf: $root.touchDevice -->
+
+					<!-- desktop upsale -->
+					<!-- ngIf: !$root.touchDevice --><div ng-if="!$root.touchDevice" class="desktop_upsale ng-scope">
+
+						<!-- desktop: rate -->
+						<!-- ngIf: $root.activation.extensionInstalled && $root.activation.nextAction == 'activation_rate' -->
+						<!-- desktop: share -->
+						<!-- ngIf: $root.activation.extensionInstalled && $root.activation.nextAction == 'activation_share' -->
+						<!-- desktop: install -->
+						<!-- ngIf: !$root.activation.extensionInstalled && $root.activation.nextAction == 'activation_install' --><div ng-if="!$root.activation.extensionInstalled &amp;&amp; $root.activation.nextAction == 'activation_install'" class="ng-scope">
+							<div class="footer_icon"></div>
+							<div class="h2">Enjoying Wikiwand?</div>
+							<div class="h3">Give good old Wikipedia a great new look:</div>
+							
+
+<a href="javascript:void(0);" ng-class="{active: btnHover}" ng-mouseenter="$root.activationHover('enter')" ng-mouseleave="$root.activationHover('leave')" ng-click="$root.reportClick('footer');$root.activationButtonClicked(''); $root.extensionPopup('click');" class="upgrade_button activation_install">
+	<span class="ng-binding">Get Wikiwand</span><i></i>
+</a>
+
+						</div><!-- end ngIf: !$root.activation.extensionInstalled && $root.activation.nextAction == 'activation_install' -->
+
+					</div><!-- end ngIf: !$root.touchDevice -->
+				</div><!-- end ngIf: $root.activation.nextAction != '' -->
+				
+
+
+
+				<ul class="social_links" ng-show="(!activation.extensionInstalled || activation.nextAction != 'activation_share') &amp;&amp; !$root.showContentRecommendations">
+					<li class="facebook"><a class="hover" href="https://www.facebook.com/wikiwandapp" target="_blank"></a></li>
+					<li class="twitter"><a class="hover" href="https://twitter.com/wikiwand" target="_blank"></a></li>
+					<li class="gplus"><a class="hover" href="https://plus.google.com/+Wikiwand" target="_blank"></a></li>
+					<li class="linkedin"><a class="hover" href="http://www.linkedin.com/company/wikiwand" target="_blank"></a></li>
+				</ul>
+
+
+				<ul class="footer_links">
+					<li><a href="http://www.wikiwand.com/">Home</a></li>
+					<li><a href="http://www.wikiwand.com/about">About</a></li>
+					<li><a href="http://www.wikiwand.com/press">Press</a></li>
+					<li><a href="http://www.wikiwand.com/sitemap">Site Map</a></li>
+					<li><a href="http://www.wikiwand.com/terms">Terms Of Service</a></li>
+					<li><a href="http://www.wikiwand.com/privacy">Privacy Policy</a></li>
+					<!--<li style="font-weight: 400"><a href="javascript:void(0);" ng-mouseenter="loadUserVoice()"  data-uv-trigger="contact">Send Feedback</a></li>-->
+				</ul>
+			</footer>
+			<!--************ wikiwand_footer ENDS ************-->
+
+
+
+		</div>
+		<!--**************************** content ENDS *****************************-->
+		
+
+
+		<!--************ gallery & lang  ************-->
+		
+
+		<!--************ TOC  ************-->
+		
+			
+
+<div id="toc_wrapper" ng-controller="TableOfContentsController" ng-swipe-left="$root.tocFold('swipeLeft')" ng-swipe-right="$root.tocFold('swipeRight')" ng-class="{active: $root.tocShow}" ng-show="$root.tocShow" class="ng-scope active">
+
+	<div id="toc_swipe" ng-show="$root.tocShow" ng-swipe-left="$root.tocFold('swipeLeft')" ng-swipe-right="$root.tocFold('swipeRight')" ng-click="$root.tocFold()"></div>
+
+	<div id="toc_btn">
+		<span>Structure algébrique</span><i id="content_icon" ng-click="tocFold(); $root.userClick(true, 'toolbar-toc-hide');"></i></div>
+	<aside id="wikiwand_toc" class="unselectable lang_fr" style="overflow: hidden;" tabindex="1">
+		
+		<ul class="toc_list">
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_overview">
+				<a href="#overview" ng-click="button.doClick($event)" class="">
+					Introduction
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special} active" ng-click="tocMobileFold()" id="toc_btn_Structures_alg.C3.A9briques_pures">
+				<a href="#Structures_alg.C3.A9briques_pures" ng-click="button.doClick($event)" class="active">
+					Structures algébriques pures
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+					<li id="toc_btn_Structures_de_base" class="active">
+						<a href="#Structures_de_base" ng-click="button.doClick($event)" class="active">
+							Structures de base
+						</a>
+					</li>
+					
+					<li id="toc_btn_Structures_.C3.A0_op.C3.A9rateurs_externes" class="active">
+						<a href="#Structures_.C3.A0_op.C3.A9rateurs_externes" ng-click="button.doClick($event)" class="">
+							Structures à opérateurs externes
+						</a>
+					</li>
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Structures_alg.C3.A9briques_ordonn.C3.A9es">
+				<a href="#Structures_alg.C3.A9briques_ordonn.C3.A9es" ng-click="button.doClick($event)" class="">
+					Structures algébriques ordonnées
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+					<li id="toc_btn_Groupes_ordonn.C3.A9s_et_anneaux_ordonn.C3.A9s" class="active">
+						<a href="#Groupes_ordonn.C3.A9s_et_anneaux_ordonn.C3.A9s" ng-click="button.doClick($event)" class="">
+							Groupes ordonnés et anneaux ordonnés
+						</a>
+					</li>
+					
+					<li id="toc_btn_Treillis" class="active">
+						<a href="#Treillis" ng-click="button.doClick($event)" class="">
+							Treillis
+						</a>
+					</li>
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Structures_alg.C3.A9briques_topologiques">
+				<a href="#Structures_alg.C3.A9briques_topologiques" ng-click="button.doClick($event)" class="">
+					Structures algébriques topologiques
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+					<li id="toc_btn_Structures_et_topologies.2C_distances.2C_normes_ou_produits_scalaires" class="active">
+						<a href="#Structures_et_topologies.2C_distances.2C_normes_ou_produits_scalaires" ng-click="button.doClick($event)" class="">
+							Structures et topologies, distances, normes ou produits scalaires
+						</a>
+					</li>
+					
+					<li id="toc_btn_Structures_et_g.C3.A9om.C3.A9trie_diff.C3.A9rentielle_et_alg.C3.A9brique" class="active">
+						<a href="#Structures_et_g.C3.A9om.C3.A9trie_diff.C3.A9rentielle_et_alg.C3.A9brique" ng-click="button.doClick($event)" class="">
+							Structures et géométrie différentielle et algébrique
+						</a>
+					</li>
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Structures_alg.C3.A9briques_et_cat.C3.A9gories">
+				<a href="#Structures_alg.C3.A9briques_et_cat.C3.A9gories" ng-click="button.doClick($event)" class="">
+					Structures algébriques et catégories
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Notes_et_r.C3.A9f.C3.A9rences">
+				<a href="#Notes_et_r.C3.A9f.C3.A9rences" ng-click="button.doClick($event)">
+					Notes et références
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Bibliographie">
+				<a href="#Bibliographie" ng-click="button.doClick($event)">
+					Bibliographie
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+				</ol>
+				
+			</li>
+
+			
+			<li class="{special:line.special}" ng-click="tocMobileFold()" id="toc_btn_Voir_aussi">
+				<a href="#Voir_aussi" ng-click="button.doClick($event)">
+					Voir aussi
+				</a>
+				
+				<ol class="sub_toc_list">
+					
+				</ol>
+				
+			</li>
+
+			
+		</ul>
+		
+	</aside>
+</div>
+
+		
+		
+
+
+
+
+<div ng-controller="BookmarkController" class="ng-scope">
+	<!-- gist -->
+	
+	<!-- bookmark -->
+	
+	
+<div id="bookmark_wrapper" ng-show="$root.showBookmarkFeed" ng-click="$event.stopPropagation()" class="ng-hide navbar_opaque">
+	<h4>
+		My Bookmarks
+		<!-- ngIf: $root.bookmarksProgressIndicator -->
+		<!-- ngIf: $root.user.logins.facebook.isActive==true -->
+	</h4>
+
+	<ul id="bookmarks" style="overflow: hidden; cursor: grab;" tabindex="0">
+
+
+		<!-- ngIf: bookmarks.length == 0 && !$root.bookmarksProgressIndicator && showBookmarkInstructionsLatch -->
+
+		<!-- ngIf: alreadyHave -->
+
+		<!-- ngIf: $root.showBookmarkFeed && $root.user.logins.facebook.isActive!=true -->
+
+
+		<!-- ngIf: showBookmarkThis && !$root.bookmarksProgressIndicator && showBookmarkThisLatch -->
+
+
+		<!-- ngRepeat: bookmark in bookmarks | orderBy: '-createTime' -->
+
+
+
+	</ul>
+
+	<div id="end_grad"></div>
+
+<div id="ascrail2000" class="nicescroll-rails" style="width: 5px; z-index: 70; cursor: grab; position: absolute; top: 46px; left: 300px; height: 577px; display: none;"><div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails" style="height: 5px; z-index: 70; top: 618px; left: 5px; position: absolute; display: none;"><div style="position: absolute; top: 0px; height: 5px; width: 0px; background-color: rgb(66, 66, 66); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
+
+	
+</div>
+
+<!--************ gallery ************-->
+<div id="gallery" ng-controller="GalleryController" ng-show="galleryActive" class="hide_before_angular ng-scope ng-hide" ng-class="{full: galleryFull}">
+	<div class="bg" ng-click="closeGallery()"></div>
+	<div id="gallery_bg">
+		<!--************ gallery image ************-->
+		<div id="gallery_img" class="unselectable" ng-class="{active: infoOpen}">
+
+			<div id="gallery_img_placeholder" ng-mouseenter="hoveredImg = true" ng-mouseleave="hoveredImg = false" class="loadThumb unselectable" ng-swipe-right="onPrevClick()" ng-swipe-left="onNextClick()">
+				<!-- ngIf: !current.bucket.loaded --><div id="img_loading" ng-if="!current.bucket.loaded" class="loaderAnim unselectable ng-scope"></div><!-- end ngIf: !current.bucket.loaded -->
+				<img ng-show="current.info.type == 'image'" class="gallery_main bucket unselectable ng-hide" ng-class="{active:current.bucket.loaded}" alt="">
+
+				<div ng-show="current.info.type == 'video'" class="gallery_main bucket video unselectable ng-hide" ng-class="{active:current.bucket.loaded}">
+					<div class="payload_container"></div>
+				</div>
+
+			</div>
+
+			<div class="gallery_arrow next unselectable" ng-show="current.index != items.length-1" ng-click="onNextClick()"><i></i></div>
+			<div class="gallery_arrow prev unselectable" ng-show="current.index != 0" ng-click="onPrevClick()"><i></i></div>
+
+			<div ng-mouseenter="hoveredImg = true" ng-mouseleave="hoveredImg = false" id="img_counter" class="ng-binding">
+				1 of 
+
+				<a ng-show="current.info.type == 'image'" ng-class="{active: hoveredImg}" class="pin_btn tooltip_top ng-hide tooltipstered" href="http://www.pinterest.com/pin/create/button/?url=http://wikiwand.com/fr/Structure_alg%C3%A9brique&amp;media=&amp;description=From%20Wikiwand:%20" target="_blank"></a>
+				<div class="report tooltip_top ng-hide tooltipstered" ng-show="current.info.type == 'image'" ng-class="{active: hoveredImg}" ng-click="$root.showCoverImageSuggestPopup=true;$root.showSuggestImageText1=true;$root.showSuggestImageText2=false;"></div>
+			</div>
+			<div id="img_title" ng-bind-html="current.title" class="ng-binding"></div>
+
+
+			<!--************ gallery thumbs ************-->
+			<div id="gallery_thumbs_con" class="unselectable">
+				<!--<div id="gallery_thumbs_pull" class="unselectable"></div>-->
+				<div id="gallery_thumbs_scroll" class="unselectable">
+					<ul id="gallery_thumbs" class="unselectable">
+						<!-- ngRepeat: item in items -->
+					</ul>
+				</div>
+			</div>
+
+
+			<!--************ gallery btns ************-->
+			<ul id="gallery_btn">
+				<li id="gallery_info_pull" ng-click="infoOpen = !infoOpen" ng-class="{active: infoOpen}"></li>
+				<li id="gallery_close" ng-click="closeGallery()"></li>
+				<li id="full_screen" ng-click="toggleFullScreen()" ng-class="{active:fullScreenActive, unactive:!fullScreenActive}" class="unactive"></li>
+			</ul>
+		</div>
+		<!--************ gallery info  ************-->
+		<div id="gallery_info" ng-swipe-right="infoOpen = false" ng-show="infoOpen" class="ng-hide">
+			<div id="gallery_info_wrap">
+				<!-- ngIf: current.title -->
+                <ul>
+					<li ng-show="current.info.description" class="unselectable img_desc ng-hide"><i></i>
+						<div class="description_text ng-binding" ng-bind-html="current.info.descriptionSafe"></div>
+					</li>
+
+					<li class="img_date ng-binding ng-hide" ng-show="current.info.dateOriginal"><i></i>Date: Unknown</li>
+					<li class="img_date ng-binding" ng-show="!current.info.dateOriginal"><i></i>Date: Unknown</li>
+					<li ng-show="current.info.license.artist" class="with-child unselectable img_credit ng-hide" ng-click="subInfoOpen1 = !subInfoOpen1"><i></i>Credit: <span ng-bind-html="current.info.license.artist" class="ng-binding"></span>
+						<ul ng-show="subInfoOpen1" class="ng-hide">
+							<li class="ng-binding">Uploaded by:  on </li>
+							<li><span ng-bind-html="current.info.license.credit" class="ng-binding"></span></li>
+						</ul>
+					</li>
+					<li ng-show="current.info.license.url" class="img_license ng-hide"><i></i>License: <a href="" target="_blank" class="ng-binding">Unknown</a></li>
+					<li ng-show="!current.info.license.url" class="img_license ng-binding"><i></i>License: Unknown</li>
+					<li class="img_original"><i></i><a target="_blank" href="">View file on Wikipedia</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div ng-show="$root.showCoverImageSuggestPopup" class="report_popup_wrapp suggest ng-hide">
+		<div class="bg" ng-click="$root.showCoverImageSuggestPopup = false"></div>
+		<div class="report_popup">
+
+			<div ng-show="$root.showSuggestImageText1" class="ng-hide">
+				<h3>Suggest as cover photo</h3>
+				<p>Would you like to suggest this photo as the cover photo for this article?</p>
+				<a href="" target="_blank" ng-click="$root.suggestImage($event,'recommended',current.original.url);">Yes, this would make a good choice</a>
+				<a href="" target="_blank" ng-click="$root.showCoverImageSuggestPopup=false">No, never mind</a>
+			</div>
+
+			<div ng-show="$root.showSuggestImageText2" class="ng-hide">
+				<h3>Thank you for helping!</h3>
+				<br>
+				<p>Your input will affect cover photo selection, along with input from other users.<br>
+			</p></div>
+			<div class="ex" ng-click="$root.showCoverImageSuggestPopup = false"></div>
+		</div>
+	</div>
+
+
+</div>
+<!--************ gallery ENDS ************-->
+
+
+<!-- fixed_btns at the bottom -->
+
+<div id="fixed_btns">
+
+	<!-- audio_player  -->
+	<div id="audio_player" class="unselectable"><i class="unselectable"></i>
+
+		<div class="unselectable"></div>
+		<span class="listen hide">Listen to this article</span></div>
+
+
+	
+
+	<!-- ngIf: $root.showVidReport -->
+
+
+	
+
+
+</div>
+
+
+
+
+<script>
+	if (!precache_from_extension) {
+		if (typeof (analytics) != 'undefined') {
+			analytics.gaVirtualPageView('virtualpageview/impression-article-page');
+		}
+	} else {
+		if (typeof (analytics) != 'undefined') {
+			analytics.gaVirtualPageView('virtualpageview/iframe-precache-article');
+		}
+	}
+</script>
+
+
+
+
+
+<!--*************************** search  *************************-->
+
+
+
+<!--*************************** search  *************************-->
+<div id="wikiwand_search" ng-init="initSearch()" ng-controller="ArticleSearchControllerRev2" ng-show="$root.showSearch" class="ng-scope ng-hide">
+	<div class="bg darkBlack" ng-click="$root.openSearch('close')"></div>
+
+
+	<div id="search_list" ng-class="{on: search.query.length}">
+
+		<input id="queryinput" autocomplete="off" class="toolbar-search ng-pristine ng-untouched ng-valid selectedResult" ng-class="{selectedResult: noSelection, loading:waiting}" ng-model="search.query" ng-keyup="testKeyboard($event)" placeholder="Rechercher sur Wikipédia" type="text">
+
+		<div id="articleSearch" ng-show="search.query.length" class="ng-hide">
+
+			<ul class="results-container ng-hide" ng-show="search.results.length">
+				<!-- ngRepeat: result in search.results -->
+			</ul>
+
+			<!-- ngIf: noResults && search.query && !waiting -->
+			<a ng-show="search.query &amp;&amp; !waiting" class="searchResult containing ng-hide" href="http://www.wikiwand.com/en/?fullSearch=true" ng-class="{selectedResult:fullSearch}">
+
+				<span class="value">Search for articles containing: <i class="ng-binding"></i></span>
+			</a>
+		</div>
+		<!-- ngIf: !$root.touchDevices --><img src="Structure%20alg%C3%A9brique%20-%20Wikiwand_files/search_ctrl.svg" ng-if="!$root.touchDevices" id="search-hint" style="display: block; margin: 20px auto" class="ng-scope"><!-- end ngIf: !$root.touchDevices -->
+
+	</div>
+
+
+
+
+	<div id="search_description">
+
+	</div>
+
+</div>
+<!--*************************** search ENDS *************************-->
+
+<!--*************************** search ENDS *************************-->
+
+<!-- ngIf: $root.loadVariousPopups --><!-- ngInclude: '/api/various_popups' --><popups ng-if="$root.loadVariousPopups" ng-include="'/api/various_popups'" class="ng-scope">
+
+<!--************ html5 popup************-->
+<div class="html5-only hide_before_angular ng-scope ng-hide" ng-class="{active: !canvasSupported}" ng-show="!canvasSupported">
+	<p>This browser is not supported by Wikiwand :( <br>Wikiwand requires a browser with modern capabilities in order to provide you with the best reading experience.<br>Please download and use one of the following browsers:</p>
+	<ul>
+		<li><a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome 11+</a></li>
+		<li><a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox 4+</a></li>
+		<li><a href="http://support.apple.com/en-us/HT202908" target="_blank">Safari 6.1.2+</a></li>
+		<li><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">Internet Explorer 10+</a></li>
+	</ul>
+</div>
+<!--************ html5 popup ENDS************-->
+
+
+<!--************ html5 popup************-->
+<div class="html5-only hide_before_angular ng-scope" style="display:none" id="httpsEverywhereNotice">
+	<p> An extension you use may be preventing Wikiwand articles from loading properly.<br><br><br>
+		If you're using <b>HTTPS Everywhere</b> or you're unable to access any article on Wikiwand, please consider switching to HTTPS (http<b>s</b>://www.wikiwand.com).</p>
+	<ul>
+		<li><a href="javascript:void(0)" onclick="window.location.href = 'https://' + window.location.href.replace('http://','');" target="_self">Switch Wikiwand to HTTPS</a></li>
+
+	</ul>
+</div>
+
+<div class="html5-only hide_before_angular ng-scope" style="display:none" id="adblockNotice">
+	<p> An extension you use may be preventing Wikiwand articles from loading properly.<br><br>
+		If you are using an <b>Ad-Blocker</b>, it might have mistakenly blocked our content.
+		You will need to temporarily disable your Ad-blocker to view this page.
+</p></div>
+<!--************ html5 popup ENDS************-->
+
+
+<!--************refresh notice - this shows when the article has been updated since caching time ************-->
+
+<span id="global-notice" class="hide_before_angular ng-scope ng-hide" ng-show="showGlobalNotice">
+	<span ng-bind-html="globalNoticeText" class="ng-binding"></span><span class="close" ng-click="hideGlobalNotice()">✕</span>
+</span>
+
+<div id="refresh-notice" class="hide_before_angular ng-scope ng-hide" ng-show="showRefreshNotice" ng-click="reloadArticle();" ng-class="{active: showRefreshNotice}">
+	This article was just edited, click to reload <i></i>
+</div>
+
+<div id="delete-notice" class="hide_before_angular ng-scope ng-hide" ng-show="showDeletedNotice" ng-click="showDeletedNotice = false" ng-class="{active: showDeletedNotice}">
+	This article has been deleted on Wikipedia (<a href="https://fr.wikipedia.org/wiki/Structure_alg%C3%A9brique?oldformat=true" onclick="if(event.stopPropagation) {event.stopPropagation();} event.cancelBubble=true;" target="_blank">Why?</a>) <span class="close">✕</span>
+</div>
+
+
+
+	<!--************ extension pop up ************-->
+	<!-- ngIf: $root.extPopShow -->
+	<!--************ extension pop up ENDS ************-->
+
+	<!--************ install dialog  ************-->
+
+	<!-- ngIf: $root.showInstall -->
+
+	<!--************ tell a friend dialog ************-->
+
+	<!-- ngIf: $root.activation.showShare -->
+
+
+<!-- ios blur screen on search focus-->
+<!-- ngIf: $root.iosFocus -->
+
+
+<!--************ lang ************-->
+<div id="lang" class="hide_before_angular ng-scope ng-hide" ng-show="$root.langOpenArticle" ng-swipe-left="$root.$broadcast('hideAllArticleLanguagesFunc')" ng-controller="AllAvailableLanguagesController">
+	<input id="langCode" value="" type="hidden">
+	<div class="bg" ng-click="$root.$broadcast('hideAllArticleLanguagesFunc')"></div>
+	<ul id="lang-list">
+		<!-- ngRepeat: lang in articleLanguageLinks | filter:filterUnrecognizedLangs | filter:filterByQueryArticle -->
+	</ul>
+
+	<div id="lang_search">
+		<div id="lang_search_wrap">
+			<input id="lang_input" ng-model="filterQuery" placeholder="Search languages" class="ng-pristine ng-untouched ng-valid">
+		</div>
+	</div>
+</div>
+
+
+<div id="p-lang" class="hide_before_angular ng-scope ng-hide" ng-show="$root.langOpenWikipedia" ng-controller="AllAvailableLanguagesController">
+	<input id="p-langCode" value="" type="hidden">
+	<div class="bg" ng-click="$root.$broadcast('hideAllWikipediaLanguagesFunc')"></div>
+
+	<div id="p-lang-wrapper">
+		<div id="p-lang_list">
+			<h4>Your preferred languages</h4>
+			<ul>
+				<!-- ngRepeat: lang in favoriteLanguages -->
+			</ul>
+		</div>
+		<div id="p-lang_search">
+			<h4>All languages</h4>
+			<input ng-model="filterQueryWikipedia" placeholder="Search language" class="ng-pristine ng-untouched ng-valid">
+			<ul>
+				<!-- ngRepeat: lang in wikipediaLanguages | filter:filterUnrecognizedLangs | filter:filterByQueryWikipedia -->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- ngIf: $root.showFollow -->
+
+<!--
+<div id="citation_pop"  ng-mouseenter="citationHovered = true" ng-mouseleave="citationHovered = false" ng-show="$root.showSharePop" ng-class="{active: $root.showShareAnim, long: $root.shareTooLong, hovered: citationHovered}">
+
+	<span ng-show="$root.showSharePop && !citationHovered && !$root.shareTooLong">
+		<i></i> Link to selection
+	</span>
+
+	<ul class="citation_share" ng-show="citationHovered && !$root.shareTooLong" ng-class="{active: citationHovered}">
+		<li><a id="linkshare" class="share-link" ng-mousedown="$root.linkShare()"></a></li>
+		<li><a id="fbshare" class="share-facebook" ng-mousedown="$root.facebookShare()"></a></li>
+		<li><a id="gplusshare" class="share-gplus" ng-mousedown="$root.gplusShare()"></a></li>
+		<li><a id="twittshare" class="share-twitt" ng-mousedown="$root.twittShare()"></a></li>
+		<li><a id="gmailshare" class="share-gmail" ng-mousedown="$root.gmailShare()"></a></li>
+	</ul>
+
+	<span ng-show="$root.shareTooLong">
+		Selection too long for citation
+	</span>
+
+</div>
+-->
+
+<div ng-show="$root.showCoverImageReportPopup" class="report_popup_wrapp hide_before_angular ng-scope ng-hide">
+	<div class="bg" ng-click="$root.showCoverImageReportPopup = false"></div>
+	<div class="report_popup">
+
+		<div ng-show="$root.showReportCoverImageText1" class="ng-hide">
+			<h3>Our magic isn't perfect</h3>
+
+			<p>You can help our automatic cover photo selection by reporting an unsuitable photo.</p>
+			<a href="" target="_blank" ng-click="$root.reportImage($event,'disturbing',articleData.mainImage.full.originalUrl)">This photo is visually disturbing</a>
+			<a href="" target="_blank" ng-click="$root.reportImage($event,'irrelevant',articleData.mainImage.full.originalUrl)">This photo is not a good choice</a>
+		</div>
+
+		<div ng-show="$root.showReportCoverImageText2" class="ng-hide">
+			<h3>Thank you for helping!</h3>
+			<br>
+			<p>Your input will affect cover photo selection, along with input from other users.<br>
+		</p></div>
+		<div class="ex" ng-click="$root.showCoverImageReportPopup = false"></div>
+	</div>
+</div>
+
+
+<div ng-show="$root.map.showMap" ng-controller="MapController" ng-init="initializeMapController();" id="map_wrapper" class="hide_before_angular ng-scope ng-hide">
+	<div class="bg" ng-click="$root.map.showMap = false; $root.mapOut();"></div>
+	<div id="map_canvas" ng-class="{active: $root.map.showMap}">
+	</div>
+</div>
+
+
+</popups><!-- end ngIf: $root.loadVariousPopups -->
+<!--************ follow dialog ************-->
+
+
+	
+
+
+	
+
+
+	</div>
+<div id="error_message" style="display:none;width:500px;padding: 20px;margin: 30vh auto;font-size:16px;text-align:center;">
+<h1>Oh no, there's been an error</h1>
+Please help us solve this error by emailing us at <a href="http://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@wikiwand.com&amp;su=Encountered%20an%20error%20on%20Wikiwand" target="_blank">support@wikiwand.com</a><br>
+Let us know what you've done that caused this error, what browser you're
+ using, and whether you have any special extensions/add-ons installed.<br>
+Thank you!
+</div>
+
+
+
+
+
+
+
+
+<div id="ascrail2001" class="nicescroll-rails" style="padding-left: 2px; padding-right: 2px; width: 7px; z-index: auto; cursor: default; position: fixed; top: 50px; left: 0px; height: 673px; display: none;"><div style="position: relative; top: 0px; float: right; width: 3px; height: 0px; background-color: rgb(66, 66, 66); border: medium none; background-clip: padding-box; border-radius: 4px;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails" style="height: 3px; z-index: auto; top: 720px; left: 0px; position: fixed; cursor: default; display: none;"><div style="position: absolute; top: 0px; height: 3px; width: 0px; background-color: rgb(66, 66, 66); border: medium none; background-clip: padding-box; border-radius: 4px;"></div></div></body></html>
