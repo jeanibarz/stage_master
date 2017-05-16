@@ -1243,7 +1243,8 @@ C'est toutefois possible en effectuant une transformation non-linéaire
 \end_inset
 
  minimal pour pouvoir représenter le système.
- Dans le cas du système étudié la transformation sera donc définie par :
+ Dans le cas du système étudié, un espace vectoriel de dimension 8 suffit
+ et la transformation est donc définie par :
 \begin_inset Formula 
 \[
 \left(\begin{bmatrix}X_{0}\\
@@ -1263,7 +1264,6 @@ h
 b\times X_{0}\\
 c\times X_{1}\\
 d\times X_{1}\\
-e\times X_{2}\\
 f\times X_{2}\\
 e\times X_{3}\\
 g\times X_{3}\\
@@ -1292,16 +1292,15 @@ X_{1}[k]\\
 X_{2}[k]\\
 X_{3}[k]\\
 X_{4}[k]
-\end{bmatrix}+\begin{bmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1\\
-1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0\\
-0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0\\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1
+\end{bmatrix}+\begin{bmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 1
 \end{bmatrix}\begin{bmatrix}a\times X_{0}\\
 b\times X_{0}\\
 c\times X_{1}\\
 d\times X_{1}\\
-e\times X_{2}\\
 f\times X_{2}\\
 e\times X_{3}\\
 g\times X_{3}\\
@@ -1391,7 +1390,32 @@ on en déduit que le nombre de coefficients non-nuls est égal à
 
 \begin_layout Itemize
 la dimension de l'espace vectoriel nécessaire pour les entrées est égal
- au nombre d'arcs (8 ici).
+ au nombre d'arcs représentés 
+\color magenta
+(d'un état 
+\begin_inset Formula $i$
+\end_inset
+
+ vers un état 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, comment on peut qualifier les arcs des 
+\begin_inset Quotes fld
+\end_inset
+
+boucles locales
+\begin_inset Quotes frd
+\end_inset
+
+ i.e.
+ des évènements ignorés ?)
+\color inherit
+(8 ici).
 \end_layout
 
 \begin_layout Standard
