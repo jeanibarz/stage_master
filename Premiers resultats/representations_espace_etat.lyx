@@ -1,0 +1,1316 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Dynamical systems on monoids : toward a general theory of deterministic
+ systems and motion
+\end_layout
+
+\begin_layout Section*
+From Marco Giunti, Claudio Mazzola
+\end_layout
+
+\begin_layout Standard
+Dynamical systems are mathematical structures whose aim is to describe the
+ evolution of an arbitrary deterministic system through time, which is typically
+ modeled as (a subset of) the integers or the real numbers.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Examples of dynamical systems :
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Discrete state space
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continuous state space
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Discrete time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Turing machines, cellular automata
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Systems specified by difference equations (e.g.
+ iterated mappings on 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continuous time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+???
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Systems specificied by ODE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Differential Equations, Dynamical Systems & An introduction to Chaos
+\end_layout
+
+\begin_layout Section*
+From Morris W.
+ Hirsch, Stephen Smale and Robert L.
+ Devaney
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+First order equations :
+\end_layout
+
+\begin_layout Itemize
+Continuous dynamical systems (differential equations) -- (Poincaré map)
+ --> Discrete dynamical systems (iterated functions) [p.26]
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Planar linear systems :
+\bar default
+ (a.k.a systems of differential equations)
+\begin_inset Formula 
+\[
+\begin{cases}
+x_{1}^{'} & =f_{1}(t,x_{1},x_{2},...,x_{n})\\
+x_{2} & =f_{2}(t,x_{1},x_{2},...,x_{n})\\
+ & \vdots\\
+x_{n}^{'} & =f_{n}(t,x_{1},x_{2},...,x_{n})
+\end{cases}\equiv X'(t)=F(t,X)=\begin{pmatrix}f_{1}(t,x_{1},x_{2},...,x_{n})\\
+\vdots\\
+f_{n}(t,x_{1},x_{2},...,x_{n})
+\end{pmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{j}$
+\end_inset
+
+ are real-valued functions of the 
+\begin_inset Formula $n+1$
+\end_inset
+
+ variables 
+\begin_inset Formula $x_{1},x_{2},...,x_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f_{j}$
+\end_inset
+
+ are 
+\begin_inset Formula $C^{\infty}$
+\end_inset
+
+ functions : this means that the partial derivatives of all orders of the
+ 
+\begin_inset Formula $f_{j}$
+\end_inset
+
+ exist and are continuous.
+\end_layout
+
+\begin_layout Itemize
+Solution in the form 
+\begin_inset Formula $X(t)=\left(x_{1}(t),x_{2}(t),...,x_{n}(t)\right)$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $X'(t)=F(t,X(t))$
+\end_inset
+
+ : existence of solution ? unicity of solution ?
+\end_layout
+
+\begin_layout Itemize
+The system is called autonomous if none of the 
+\begin_inset Formula $f_{j}$
+\end_inset
+
+ depends on 
+\begin_inset Formula $t$
+\end_inset
+
+, so the system becomes 
+\begin_inset Formula $X'=F(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Autonomous systems in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ : 
+\begin_inset Formula $\begin{cases}
+X'(t)=F(X,Y)\\
+Y'(t)=G(X,Y)
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Part*
+Wikipédia
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Keywords :
+\bar default
+ dynamic dependence, input-output (IO), representation, linear parameter-varying
+ (LPV) systems, state-space (SS) representation, discrete time systems,
+ linear systems, state-space methods.
+\end_layout
+
+\begin_layout Description
+PWA Piecewise affine
+\end_layout
+
+\begin_layout Description
+IO Input-output
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Time series :
+\bar default
+ série d'échantillons de données indexés dans un ordre temporel.
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Ordinary Differentiel Equations (ODE) :
+\bar default
+ a differential equation is a result that describes dynamically changing
+ phenomena, evolution, and variation [wiki].
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+explicit ODE :
+\bar default
+ 
+\begin_inset Formula $F\left(x,y,y',...,y^{(n-1)}\right)=y^{(n)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+N-order systems ODE :
+\bar default
+ can be converted to equivalent first order systems by simple reformulation.
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+First-order ODE :
+\bar default
+ ODE where only up to first derivatives appears.
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Autonomous :
+\bar default
+ a differential equation not depending on x
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Linear :
+\bar default
+ a differential equation is said to be linear if F can be written as a linear
+ combination of the derivatives of y : 
+\begin_inset Formula $y^{(n)}=\sum_{i=0}^{i=n-1}a_{i}(x)y^{(i)}+r(x)$
+\end_inset
+
+, where 
+\begin_inset Formula $a_{i}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $r(x)$
+\end_inset
+
+ are continuous functions in 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The function 
+\begin_inset Formula $r(x)$
+\end_inset
+
+ is called the source term, leading to two further important classifications
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\bar under
+Homogeneous :
+\bar default
+ if 
+\begin_inset Formula $r(t)=0$
+\end_inset
+
+, and consequently one 
+\begin_inset Quotes fld
+\end_inset
+
+automatic
+\begin_inset Quotes frd
+\end_inset
+
+ solution is the trivial solution, 
+\begin_inset Formula $y=0$
+\end_inset
+
+.
+ The solution of a linear homogeneous equation is a complementary function,
+ denoted here by 
+\begin_inset Formula $y_{c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\bar under
+Nonhomogeneous (or inhomogeneous) :
+\bar default
+ if 
+\begin_inset Formula $r(x)\neq0$
+\end_inset
+
+.
+ The additional solution to the complementary function is the particular
+ integral, denoted here by 
+\begin_inset Formula $y_{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The general solution to a linear equation can be written as 
+\begin_inset Formula $y=y_{c}+y_{p}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\bar under
+Non-linear :
+\bar default
+ a differential equation that cannot be written in the form of a linear
+ combination.
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Autres : nonlinear implicit differential equations, nonlinear DAE's, Lie-Backlun
+d mappings, exterior algebra, differential algebra, well-posedness, differential
+ flatness.
+\end_layout
+
+\begin_layout Itemize
+implicit function theorem
+\end_layout
+
+\begin_layout Standard
+Phase space = state space.
+\end_layout
+
+\begin_layout Section
+Définitions
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\bar under
+Système causal :
+\series default
+\bar default
+ un système est causal si sa sortie à un quelconque instant 
+\begin_inset Formula $t_{s}$
+\end_inset
+
+ ne dépend pas de l'entrée à 
+\begin_inset Formula $t_{e}>t_{s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\bar under
+Remarque :
+\bar default
+ tout les systèmes physiques sont causals.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\bar under
+Système temps invariant :
+\series default
+\bar default
+ un système est dit temps invariant si un décalage temporel du signal d'entrée
+ entraîne un décalage temporel identique du signal de sortie identique.
+ En d'autres termes : 
+\begin_inset Formula $\forall h,\,u(t)\rightharpoondown y(t)\implies u(t+h)\rightharpoondown y(t+h)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\bar under
+Système linéaire :
+\series default
+\bar default
+ un système est dit linéaire s'il satisfait les propriétés de superposition
+ et d'homogénéité
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\bar under
+Superposition :
+\series default
+\bar default
+ le système est initialement au repos.
+ Pour un signal d'entrée 
+\begin_inset Formula $x(t)=x_{1}(t)$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $x_{2}(t)$
+\end_inset
+
+), la sortie correspondante est 
+\begin_inset Formula $y(t)=y_{1}(t)$
+\end_inset
+
+ (resp.
+ 
+\begin_inset Formula $y_{2}(t)$
+\end_inset
+
+).
+ Alors pour un signal d'entrée 
+\begin_inset Formula $x(t)=x_{1}(t)+x_{2}(t)$
+\end_inset
+
+, la sortie correspondante est 
+\begin_inset Formula $y(t)=y_{1}(t)+y_{2}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\bar under
+Homogénéité :
+\series default
+\bar default
+ le système est initialement au repos.
+ Pour un signal d'entrée 
+\begin_inset Formula $x(t)$
+\end_inset
+
+, la sortie correspondante est 
+\begin_inset Formula $y(t)$
+\end_inset
+
+.
+ Alors pour un signal d'entrée 
+\begin_inset Formula $\alpha x(t)$
+\end_inset
+
+, la sortie correspondante est 
+\begin_inset Formula $\alpha y(t)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Modèles espace d'état de systèmes linéaires
+\end_layout
+
+\begin_layout Part*
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Type de système
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modèle espace d'état
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continuous linear time-invariant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\underline{\dot{x}}(t) & =A\underline{x}(t)+B\underline{u}(t)\\
+\underline{y}(t) & =C\underline{x}(t)+D\underline{u}(t)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continuous linear time-variant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\underline{\dot{x}}(t) & =A(t)\underline{x}(t)+B(t)\underline{u}(t)\\
+\underline{y}(t) & =C(t)\underline{x}(t)+D(t)\underline{u}(t)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Explicit discrete linear time-invariant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\underline{x}(k+1) & =A\underline{x}(k)+B\underline{u}(k)\\
+\underline{y}(k) & =C\underline{x}(k)+D\underline{u}(k)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Explicit discrete linear time-variant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+\underline{x}(k+1) & =A(k)\underline{x}(k)+B(k)\underline{u}(k)\\
+\underline{y}(k) & =C(k)\underline{x}(k)+D(k)\underline{u}(k)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Laplace domain
+\emph default
+ of continuous linear time-invariant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+s.\underline{X}(t) & =A\underline{X}(s)+BU(s)\\
+\underline{Y}(s) & =CX(s)+DU(s)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Z-domain
+\emph default
+ of discrete linear time-invariant
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{cases}
+z\underline{X}(z) & =A\underline{X}(z)+B\underline{U}(z)\\
+\underline{Y}(z) & =C\underline{X}(z)+D\underline{U}(z)
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In all of these systems, such as the 
+\begin_inset Quotes fld
+\end_inset
+
+Continuous linear time-invariant
+\begin_inset Quotes frd
+\end_inset
+
+ case, there exists a linear map (linear mapping, linear transformation,
+ linear function...) 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ such that :
+\begin_inset Formula 
+\[
+\begin{cases}
+\underline{\dot{x}}(t) & =\begin{bmatrix}A & B\end{bmatrix}\begin{bmatrix}\underline{x}(t)\\
+\underline{u}(t)
+\end{bmatrix}=f(\underline{x}(t),\underline{u}(t))\\
+\underline{y}(t) & =\begin{bmatrix}C & D\end{bmatrix}\begin{bmatrix}\underline{x}(t)\\
+\underline{u}(t)
+\end{bmatrix}=g(\underline{x}(t),\underline{u}(t))
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modèles de systèmes non-linéaires
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+\dot{x}(t) & =f(t,x(t),u(t))\\
+y(t) & =h(t,x(t),u(t))
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si 
+\begin_inset Formula $f(.,.,.)$
+\end_inset
+
+ ou 
+\begin_inset Formula $h(.,.,.)$
+\end_inset
+
+ est une combinaison linéaire, on peut l'écrire sous forme matricielle.
+\end_layout
+
+\begin_layout Standard
+On souhaite écrire une MEF déterministe de type 
+\begin_inset Quotes fld
+\end_inset
+
+Moore
+\begin_inset Quotes frd
+\end_inset
+
+ sous une forme d'espace d'état linéaire de façon à :
+\end_layout
+
+\begin_layout Enumerate
+Faire une analogie entre un système continu ou/et discret échantillonné
+ avec une MEF,
+\end_layout
+
+\begin_layout Enumerate
+Obtenir des RRA's qui seraient une combinaison linéaire invariante des entrées
+ (évènements) et des sorties, i.e.
+ des équations du type 
+\begin_inset Formula $\sum a_{i}x_{i}=b$
+\end_inset
+
+ avec :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ des 
+\begin_inset Quotes fld
+\end_inset
+
+scalaires
+\begin_inset Quotes frd
+\end_inset
+
+ (des valeurs constantes),
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ une entrée ou une sortie,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $b$
+\end_inset
+
+ un scalaire (une constante).
+\end_layout
+
+\end_deeper
+\begin_layout Part
+Systèmes dynamiques : représentations d'états
+\end_layout
+
+\begin_layout Standard
+Définition ....
+ Représentation d'état
+\end_layout
+
+\begin_layout Standard
+Tout système dynamique 
+\begin_inset Formula $\mathbf{\sum}$
+\end_inset
+
+ peut être représenté par ses équations d'état définies comme un ensemble
+ d'équations différentielles du premier ordre appelées équations dynamiques,
+ et un ensemble d'équations algébriques appelées équations de sortie ou
+ de mesure :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+x(t) & =f\left(x(t),u(t),t\right)\\
+y(t) & =h\left(x(t),u(t),t\right)
+\end{cases}\begin{array}{c}
+\text{\textbf{équation dynamique}}\\
+\text{\textbf{équation de mesure}}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ou 
+\begin_inset Formula $x(t)\in\mathbb{R}^{n}$
+\end_inset
+
+ est le vecteur d'état, 
+\begin_inset Formula $u(t)\in\mathbb{R}^{m}$
+\end_inset
+
+ est le vecteur de commande, 
+\begin_inset Formula $y(t)\in\mathbb{R}^{r}$
+\end_inset
+
+ est le vecteur de sortie.
+ La fonction 
+\begin_inset Formula $f\,:\,\mathbb{R}^{n}\times\mathbb{R}^{m}\times\mathbb{R}\rightarrow\mathbb{R}^{n}$
+\end_inset
+
+ est une fonction de Lipschitz par rapport à 
+\begin_inset Formula $x$
+\end_inset
+
+, continue par rapport à 
+\begin_inset Formula $u$
+\end_inset
+
+ et continue par morceaux par rapport à 
+\begin_inset Formula $t$
+\end_inset
+
+ afin que ...
+ ait une solution unique.
+ Les équations d'état caractérisent complètement le comportement dynamique
+ du système.
+ [Denis Arzelier, p.
+\end_layout
+
+\begin_layout Standard
+Un système dynamique peut s'écrire sous sa forme la plus générale :
+\begin_inset Formula 
+\[
+\begin{cases}
+x(t) & =\\
+y(t) & =
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La représentation d'état d'un système continu 
+\series bold
+L
+\series default
+inéaire 
+\series bold
+T
+\series default
+emps 
+\series bold
+I
+\series default
+nvariant est la suivante :
+\begin_inset Formula 
+\[
+\begin{cases}
+\underline{\dot{x}}(t) & =A\underline{x}(t)+B\underline{u}(t)\\
+\underline{y}(t) & =C\underline{x}(t)+D\underline{u}(t)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Dans cette représentation :
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+les conditions initiales sont supposées nulles
+\series default
+ (très important !!!),
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A(t)$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice dynamique
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $B$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice d'entrée
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice de mesure
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice de transfert direct
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $X(s)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur d'état
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $U(s)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur d'entrée
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y(s)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur de sortie
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D\neq0$
+\end_inset
+
+ implique une bande passante infinie du système (transfert direct de l'entrée
+ vers la sortie).
+ 
+\end_layout
+
+\begin_layout Standard
+Dans la réalité, la bande passante d'un système n'est jamais infinie (cela
+ impliquerait un transfert d'information d'une vitesse infinie hors même
+ la célérité de la lumière n'est pas infinie...).
+ On peut donc considérer 
+\begin_inset Formula $D=0$
+\end_inset
+
+ et l'écrire sous la forme simplifiée :
+\begin_inset Formula 
+\[
+\begin{cases}
+pX(s) & =AX(s)+BU(s)\\
+Y(s) & =CX(s)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considering a non-linear mapping 
+\begin_inset Formula $m$
+\end_inset
+
+ defined by 
+\begin_inset Formula $m\,:\,\mathbb{F}_{2}^{n}\times\mathbb{F}_{2}^{m}\rightarrow\mathbb{F}_{2}^{m}$
+\end_inset
+
+ which maps 
+\begin_inset Formula $\left(\begin{bmatrix}X_{0}\\
+X_{1}\\
+X_{2}\\
+X_{3}\\
+X_{4}
+\end{bmatrix},\begin{bmatrix}a\\
+b\\
+c\\
+d\\
+e\\
+f\\
+g\\
+h
+\end{bmatrix}\right)\rightarrow\begin{bmatrix}aX_{0}\\
+bX_{0}\\
+cX_{1}\\
+dX_{1}\\
+fX_{2}\\
+eX_{3}\\
+gX_{3}\\
+hX_{4}
+\end{bmatrix}$
+\end_inset
+
+, the previously non-linear system can now be written as a linear-system
+ 
+\begin_inset Formula $X_{k+1}=AX_{k}+BU$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+\begin{bmatrix}X_{0}\\
+X_{1}\\
+X_{2}\\
+X_{3}\\
+X_{4}
+\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}X_{0}\\
+X_{1}\\
+X_{2}\\
+X_{3}\\
+X_{4}
+\end{bmatrix}+\begin{bmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 1 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 1
+\end{bmatrix}\begin{bmatrix}aX_{0}\\
+bX_{0}\\
+cX_{1}\\
+dX_{1}\\
+fX_{2}\\
+eX_{3}\\
+gX_{3}\\
+hX_{4}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

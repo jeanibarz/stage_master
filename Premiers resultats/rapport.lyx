@@ -1,0 +1,1540 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Représentation espace d'état d'une MEF de type 
+\begin_inset Quotes fld
+\end_inset
+
+Moore
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Introduction
+\end_layout
+
+\begin_layout Standard
+On souhaite obtenir une représentation d'espace d'état linéaire d'une MEF
+ déterministe de type 
+\begin_inset Quotes fld
+\end_inset
+
+Moore
+\begin_inset Quotes frd
+\end_inset
+
+ de façon à :
+\end_layout
+
+\begin_layout Enumerate
+Faire une analogie entre la forme espace d'état d'un système linéaire continu
+ et/ou discret (échantillonné) et la forme espace d'état d'une MEF,
+\end_layout
+
+\begin_layout Enumerate
+Obtenir à partir de cette forme d'espace d'état des RRA's, i.e.
+ des équations qui dépendent uniquement d'observations (sorties/entrées)
+ et indépendantes de l'état courant.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Représentation espace d'état
+\end_layout
+
+\begin_layout Standard
+La représentation d'état (dite 
+\begin_inset Quotes fld
+\end_inset
+
+externe
+\begin_inset Quotes frd
+\end_inset
+
+) d'un système continu 
+\series bold
+L
+\series default
+inéaire 
+\series bold
+T
+\series default
+emps 
+\series bold
+I
+\series default
+nvariant qui nous intéresse est définie par :
+\begin_inset Formula 
+\[
+\begin{cases}
+\underline{\dot{x}}(t) & =A\underline{x}(t)+B\underline{u}(t)\\
+\underline{y}(t) & =C\underline{x}(t)+D\underline{u}(t)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Dans cette représentation :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice dynamique
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $B$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice d'entrée
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice de mesure
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D$
+\end_inset
+
+ est appelée 
+\begin_inset Quotes fld
+\end_inset
+
+matrice de transfert direct
+\begin_inset Quotes frd
+\end_inset
+
+ du système (si 
+\begin_inset Formula $D\neq0$
+\end_inset
+
+, la bande passante du système est infinie...),
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\underline{x}(t)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur d'état
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\underline{u}(t)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur d'entrée
+\begin_inset Quotes frd
+\end_inset
+
+ du système,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\underline{y}(t)$
+\end_inset
+
+ est un vecteur colonne appelé 
+\begin_inset Quotes fld
+\end_inset
+
+vecteur de sortie
+\begin_inset Quotes frd
+\end_inset
+
+ du système.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A,B,C,D$
+\end_inset
+
+ sont des applications linéaires/opérateurs linéaires (en anglais : linear-map/l
+inear-mapping).
+ Une application 
+\begin_inset Formula $f\,:\,E\rightarrow F$
+\end_inset
+
+ est dite linéaire si elle préserve les combinaisons linéaires, i.e.
+ pour toute famille finie 
+\begin_inset Formula $\left(v_{i}\right)_{i\in I}$
+\end_inset
+
+ de vecteurs et pour toute famille 
+\begin_inset Formula $\left(\lambda_{i}\right)_{i\in I}$
+\end_inset
+
+ de scalaires : 
+\begin_inset Formula 
+\[
+f\left(\sum_{i\in I}\lambda_{i}v_{i}\right)=\sum_{i\in I}\lambda_{i}f\left(v_{i}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette représentation est donnée sous forme de schéma-blocs (schéma fonctionnel)
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sb_espace_etat_continu_lineaire"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename representation_espace_etat_continu_lineaire.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schéma-bloc d'une représentation espace d'état d'un système continu linéaire
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sb_espace_etat_continu_lineaire"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Machine de Moore
+\end_layout
+
+\begin_layout Section
+Cas considéré : machine de Moore déterministe, 
+\begin_inset Formula $\delta$
+\end_inset
+
+ fonction totale
+\end_layout
+
+\begin_layout Standard
+Une machine de Moore est une MEF de la catégorie des transducteurs finis.
+ C'est une Machine à Etats Finis car son ensemble d'Etats est discret et
+ fini.
+ C'est un transducteur car il possède des 
+\begin_inset Quotes fld
+\end_inset
+
+sorties
+\begin_inset Quotes frd
+\end_inset
+
+ (c'est une 
+\begin_inset Quotes fld
+\end_inset
+
+extension
+\begin_inset Quotes frd
+\end_inset
+
+ des automates finis).
+ Une machine de Moore peut être décrite par une table de transition ou un
+ diagramme états-transitions.
+\end_layout
+
+\begin_layout Subsection
+Définition formelle
+\end_layout
+
+\begin_layout Standard
+Une machine de Moore est un 6-uplet 
+\begin_inset Formula $<Q,i,A,B,\delta,\lambda>$
+\end_inset
+
+ constitué de :
+\end_layout
+
+\begin_layout Itemize
+un ensemble fini d'états 
+\begin_inset Formula $Q$
+\end_inset
+
+ ;
+\end_layout
+
+\begin_layout Itemize
+un état initial 
+\begin_inset Formula $i$
+\end_inset
+
+, élément de 
+\begin_inset Formula $Q$
+\end_inset
+
+ ;
+\end_layout
+
+\begin_layout Itemize
+un ensemble fini 
+\begin_inset Formula $A$
+\end_inset
+
+, appelé alphabet d'entrée ;
+\end_layout
+
+\begin_layout Itemize
+un ensemble fini 
+\begin_inset Formula $B$
+\end_inset
+
+, appelé alphabet de sortie ;
+\end_layout
+
+\begin_layout Itemize
+une fonction de transition 
+\begin_inset Formula $\delta\,:\,Q'\times A'\rightarrow Q''$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+ est une fonction 
+\begin_inset Quotes fld
+\end_inset
+
+totale
+\begin_inset Quotes frd
+\end_inset
+
+ ssi 
+\begin_inset Formula $Q'\times Q''\times A'=Q\times Q\times A$
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+partielle
+\begin_inset Quotes frd
+\end_inset
+
+ sinon ;
+\end_layout
+
+\begin_layout Itemize
+une fonction de sortie 
+\begin_inset Formula $\lambda\,:\,Q\rightarrow B$
+\end_inset
+
+ 
+\color magenta
+(totale à priori ?)
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+On notera 
+\begin_inset Formula $\delta\left(q,a\right)$
+\end_inset
+
+ par 
+\begin_inset Formula $aq$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Diagramme états-transition
+\end_layout
+
+\begin_layout Standard
+La MEF considérée en exemple est donné Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "diag_MEF"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/jean/Documents/stage_master/Synthèses/modele_exemple.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramme états-transition de la MEF considérée (sorties non représentées)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "diag_MEF"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On fait l'hypothèse que la MEF est déterministe, i.e.
+ il n'existe pas 2 arcs sortants d'un meme état avec la meme étiquette.
+ La fonction de transition 
+\begin_inset Formula $\delta$
+\end_inset
+
+ est totale, i.e.
+ l'automate ne peut pas 
+\begin_inset Quotes fld
+\end_inset
+
+mourir
+\begin_inset Quotes frd
+\end_inset
+
+ (il 
+\begin_inset Quotes fld
+\end_inset
+
+accepte
+\begin_inset Quotes frd
+\end_inset
+
+ tout évènement de l'alphabet d'entrée quelque soit son état courant).
+ Dans le diagramme d'états-transition, les arcs reliant un état à lui-même
+ n'ont pas été représentés (par souci de commodité).
+ On suppose aussi que les évènements sont séquentiels, i.e.
+ il n'y a qu'une entrée valide simultanément.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On fait le choix de travailler dans un corps fini commutatif 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+ (dit 
+\begin_inset Quotes fld
+\end_inset
+
+corps de Galois
+\begin_inset Quotes frd
+\end_inset
+
+), i.e.
+ une structure algébrique 
+\begin_inset Formula $\left(\left\{ 0,1\right\} ,+,\times\right)$
+\end_inset
+
+ définie avec les deux lois de composition interne 
+\begin_inset Formula $\left(+,\times\right)$
+\end_inset
+
+ définies par les tables de vérités données ci-après :
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $+$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\times$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Remarque : dans 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+, les couples d'opérations 
+\begin_inset Formula $\left(+,-\right)$
+\end_inset
+
+ et 
+\begin_inset Formula $\left(\times,\div\right)$
+\end_inset
+
+ sont identiques.
+ En effet, on vérifie facilement que :
+\begin_inset Formula 
+\[
+\begin{cases}
+0+0=0 & \implies0-0=0\\
+0+1=1 & \implies1-1=0\\
+1+0=1 & \implies1-0=1\\
+1+1=0 & \implies0-1=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d'ou une table de vérité pour l'opérateur 
+\begin_inset Formula $\left(-\right)$
+\end_inset
+
+ identique à l'opérateur 
+\begin_inset Formula $\left(+\right)$
+\end_inset
+
+, et la division n'est définie que pour 
+\begin_inset Formula $\left\{ 0,1\right\} \setminus\left\{ 0\right\} =\left\{ 1\right\} $
+\end_inset
+
+ et on a :
+\begin_inset Formula 
+\[
+\begin{cases}
+0\times1=0 & \implies0\div1=0\\
+1\times1=1 & \implies1\div1=1
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+d'ou la encore une table de vérité pour 
+\begin_inset Formula $\left(\div\right)$
+\end_inset
+
+ identique à la sous-table extraite de 
+\begin_inset Formula $\left(\times\right)$
+\end_inset
+
+.
+ On écrira donc parfois l'un ou l'autre des opérateurs si cela permet d'améliore
+r la compréhension.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On utilise un codage 
+\begin_inset Formula $1$
+\end_inset
+
+ parmi 
+\begin_inset Formula $n$
+\end_inset
+
+ (
+\begin_inset Formula $n$
+\end_inset
+
+ le nombre d'états), i.e.
+ on associe chaque état 
+\begin_inset Formula $i$
+\end_inset
+
+ à une variable d'état 
+\begin_inset Formula $X_{i}\in\left\{ 0,1\right\} $
+\end_inset
+
+.
+ On a 
+\begin_inset Formula $X_{i}=1$
+\end_inset
+
+ si l'état courant est l'état 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $X_{i}=0$
+\end_inset
+
+ sinon.
+ On note 
+\begin_inset Formula $X$
+\end_inset
+
+ le vecteur d'état (vecteur colonne) 
+\begin_inset Formula $X=\begin{bmatrix}X_{0} & X_{1} & \cdots & X_{n-1}\end{bmatrix}^{T}$
+\end_inset
+
+.
+ De façon similaire, on notera 
+\begin_inset Formula $U=\begin{bmatrix}a & b & \cdots & g & h\end{bmatrix}^{T}$
+\end_inset
+
+ le vecteur d'entrée.
+\end_layout
+
+\begin_layout Subsection
+Conditions de 
+\begin_inset Quotes fld
+\end_inset
+
+mise à zéro
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les conditions de 
+\begin_inset Quotes fld
+\end_inset
+
+mise à zéro
+\begin_inset Quotes frd
+\end_inset
+
+ pour chaque variable d'état sont :
+\begin_inset Formula 
+\[
+{\color{red}\begin{cases}
+X_{0}\,: & a\times X_{0}+b\times X_{0}\\
+X_{1}\,: & c\times X_{1}+d\times X_{1}\\
+X_{2}\,: & f\times X_{2}\\
+X_{3}\,: & e\times X_{3}+g\times X_{3}\\
+X_{4}\,: & h\times X_{4}
+\end{cases}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conditions de 
+\begin_inset Quotes fld
+\end_inset
+
+mise à un
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les conditions de 
+\begin_inset Quotes fld
+\end_inset
+
+mise à un
+\begin_inset Quotes frd
+\end_inset
+
+ pour chaque variable d'état sont :
+\color green
+
+\begin_inset Formula 
+\[
+\begin{cases}
+X_{0}\,: & h\times X_{4}\\
+X_{1}\,: & a\times X_{0}\\
+X_{2}\,: & d\times X_{1}+e\times X_{3}\\
+X_{3}\,: & b\times X_{0}+c\times X_{1}+f\times X_{2}\\
+X_{4}\,: & g\times X_{3}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Variations des variables d'état
+\end_layout
+
+\begin_layout Standard
+Une variable d'état 
+\begin_inset Formula $i$
+\end_inset
+
+ varie lorsque 
+\begin_inset Formula $X_{i}[k+1]-X_{i}[k]=1$
+\end_inset
+
+ (équivalent à 
+\begin_inset Formula $X_{i}[k+1]+X_{i}[k]$
+\end_inset
+
+ sur notre corps 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+), i.e.
+ lorsque l'un des deux conditions suivantes sont remplies :
+\begin_inset Formula 
+\[
+\begin{cases}
+\left(X_{i}[k]=0\right)\textrm{ et }\left(X_{i}[k+1]=1\right) & \textrm{\textbf{condition de mise à un vérifiée} ("arrivée" sur l'état \ensuremath{i})}\\
+\left(X_{i}[k]=1\right)\textrm{ et }\left(X_{i}[k+1]=0\right) & \textrm{\textbf{condition de mise à zéro vérifiée} ("départ" de l'état \ensuremath{i})}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les conditions de variations d'état sont donc définies par :
+\begin_inset Formula 
+\[
+\begin{cases}
+X_{0}\,: & {\color{red}a\times X_{0}}+{\color{red}b\times X_{0}}+{\color{green}h\times X_{4}}\\
+X_{1}\,: & {\color{green}a\times X_{0}}+{\color{red}c\times X_{1}}+{\color{red}d\times X_{1}}\\
+X_{2}\,: & {\color{green}d\times X_{1}}+{\color{red}f\times X_{2}}+{\color{green}e\times X_{3}}\\
+X_{3}\,: & {\color{green}b\times X_{0}}+{\color{green}c\times X_{1}}+{\color{red}e\times X_{3}}+{\color{green}f\times X_{2}}+{\color{red}g\times X_{3}}\\
+X_{4}\,: & {\color{green}g\times X_{3}}+{\color{red}h\times X_{4}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Représentation espace d'état
+\end_layout
+
+\begin_layout Standard
+La représentation d'espace d'état discrète est :
+\begin_inset Formula 
+\[
+\begin{cases}
+X[k+1] & =f\left(X[k],U[k]\right)\\
+Y[k] & =g(X[k],U[k])
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comme le système n'est pas linéaire, il ne peut pas être écrit tel quel
+ sous une forme d'espace d'état discrète linéaire :
+\begin_inset Formula 
+\[
+\begin{cases}
+X[k+1] & =AX[k]+BU[k]\\
+Y[k] & =CX[k]+DU[k]
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+C'est toutefois possible en effectuant une transformation non-linéaire 
+\begin_inset Formula $\mathbb{F}_{2}^{n}\times\mathbb{F}_{2}^{m}\rightarrow\mathbb{F}_{2}^{mn}$
+\end_inset
+
+.
+ Dans notre cas, on effectuera cette transformation dans un espace vectoriel
+ 
+\begin_inset Formula $Q\subset\mathbb{F}_{2}^{mn}$
+\end_inset
+
+, avec 
+\begin_inset Formula $Q$
+\end_inset
+
+ minimal pour pouvoir représenter le système.
+ Dans le cas du système étudié la transformation sera donc définie par :
+\begin_inset Formula 
+\[
+\left(\begin{bmatrix}X_{0}\\
+X_{1}\\
+X_{2}\\
+X_{3}\\
+X_{4}
+\end{bmatrix},\begin{bmatrix}a\\
+b\\
+c\\
+d\\
+e\\
+f\\
+g\\
+h
+\end{bmatrix}\right)\rightarrow\tilde{U}=\begin{bmatrix}a\times X_{0}\\
+b\times X_{0}\\
+c\times X_{1}\\
+d\times X_{1}\\
+e\times X_{2}\\
+f\times X_{2}\\
+e\times X_{3}\\
+g\times X_{3}\\
+h\times X_{4}
+\end{bmatrix}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On peut alors écrire la représentation d'espace d'état discrète linéaire
+ :
+\begin_inset Formula 
+\[
+\begin{cases}
+X[k+1] & =f\left(X[k],\tilde{U}[k]\right)=\begin{bmatrix}1 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}X_{0}[k]\\
+X_{1}[k]\\
+X_{2}[k]\\
+X_{3}[k]\\
+X_{4}[k]
+\end{bmatrix}+\begin{bmatrix}1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 1\\
+1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 1 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1
+\end{bmatrix}\begin{bmatrix}a\times X_{0}\\
+b\times X_{0}\\
+c\times X_{1}\\
+d\times X_{1}\\
+e\times X_{2}\\
+f\times X_{2}\\
+e\times X_{3}\\
+g\times X_{3}\\
+h\times X_{4}
+\end{bmatrix}\\
+Y[k] & =g(X[k],\tilde{U}[k])
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Rappel :
+\bar default
+
+\begin_inset Formula 
+\[
+\begin{cases}
+X_{0}\,: & {\color{red}a\times X_{0}}+{\color{red}b\times X_{0}}+{\color{green}h\times X_{4}}\\
+X_{1}\,: & {\color{green}a\times X_{0}}+{\color{red}c\times X_{1}}+{\color{red}d\times X_{1}}\\
+X_{2}\,: & {\color{green}d\times X_{1}}+{\color{red}f\times X_{2}}+{\color{green}e\times X_{3}}\\
+X_{3}\,: & {\color{green}b\times X_{0}}+{\color{green}c\times X_{1}}+{\color{red}e\times X_{2}}+{\color{green}f\times X_{2}}+{\color{red}g\times X_{3}}\\
+X_{4}\,: & {\color{green}g\times X_{3}}+{\color{red}h\times X_{4}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Remarques :
+\end_layout
+
+\begin_layout Itemize
+le nombre de coefficients non-nuls dans une quelconque ligne 
+\begin_inset Formula $i$
+\end_inset
+
+ de la matrice 
+\begin_inset Formula $B$
+\end_inset
+
+ correspond au nombre d'arcs (entrants + sortants) sur l'état 
+\begin_inset Formula $i$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+le nombre de coefficients non-nuls dans une quelconque colonne 
+\begin_inset Formula $j$
+\end_inset
+
+ de la matrice 
+\begin_inset Formula $B$
+\end_inset
+
+ est toujours égal à 2 (un coefficient pour l'état mis à 0 et un coefficient
+ pour l'état mis à 1 pour l'arc associé à la colonne 
+\begin_inset Formula $j$
+\end_inset
+
+),
+\end_layout
+
+\begin_layout Itemize
+on en déduit que le nombre de coefficients non-nuls est égal à 
+\begin_inset Formula $2a$
+\end_inset
+
+ si 
+\begin_inset Formula $a$
+\end_inset
+
+ est le nombre d'arcs du diagramme d'états-transition,
+\end_layout
+
+\begin_layout Itemize
+la dimension de l'espace vectoriel nécessaire pour les entrées est égal
+ au nombre d'arcs (8 ici).
+\end_layout
+
+\begin_layout Standard
+On donne une forme schéma-blocs de la machine de Moore (cas général) Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sb_moore_general"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename nouvelle_representation_espace_etat.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schéma-blocs d'une machine de Moore (cas général)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sb_moore_general"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si l'on fait les hypothèses suivantes :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $D=0$
+\end_inset
+
+, i.e.
+ il n'y a pas de transfert direct entrée/sortie, et
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Y=f(X[k])$
+\end_inset
+
+, i.e.
+ la sortie est une fonction linéaire de l'état courant.
+\end_layout
+
+\begin_layout Standard
+Alors on obtient un schéma-blocs simplifié, représenté Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sb_moore_simplifie"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename nouvelle_representation_espace_etat_simplifiee.png
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schéma-blocs d'une machine de Moore (sous les hypothèses 
+\begin_inset Formula $D=0$
+\end_inset
+
+ et 
+\begin_inset Formula $Y=f(X[k])$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sb_moore_simplifie"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
