@@ -1,0 +1,1228 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\setcounter{MaxMatrixCols}{18}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Meta-diagnostic à partir d'une MEF de type 
+\begin_inset Quotes fld
+\end_inset
+
+Moore
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Introduction
+\end_layout
+
+\begin_layout Standard
+A partir de RRA's statiques, on cherche à réaliser un meta-diagnostic, i.e.
+ déduire des erreurs possibles sur le modèle.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Hypothèses :
+\end_layout
+
+\begin_layout Enumerate
+L'hypothèse du transfert direct entrée/sortie nul est valide,
+\end_layout
+
+\begin_layout Enumerate
+Les dimensions de la matrice C sont correctes (i.e.
+ le nombre d'états et le nombre de sorties sont corrects).
+\end_layout
+
+\begin_layout Enumerate
+Les observations et meta-observations sont correctes.
+\end_layout
+
+\begin_layout Enumerate
+L'algorithme de meta-diagnostic est correct.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+RRA's statiques
+\end_layout
+
+\begin_layout Standard
+Les RRA's statiques sont obtenues à partir de la matrice 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ Comme 
+\begin_inset Formula $C$
+\end_inset
+
+ est supposée incorrecte, 
+\begin_inset Formula $W$
+\end_inset
+
+ l'est également.
+ Par ailleurs, faire des 
+\begin_inset Quotes fld
+\end_inset
+
+meta-observations
+\begin_inset Quotes frd
+\end_inset
+
+ à partir des résidus paraît louche : en effet les résidus sont obtenus
+ à partir de l'application linéaire associée à 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ On observe donc d'abord 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\series bold
+puis
+\series default
+ on calcule les résidus associés à chaque RRA.
+ Si on a des observations partielles sur 
+\begin_inset Formula $Y$
+\end_inset
+
+, autant les utilisées elles plutôt qu'utiliser les informations sur les
+ résidus, qui contiennent au mieux autant d'information (si 
+\begin_inset Formula $W$
+\end_inset
+
+ est injective), au pire moins d'information...
+\end_layout
+
+\begin_layout Standard
+On défini une matrice oracle 
+\begin_inset Formula $C_{o}$
+\end_inset
+
+, telle que 
+\begin_inset Formula $C_{o}=C+C_{\varepsilon}$
+\end_inset
+
+, où 
+\begin_inset Formula $C$
+\end_inset
+
+ est la matrice erronée que nous pensions correcte, et 
+\begin_inset Formula $C_{\varepsilon}$
+\end_inset
+
+ représente les erreurs commises sur les coefficients de cette matrice 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Matrice 
+\begin_inset Formula $C$
+\end_inset
+
+ oracle de dans 
+\begin_inset Formula $\left\{ 0,1\right\} ^{m\times n}$
+\end_inset
+
+, par exemple la matrice 
+\begin_inset Formula $C_{o}\in\mathbb{F}_{2}^{4\times3}$
+\end_inset
+
+ suivante :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{o}=\begin{bmatrix}u & 1 & u\\
+u & 0 & u\\
+1 & 0 & 1\\
+u & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $u$
+\end_inset
+
+ : valeur non définie (non testée), pouvant donc prendre la valeur 
+\begin_inset Formula $0$
+\end_inset
+
+ ou 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Transformation d'une matrice en un vecteur : une application linéaire
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+-Espace vectoriel
+\end_layout
+
+\begin_layout Standard
+On appelle 
+\series bold
+matrice
+\series default
+ de type 
+\begin_inset Formula $\left(I,J\right)$
+\end_inset
+
+ à 
+\series bold
+coefficients
+\series default
+ dans 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+, toute famille d'éléments de 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+ indexée par le produit cartésien 
+\begin_inset Formula $I\times J$
+\end_inset
+
+, c'est-à-dire toute application 
+\begin_inset Formula $A$
+\end_inset
+
+ de 
+\begin_inset Formula $I\times J$
+\end_inset
+
+ dans 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dans la suite, les ensembles 
+\begin_inset Formula $I,J$
+\end_inset
+
+ seront finis et sont respectivement les ensembles de nombres entiers naturels
+ 
+\begin_inset Formula $\left\{ 1,2,\ldots,m\right\} $
+\end_inset
+
+ et 
+\begin_inset Formula $\left\{ 1,2,\ldots,n\right\} $
+\end_inset
+
+.
+ Dans ce cas, on dit que la matrice a 
+\begin_inset Formula $m$
+\end_inset
+
+ lignes et 
+\begin_inset Formula $n$
+\end_inset
+
+ colonnes, ou quelle est de 
+\series bold
+dimension 
+\series default
+ou 
+\series bold
+taille
+\series default
+ 
+\begin_inset Formula $\left(m,n\right)$
+\end_inset
+
+.
+ En notant 
+\begin_inset Formula $a_{i,j}$
+\end_inset
+
+ l'image d'un couple 
+\begin_inset Formula $\left(i,j\right)$
+\end_inset
+
+ par l'application 
+\begin_inset Formula $A$
+\end_inset
+
+, la matrice peut alors être notée
+\begin_inset Formula 
+\[
+A=\left(a_{i,j}\right)_{1\leq i\leq m,1\leq j\leq n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ou plus simplement 
+\begin_inset Formula $\left(a_{i,j}\right)$
+\end_inset
+
+ si le contexte s'y prête.
+\end_layout
+
+\begin_layout Standard
+Une matrice ne comportant qu'une seule ligne et 
+\begin_inset Formula $n$
+\end_inset
+
+ colonnes est appelée 
+\series bold
+matrice ligne
+\series default
+ de taille 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ Une matrice ne comportant 
+\begin_inset Formula $m$
+\end_inset
+
+ lignes et qu'une seule colonne est appelée 
+\series bold
+matrice colonne
+\series default
+ de taille 
+\begin_inset Formula $m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Une 
+\series bold
+sous-matrice
+\series default
+ de 
+\begin_inset Formula $A$
+\end_inset
+
+ est une matrice obtenue en sélectionnant une partie 
+\begin_inset Formula $I\subseteq\left\{ 1,2,\ldots,m\right\} $
+\end_inset
+
+ de ses lignes et une partie 
+\begin_inset Formula $J\subseteq\left\{ 1,2,\ldots,n\right\} $
+\end_inset
+
+ de ces colonnes.
+ On la note 
+\begin_inset Formula $A_{I,J}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proposition
+\series default
+ Une matrice 
+\begin_inset Formula $A$
+\end_inset
+
+ de taille 
+\begin_inset Formula $\left(m,n\right)$
+\end_inset
+
+ à coefficients dans 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ peut être transformée en une matrice colonne 
+\begin_inset Formula $B$
+\end_inset
+
+ de taille 
+\begin_inset Formula $mn$
+\end_inset
+
+ à coefficients dans 
+\begin_inset Formula $\mathbb{K}$
+\end_inset
+
+ par une application bilinéaire 
+\begin_inset Formula $f_{m,n}$
+\end_inset
+
+, dont la réciproque est notée 
+\begin_inset Formula $f_{m,n}^{-1}$
+\end_inset
+
+, et telle que
+\begin_inset Formula 
+\[
+f_{m,n}\,:\,\left(a_{i,j}\right)_{1\leq i\leq m,1\leq j\leq n}\rightarrow\left(b_{k,l}\right)_{1\leq k\leq mn,l=1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f_{m,n}^{-1}\thinspace:\,\left(b_{k,l}\right)_{1\leq k\leq mn,l=1}\rightarrow\left(a_{i,j}\right)_{1\leq i\leq m,1\leq j\leq n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\forall\left(i,j\right),1\leq i\leq m,1\leq j\leq n\,:\,a_{i,j}=f_{m,n}^{-1}\left(f_{m,n}\left(a_{i,j}\right)\right)=f_{m,n}^{-1}\left(b_{i\left(n-1\right)+j,1}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{cases}
+f\,:\,\mathcal{M}_{m,n} & \rightarrow\mathcal{M}_{mn,1}\\
+\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix} & \rightarrow\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n} & a_{2,1} & a_{2,2} & \cdots & \cdots & a_{m,n}\end{bmatrix}^{T}
+\end{cases}
+\]
+
+\end_inset
+
+qui 
+\begin_inset Quotes fld
+\end_inset
+
+transforme
+\begin_inset Quotes frd
+\end_inset
+
+ une matrice rectangulaire en un vecteur colonne.
+ commutatif 
+\begin_inset Formula $\left(\mathcal{M}_{m,n},+\right)$
+\end_inset
+
+, où la LCI (= loi de composition interne) est définie usuellement :
+\begin_inset Formula 
+\[
++\,:\,\left(A,B\right)\in\mathcal{M}_{m,n}^{2}\rightarrow C\in\mathcal{M}_{m,n},\,c_{i,j}=a_{i,j}+b_{i,j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+On défini un On défini une application 
+\begin_inset Formula $f$
+\end_inset
+
+ qui transforme un tenseur de rang 2 en un tenseur de rang 1, i.e.
+ qui transforme une matrice 
+\begin_inset Formula $\mathcal{M}_{m,n}$
+\end_inset
+
+ de 
+\begin_inset Formula $m$
+\end_inset
+
+ lignes et 
+\begin_inset Formula $n$
+\end_inset
+
+ colonnes en un vecteur colonne 
+\begin_inset Formula $\mathcal{V}_{p}$
+\end_inset
+
+ avec 
+\begin_inset Formula $p=m\times n$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+\begin{cases}
+f\,:\,\mathcal{M}_{m,n} & \rightarrow\mathcal{V}_{mn}\\
+\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix} & \rightarrow\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n} & a_{2,1} & a_{2,2} & \cdots & \cdots & a_{m,n}\end{bmatrix}^{T}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Remarque :
+\bar default
+ comme 
+\begin_inset Formula $\mathcal{V}_{p}$
+\end_inset
+
+ est un élément particulier de l'ensemble des matrices 
+\begin_inset Formula $\mathcal{M}_{m,n}$
+\end_inset
+
+ avec 
+\begin_inset Formula $n=1$
+\end_inset
+
+, les définitions des opérations entre 2 éléments 
+\begin_inset Formula $\left(A,B\right)\in\mathcal{M}_{m,n}^{2}$
+\end_inset
+
+ valent aussi pour 2 éléments 
+\begin_inset Formula $\left(A,B\right)\in\mathcal{M}_{m,1}^{2}\equiv\left(A,B\right)\in\mathcal{V}_{m}^{2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Addition
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'addition 
+\begin_inset Formula $\left(+\right)$
+\end_inset
+
+ de 2 éléments 
+\begin_inset Formula $\left(\mathcal{M}_{m_{1},n_{1}},\mathcal{M}_{m_{2},n_{2}}\right)$
+\end_inset
+
+ est définie usuellement, c'est-à-dire ssi.
+ les dimensions entre 2 éléments sont identiques (
+\begin_inset Formula $m_{1}=m_{2}$
+\end_inset
+
+ et 
+\begin_inset Formula $n_{1}=n_{2}$
+\end_inset
+
+) :
+\begin_inset Formula 
+\[
+\begin{cases}
++:\,\mathcal{M}_{m,n}\times\mathcal{M}_{m,n} & \rightarrow\mathcal{M}_{m,n}\\
+\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix},\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix}\right) & \rightarrow\begin{bmatrix}a_{1,1}+b_{1,1} & a_{1,2}+b_{1,2} & \cdots & a_{1,n}+b_{1,n}\\
+a_{2,1}+b_{2,1} & a_{2,2}+b_{2,2} & \cdots & a_{2,n}+b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1}+b_{m,1} & a_{m,2}+b_{m,2} & \cdots & a_{m,n}+b_{m,n}
+\end{bmatrix}
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+L'ensemble 
+\begin_inset Formula $\left(\mathcal{M}_{m,n},+\right)$
+\end_inset
+
+ forme un groupe commutatif.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multiplication par un scalaire
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La multiplication 
+\begin_inset Formula $(\circ)$
+\end_inset
+
+ d'un élément 
+\begin_inset Formula $\mathcal{M}_{m,n}$
+\end_inset
+
+ par un scalaire (élément du corps 
+\begin_inset Formula $\mathbb{F}_{2}=\left(\left\{ 0,1\right\} ,+,\times\right)$
+\end_inset
+
+) est également définie usuellement :
+\begin_inset Formula 
+\[
+\begin{cases}
+\circ\,:\,\left(\left\{ 0,1\right\} ,\mathcal{M}_{m,n}\right) & \rightarrow\mathcal{M}_{m,n}\\
+\left(\alpha,\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix}\right) & \rightarrow\alpha\circ\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix}=\begin{bmatrix}\alpha\times b_{1,1} & \alpha\times b_{1,2} & \cdots & \alpha\times b_{1,n}\\
+\alpha\times b_{2,1} & \alpha\times b_{2,2} & \cdots & \alpha\times b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+\alpha\times b_{m,1} & \alpha\times b_{m,2} & \cdots & \alpha\times b_{m,n}
+\end{bmatrix}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'ensemble 
+\begin_inset Formula $\left(\left\{ 0,1\right\} ,\mathcal{M}_{m,n},\circ\right)$
+\end_inset
+
+Les éléments neutres de l'espace de départ (resp.
+ de l'espace d'arrivée) sont la matrice nulle (resp.
+ le vecteur nul).
+ On se place dans un 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+-espace vectoriel sur le corps 
+\begin_inset Formula $\mathbb{F}_{2}$
+\end_inset
+
+.
+ On pose :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A\in\mathcal{M}_{m,n},\,A=\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix},B\in\mathcal{M}_{m,n},\,B=\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix},\alpha\in\mathbb{F}_{2}
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\bar under
+Proposition 1 :
+\bar default
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ est un morphisme d'espaces vectoriels.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Démonstration
+\end_layout
+
+\begin_layout Standard
+On doit vérifier que 
+\begin_inset Formula $\forall(x,y)\in\mathcal{M}_{m,n}^{2},\,\forall\lambda\in\mathbb{K},\,f\left(x+\lambda y\right)=f\left(x\right)+\lambda f\left(y\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f\left(A+\alpha B\right)=f\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix}+\alpha\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(A+\alpha B\right)=f\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix}+\begin{bmatrix}\alpha b_{1,1} & \alpha b_{1,2} & \cdots & \alpha b_{1,n}\\
+\alpha b_{2,1} & \alpha b_{2,2} & \cdots & \alpha b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+\alpha b_{m,1} & \alpha b_{m,2} & \cdots & \alpha b_{m,n}
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(A+\alpha B\right)=f\left(\begin{bmatrix}a_{1,1}+\alpha b_{1,1} & a_{1,2}+\alpha b_{1,2} & \cdots & a_{1,n}+\alpha b_{1,n}\\
+a_{2,1}+\alpha b_{2,1} & a_{2,2}+\alpha b_{2,2} & \cdots & a_{2,n}+\alpha b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1}+\alpha b_{m,1} & a_{m,2}+\alpha b_{m,2} & \cdots & a_{m,n}+\alpha b_{m,n}
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+f\left(A+\alpha B\right)=\begin{bmatrix}\alpha a_{1,1}+b_{1,1} & \alpha a_{1,2}+b_{1,2} & \cdots & \alpha a_{1,n}+b_{1,n} & \alpha a_{2,1}+b_{2,1} & \alpha a_{2,2}+b_{2,2} & \cdots & \cdots & \alpha a_{m,n}+b_{m,n}\end{bmatrix}^{T}\label{eq:egalite1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+D'autre part, on a :
+\begin_inset Formula 
+\[
+f\left(A\right)+\alpha f\left(B\right)=f\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{bmatrix}\right)+\alpha f\left(\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n}\\
+b_{2,1} & b_{2,2} & \cdots & b_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+b_{m,1} & b_{m,2} & \cdots & b_{m,n}
+\end{bmatrix}\right)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(A\right)+\alpha f\left(B\right)=\begin{array}{cc}
+\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n} & a_{2,1} & a_{2,2} & \cdots & \cdots & a_{m,n}\end{bmatrix}^{T} & +\\
+\alpha\begin{bmatrix}b_{1,1} & b_{1,2} & \cdots & b_{1,n} & +b_{2,1} & +b_{2,2} & \cdots & \cdots & +b_{m,n}\end{bmatrix}^{T}
+\end{array}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+f\left(A\right)+\alpha f\left(B\right)=\begin{array}{cc}
+\begin{bmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n} & a_{2,1} & a_{2,2} & \cdots & \cdots & a_{m,n}\end{bmatrix}^{T} & +\\
+\begin{bmatrix}\alpha b_{1,1} & \alpha b_{1,2} & \cdots & \alpha b_{1,n} & +\alpha b_{2,1} & +\alpha b_{2,2} & \cdots & \cdots & +\alpha b_{m,n}\end{bmatrix}^{T}
+\end{array}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+f\left(A\right)+\alpha f\left(B\right)=\begin{bmatrix}a_{1,1}+\alpha b_{1,1} & a_{1,2}+\alpha b_{1,2} & \cdots & a_{1,n}+\alpha b_{1,n} & a_{2,1}+\alpha b_{2,1} & a_{2,2}+\alpha b_{2,2} & \cdots & \cdots & a_{m,n}+\alpha b_{m,n}\end{bmatrix}^{T}\label{eq:egalite2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Par 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:egalite1"
+
+\end_inset
+
+ et 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:egalite2"
+
+\end_inset
+
+, il vient que 
+\begin_inset Formula $f\left(A+\alpha B\right)=f\left(A\right)+\alpha f\left(B\right)$
+\end_inset
+
+ donc 
+\begin_inset Formula $f$
+\end_inset
+
+ est une application linéaire : c'est un morphisme d'espaces vectoriels.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\bar under
+Proposition 2 :
+\bar default
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ est un isomorphisme.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Démonstration 
+\series default
+[
+\begin_inset CommandInset href
+LatexCommand href
+name "démonstration"
+target "https://perso.univ-rennes1.fr/marie-pierre.lebaud/agint/ecrit/algebre-lineaire/applications-lineaires/V-appli-lin.pdf"
+
+\end_inset
+
+, p.3/17]
+\end_layout
+
+\begin_layout Standard
+Comme les espaces de départ et d'arrivée sont de même dimension finie, 
+\begin_inset Formula $f$
+\end_inset
+
+ est bijective.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On peut donc transformer la matrice 
+\begin_inset Formula $C_{o}$
+\end_inset
+
+ en un vecteur ligne : 
+\begin_inset Formula $f\left(C_{o}\right)=f\left(\begin{bmatrix}w_{1} & 1 & w_{2}\\
+w_{3} & 0 & w_{4}\\
+1 & 0 & 1\\
+w_{5} & 0 & 1
+\end{bmatrix}\right)=\begin{bmatrix}w_{1} & 1 & w_{2} & w_{3} & 0 & w_{4} & 1 & 0 & 1 & w_{5} & 0 & 1\end{bmatrix}^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Par un changement de base on peut ensuite transformer 
+\begin_inset Formula $C_{o}$
+\end_inset
+
+ en une matrice par bloc 
+\begin_inset Formula $C=\begin{bmatrix}1 & 0 & 1 & 0 & 1 & 0 & 1 & \brokenvert & w_{1} & w_{2} & w_{3} & w_{4} & w_{5}\end{bmatrix}^{T}=\begin{bmatrix}V & W\end{bmatrix}^{T}$
+\end_inset
+
+, où 
+\begin_inset Formula $V=\begin{bmatrix}1 & 0 & 1 & 0 & 1 & 0 & 1\end{bmatrix}^{T}$
+\end_inset
+
+ est un vecteur colonne dont tout les coefficients sont connus (meta-observation
+s), et où 
+\begin_inset Formula $W=\begin{bmatrix}w_{1} & w_{2} & w_{3} & w_{4} & w_{5}\end{bmatrix}^{T}$
+\end_inset
+
+ est un vecteur colonne dont les coefficients sont inconnus (ceux que l'on
+ cherche justement à déterminer !).
+ L'application linéaire initiale, associée à la matrice 
+\begin_inset Formula $C_{0}$
+\end_inset
+
+, réalisait un morphisme d'espaces vectortiels, d'espace de départ l'espace
+ du vecteur d'états 
+\begin_inset Formula $X=\begin{bmatrix}x_{1} & x_{2} & x_{3}\end{bmatrix}^{T}$
+\end_inset
+
+, et d'espace d'image l'espace du vecteur de mesures : 
+\begin_inset Formula 
+\[
+Y=C_{0}X
+\]
+
+\end_inset
+
+Comme 
+\begin_inset Formula $X$
+\end_inset
+
+ ne peut avoir qu'un seul coefficient à 1, on cherche à trouver quelle matrice
+ 
+\begin_inset Formula $C_{o}$
+\end_inset
+
+ vérifie 
+\begin_inset Formula $Y=C_{o}X$
+\end_inset
+
+, pour 
+\begin_inset Formula $X=\begin{bmatrix}1 & 0 & 0\end{bmatrix}^{T}\vee X=\begin{bmatrix}0 & 1 & 0\end{bmatrix}^{T}\vee X=\begin{bmatrix}0 & 0 & 1\end{bmatrix}^{T}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Avec 
+\begin_inset Formula $X_{1}=\begin{bmatrix}1 & 0 & 0\end{bmatrix}^{T}$
+\end_inset
+
+ :
+\begin_inset Formula 
+\[
+\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}w_{1}\\
+w_{3}\\
+1\\
+w_{5}
+\end{bmatrix}\Leftrightarrow\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}1\\
+0\\
+1\\
+0\\
+1\\
+0\\
+1\\
+w_{1}\\
+w_{2}\\
+w_{3}\\
+w_{4}\\
+w_{5}
+\end{bmatrix}=B_{11}V+B_{12}W
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Avec 
+\begin_inset Formula $X_{2}=\begin{bmatrix}0 & 1 & 0\end{bmatrix}^{T}$
+\end_inset
+
+ :
+\begin_inset Formula 
+\[
+\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}1\\
+0\\
+0\\
+0
+\end{bmatrix}\Leftrightarrow\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}\begin{bmatrix}1\\
+0\\
+1\\
+0\\
+1\\
+0\\
+1\\
+w_{1}\\
+w_{2}\\
+w_{3}\\
+w_{4}\\
+w_{5}
+\end{bmatrix}=B_{21}V+B_{22}W
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Avec 
+\begin_inset Formula $X_{3}=\begin{bmatrix}0 & 0 & 1\end{bmatrix}^{T}$
+\end_inset
+
+ :
+\begin_inset Formula 
+\[
+\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}w_{2}\\
+w_{4}\\
+1\\
+1
+\end{bmatrix}\Leftrightarrow\begin{bmatrix}y_{1}\\
+y_{2}\\
+y_{3}\\
+y_{4}
+\end{bmatrix}=\begin{bmatrix}0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}\begin{bmatrix}1\\
+0\\
+1\\
+0\\
+1\\
+0\\
+1\\
+w_{1}\\
+w_{2}\\
+w_{3}\\
+w_{4}\\
+w_{5}
+\end{bmatrix}=B_{31}V+B_{32}V
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On doit résoudre 
+\begin_inset Formula $\left(Y=B_{11}V+B_{12}W\right)\vee\left(Y=B_{21}V+B_{22}W\right)\vee\left(Y=B_{31}V+B_{32}W\right)$
+\end_inset
+
+.
+ Ce qui revient à chercher l'union des solutions pour 3 systèmes d'équations
+ linéaires :
+\begin_inset Formula 
+\[
+W=\left\{ \hat{W}+W_{0}|\forall i\in\left\{ 1,2,3\right\} ,\forall\aleph_{i2}\in ker\left(B_{i2}\right)\,:\,B_{i2}\left(\hat{W}+\aleph_{i2}\right)=Y+B_{i1}V\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
